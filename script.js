@@ -245,12 +245,12 @@ for (let i=11; i<=33; i++) {
 // Выведите столбец четных чисел в промежутке от 0 до 100.
 let number = 0;
 
-while (number <= 100) {
-    console.log(number);
-    number = number + 2;
-}
+// while (number <= 100) {
+//     console.log(number);
+//     number = number + 2;
+// }
 
-for (let i=0; i<=100; i+2) {
+for (let i=0; i<=100; i=i+2) {
     console.log(i);
 }
 
@@ -258,9 +258,26 @@ for (let i=0; i<=100; i+2) {
 let i = 0,
     result = 0;
 
-while (i <= 100) {
+// while (i <= 100) {
+//     result = result + i;
+//     i++;
+// }
+// console.log(result);
+
+for (let i = 0; i <= 100; i++) {
     result = result + i;
-    i++;
 }
 console.log(result);
 
+// Дан массив с элементами [1, 2, 3, 4, 5]. С помощью цикла for выведите все эти элементы на экран.
+
+let resultate = 0;
+let arr = [1, 2, 3, 4, 5];
+// for (i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+for (i = 0; i < arr.length; i++) {
+    resultate = resultate + arr[i];
+}
+console.log(resultate);

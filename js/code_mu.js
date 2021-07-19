@@ -1832,12 +1832,12 @@
 // }
 
 // Дан массив с числами. С помощью цикла найдите сумму элементов этого массива.
-let arr = [11, 34, 5, 22, 10];
-let result = 0;
-for (let i = 0; i < arr.length; i++) {
-    result += arr[i];
-}
-console.log(result);
+// let arr = [11, 34, 5, 22, 10];
+// let result = 0;
+// for (let i = 0; i < arr.length; i++) {
+//     result += arr[i];
+// }
+// console.log(result);
 
 // Дан массив с числами. С помощью цикла найдите сумму квадратов элементов этого массива.
 // let arr = [11, 34, 5, 22, 10];
@@ -1848,18 +1848,621 @@ console.log(result);
 // console.log(result);
 
 // Дан массив с числами. Найдите среднее арифметическое его элементов (сумма элементов, делить на количество).
-let arr = [11, 34, 5, 0, 10];
-let result = 0;
-for (let i = 0; i < arr.length; i++) {
-    result += arr[i] / arr.length;  
-}
-console.log(result);
+// let arr = [11, 34, 5, 0, 10];
+// let result = 0;
+// for (let i = 0; i < arr.length; i++) {
+//     result += arr[i] / arr.length;  
+// }
+// console.log(result);
 
 // Напишите скрипт, который будет находить факториал числа. Факториал (обозначается !) - это произведение (умножение) всех целых чисел, меньше данного, и его самого. Например, 4! = 1*2*3*4.
 
-let num = 4;
-let result = 1;
-for (let i = 1; i <= num; i++) {
-    result *= i;
+// let num = 4;
+// let result = 1;
+// for (let i = 1; i <= num; i++) {
+//     result *= i;
+// }
+// console.log('факториал ' + num + ' = ' + result);
+
+
+//====================== Многомерные массивы в JavaScript ================================
+
+// Выведите с его помощью элементы с текстом 'l', 'e', 'g' и 'a'.
+// let arr = [
+// 	['a', 'b', 'c'],
+// 	['d', 'e', 'f'],
+// 	['g', 'h', 'i'],
+// 	['j', 'k', 'l'],
+// ];
+// console.log(arr[3][2], arr[1][1], arr[2][0], arr[0][0]);
+
+// Найдите сумму всех его элементов.
+// let arr = [[1, 2], [3, 4], [5, 6]];
+// let result = arr[0][0] + arr[0][1] + arr[1][0] + arr[1][1] + arr[2][0] + arr[2][1];
+// console.log(result);
+
+// Найдите сумму всех элементов приведенного массива.
+// let arr = [[[1, 2],[3, 4],],[[5, 6],[7, 8],],];
+// let result = arr[0][0][0] + arr[0][0][1] + arr[0][1][0] + arr[0][1][1] + arr[1][0][0] + arr[1][0][1] + arr[1][1][0] + arr[1][1][1];
+// console.log(result);
+
+
+//==================== Перебор многомерных массивов в JavaScript ==========================
+
+// С помощью вложенных циклов найдите сумму элементов этого массива.
+// let arr = [[1, 2, 3], [4, 5], [6]];
+// let result = 0;
+// for (let subArr of arr) {
+// 	for (let elem of subArr) {
+// 		result += elem;
+// 	}
+// }
+// console.log(result);
+
+// С помощью вложенных циклов найдите сумму элементов этого массива.
+// let arr = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+// let result = 0;
+// for (let subArr of arr) {
+// 	for (let subSubArr of subArr) {
+// 		for (let elem of subSubArr) {
+// 			result += elem;
+// 		}
+// 	}
+// }
+// console.log(result);
+
+// Решите предыдущие две задачи через цикл for.
+// let arr = [[1, 2, 3], [4, 5], [6]];
+// let = result = 0;
+// for (let i = 0; i < arr.length; i++) {
+// 	for (let j = 0; j < arr[i].length; j++) {
+// 		result += arr[i][j];
+// 	}
+// }
+// console.log(result);
+
+// let arr = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+// let result = 0;
+// for (let i = 0; i < arr.length; i++) {
+// 	for (let j = 0; j < arr[i].length; j++) {
+// 		for (let k = 0; k < arr[i][j].length; k++) {
+// 			result += arr[i][j][k];
+// 		}
+// 	}
+// }
+// console.log(result);
+
+//==================== Заполнение многомерных массивов JavaScript ========================
+
+// Сформируйте с помощью двух вложенных циклов следующий массив:
+// [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
+
+// let arr = [];
+// for (let i = 0; i < 3; i++) {
+// 	arr[i] = [];
+// 	for (let j = 0; j < 5; j++) {
+// 		arr[i].push(j + 1);
+// 	}
+// }
+// console.log(arr);
+
+// Сформируйте с помощью двух вложенных циклов следующий массив:
+// [['x', 'x', 'x', 'x'], ['x', 'x', 'x', 'x'], ['x', 'x', 'x', 'x']]
+// let arr = [];
+// for (let i = 0; i < 3; i++) {
+// 	arr[i] = [];
+// 	for (let j = 0; j < 4; j++) {
+// 		arr[i][j] = 'x';
+// 	}
+// }
+// console.log(arr);
+
+// Сформируйте с помощью трех вложенных циклов следующий массив:
+// [
+// 	[
+// 		[1, 2, 3, 4, 5],
+// 		[1, 2, 3, 4, 5],
+// 	],
+// 	[
+// 		[1, 2, 3, 4, 5],
+// 		[1, 2, 3, 4, 5],
+// 	],
+// 	[
+// 		[1, 2, 3, 4, 5],
+// 		[1, 2, 3, 4, 5],
+// 	],
+// ]
+
+// let arr = [];
+// for (let i = 0; i < 3; i++) {
+// 	arr[i] = [];
+// 	for (let j = 0; j < 2; j++) {
+// 		arr[i][j]= [];
+// 		for (let k = 0; k < 5; k++) {
+// 			arr[i][j].push(k + 1);
+// 		}
+// 	}
+// }
+// console.log(arr);
+
+// let arr = [];
+
+// for (let i = 0; i < 3; i++) {
+// 	arr[i] = [];
+	
+// 	for (let j = 1; j <= 5; j++) {
+// 		arr[i].push(j);
+// 	}
+// }
+
+// console.log(arr);
+
+// Сформируйте с помощью двух вложенных циклов следующий массив:
+// [[1, 2], [3, 4], [5, 6], [7, 8]]
+// let arr = [];
+// for (let i = 0, k = 1; i < 4; i++) {
+// 	arr[i] = [];
+// 	for (let j = 0; j < 2; j++, k++) {
+// 		arr[i][j] = k;
+// 	}
+// }
+// console.log(arr);
+
+// Сформируйте с помощью двух вложенных циклов следующий массив:
+// [[2, 4, 6], [8, 10, 12], [14, 16, 18], [20, 22, 24]]
+// let arr = [];
+// for (i = 0, k = 1; i < 4; i++) {
+// 	arr[i] = [];
+// 	for (j = 0; j < 3; j++, ++k) {
+// 		arr[i][j] = k * 2;
+// 	}
+// }
+// console.log(arr);
+
+// Сформируйте с помощью трех вложенных циклов следующий трехмерный массив:
+// [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+
+// let arr = [];
+// for (let i = 0, k = 1; i < 2; i++) {
+// 	arr[i] = [];
+// 	for (let j = 0; j < 2; j++) {
+// 		arr[i][j] = [];
+// 		for (let s = 0; s < 2; s++, k++){
+// 			arr[i][j].push(k);
+// 		}
+// 	}
+// }
+// console.log(arr);
+
+// Автор следующего кода хотел сделать массив [[1, 2, 3], [4, 5, 6], [7, 8, 9]]:
+// let arr = [];
+// for (let i = 0; i < 3; i++) {
+// 	arr[i] = [];
+// 	for (let j = 0; j < 3; j++) {
+// 		arr[i][j] = k;
+// 		k++;
+// 	}
+// }
+// console.log(arr);
+// Написанный код, однако, не делает задуманного. Найдите и исправьте ошибку автора.
+// let arr = [];
+// for (let i = 0, k = 1; i < 3; i++) {
+// 	arr[i] = [];
+// 	for (let j = 0; j < 3; j++) {
+// 		arr[i][j] = k;
+// 		k++;
+// 	}
+// }
+// console.log(arr);
+
+
+//========================= Многомерные объекты в JavaScript ==============================
+
+// Найдите сумму элементов приведенного объекта.
+// let obj = {
+// 	key1: {
+// 		key1: 1,
+// 		key2: 2,
+// 		key3: 3,
+// 	},
+// 	key2: {
+// 		key1: 4,
+// 		key2: 5,
+// 		key3: 6,
+// 	},
+// 	key3: {
+// 		key1: 7,
+// 		key2: 8,
+// 		key3: 9,
+// 	},
+// }
+// let result = 0;
+// for (let key in obj) {
+// 	let subObj = obj[key];
+// 	for (let elem in subObj) {
+// 		result += subObj[elem];
+// 	}
+// }
+// console.log(result);
+
+// Выведите на экран элемент 'b2' и элемент 'c1'.
+// let obj = {
+// 	1: {
+// 		1: 'a1',
+// 		2: 'a2',
+// 		3: 'a3',
+// 	},
+// 	2: {
+// 		1: 'b1',
+// 		2: 'b2',
+// 		3: 'b3',
+// 	},
+// 	3: {
+// 		1: 'c1',
+// 		2: 'c2',
+// 		3: 'c3',
+// 	},
+// }
+// for (let key in obj) {
+// 	let subObj = obj[key];
+// 	for (subKey in subObj) {
+// 		if (subObj[subKey] == 'b2' || subObj[subKey] == 'c1') {
+// 			console.log(subObj[subKey]);
+// 		}
+// 	}
+// }
+
+// Найдите сумму всех элементов-чисел.
+// let obj = {
+// 	key1: {
+// 		a: 1, b: 2, c: {
+// 			d: 3,
+// 			e: 4,
+// 		}, f: 5,
+// 	},
+// 	key2: {
+// 		g: 6, h: 7,
+// 	},
+// }
+// ?????
+
+//===================== Перебор многомерных объектов в JavaScript ========================
+
+// Используя циклы, найдите сумму элементов этого объекта.
+// let obj = {
+// 	1: {
+// 		1: 11,
+// 		2: 12,
+// 		3: 13,
+// 	},
+// 	2: {
+// 		1: 21,
+// 		2: 22,
+// 		3: 23,
+// 	},
+// 	3: {
+// 		1: 24,
+// 		2: 25,
+// 		3: 26,
+// 	}
+// }
+// let result = 0;
+// for (let key in obj) {
+// 	let subObj = obj[key];
+// 	for (let subKey in subObj) {
+// 		result += subObj[subKey];
+// 	}
+// }
+// console.log(result);
+
+
+//============== Ключи из переменных в многомерных структурах JavaScript =================
+
+// let months = {
+// 	'ru': [
+// 		'январь',
+// 		'февраль',
+// 		'март',
+// 		'апрель',
+// 		'май',
+// 		'июнь',
+// 		'июль',
+// 		'август',
+// 		'сентябрь',
+// 		'октябрь',
+// 		'ноябрь',
+// 		'декабрь',
+// 	],
+// 	'en': [
+// 		'january',
+// 		'february',
+// 		'march',
+// 		'april',
+// 		'may',
+// 		'june',
+// 		'july',
+// 		'august',
+// 		'september',
+// 		'october',
+// 		'november',
+// 		'december',
+// 	],
+// };
+// let lang = 'ru'; 
+// let month = 5;   
+// console.log(months[lang][month]);
+
+// Пусть даны также 3 переменные, содержащие год, месяц и день. Выведите дело, соответствующее значениям переменных.
+// let affairs = {
+// 	'2018': {
+// 		11: {
+// 			29: ['дело111', 'дело112', 'дело113'],
+// 			30: ['дело121', 'дело122', 'дело123'],
+// 		},
+// 		12: {
+// 			30: ['дело211', 'дело212', 'дело213'],
+// 			31: ['дело221', 'дело222', 'дело223'],
+// 		},
+// 	},
+// 	'2019': {
+// 		12: {
+// 			29: ['дело311', 'дело312', 'дело313'],
+// 			30: ['дело321', 'дело322', 'дело323'],
+// 			31: ['дело331', 'дело332', 'дело333'],
+// 		}
+// 	},
+// }
+// let year = '2019';
+// let month = 12;
+// let day = 30;
+// console.log(affairs[year][month][day]);
+
+//================= Многомерные массивы и объекты в JavaScript ==========================
+
+// Выведите на экран сумму зарплат первого и второго работников.
+// let employees = [
+// 	{
+// 		name: 'name1',
+// 		salary: 300,
+// 	},
+// 	{
+// 		name: 'name2',
+// 		salary: 400,
+// 	},
+// 	{
+// 		name: 'name3',
+// 		salary: 500,
+// 	},
+// ];
+
+// let result = employees[0]['salary'] + employees[1]['salary'];
+// console.log(result);
+
+// Выведите на экран элемент 'Вася' и элемент 'Лена'.
+// let students = {
+// 	'boys':  ['Коля', 'Вася', 'Петя'],
+// 	'girls': ['Даша', 'Маша', 'Лена'],
+// };
+// console.log(students['boys'][1] + ' и ' + students['girls'][2]);
+
+
+//=================== Перебор многомерных комбинаций в JavaScript =========================
+
+// Выведите на экран данные каждого работника в формате имя - зарплата.
+// let employees = [
+// 	{
+// 		name: 'name1',
+// 		salary: 300,
+// 	},
+// 	{
+// 		name: 'name2',
+// 		salary: 400,
+// 	},
+// 	{
+// 		name: 'name3',
+// 		salary: 500,
+// 	},
+// ];
+// for(let employee of employees) {
+// 	document.write(employee.name + ' - ' + employee.salary + '<br>');
+// }
+
+// Выведите на экран сумму зарплат всех работников.
+// let employees = [
+// 	{
+// 		name: 'name1',
+// 		salary: 300,
+// 	},
+// 	{
+// 		name: 'name2',
+// 		salary: 400,
+// 	},
+// 	{
+// 		name: 'name3',
+// 		salary: 500,
+// 	},
+// ];
+// let result = 0;
+// for (let employee of employees) {
+// 	result += employee.salary;
+// }
+// console.log(result);
+
+// Выведите на экран сумму зарплат тех работников, возраст которых равен или более 30 лет.
+// let employees = [
+// 	{
+// 		name: 'name1',
+// 		salary: 300,
+// 		age: 28,
+// 	},
+// 	{
+// 		name: 'name2',
+// 		salary: 400,
+// 		age: 29,
+// 	},
+// 	{
+// 		name: 'name3',
+// 		salary: 500,
+// 		age: 30,
+// 	},
+// 	{
+// 		name: 'name4',
+// 		salary: 600,
+// 		age: 31,
+// 	},
+// 	{
+// 		name: 'name5',
+// 		salary: 700,
+// 		age: 32,
+// 	},
+// ];
+// let result = 0;
+// for (let employee of employees) {
+// 	if (employee.age >= 30) {
+// 		result += employee.salary;
+// 	}
+// }
+// console.log(result);
+
+// Выведите на экран имена и зарплаты неуволенных работников.
+// let employees = [
+// 	{
+// 		name: 'name1',
+// 		salary: 300,
+// 		dismissed: false,
+// 	},
+// 	{
+// 		name: 'name2',
+// 		salary: 400,
+// 		dismissed: true,
+// 	},
+// 	{
+// 		name: 'name3',
+// 		salary: 500,
+// 		dismissed: false,
+// 	},
+// 	{
+// 		name: 'name4',
+// 		salary: 600,
+// 		dismissed: true,
+// 	},
+// 	{
+// 		name: 'name5',
+// 		salary: 700,
+// 		dismissed: false,
+// 	},
+// ];
+// for (let employee of employees) {
+// 	if (employee.dismissed != true) {
+// 		document.write(employee.name + ' : ' + employee.salary + '<br>');
+// 	}
+// }
+
+// С помощью вложенных циклов выведите на экран все строки с данными.
+// let data = {
+// 	1: [
+// 		'data11',
+// 		'data12',
+// 		'data13',
+// 	],
+// 	2: [
+// 		'data21',
+// 		'data22',
+// 		'data23',
+// 	],
+// 	3: [
+// 		'data31',
+// 		'data32',
+// 		'data33',
+// 		'data34',
+// 		'data35',
+// 	],
+// 	4: [
+// 		'data41',
+// 		'data42',
+// 	],
+// };
+
+// for (let key in data) {
+// 	for (let num of data[key]) {
+// 		console.log(num);
+// 	}
+// }
+
+// Количество объектов в массиве и количество элементов в объекте может быть произвольным.
+// С помощью вложенных циклов выведите на экран все строки с данными.
+// let data = [
+// 	{
+// 		1: 'data11',
+// 		2: 'data12',
+// 		3: 'data13',
+// 		4: 'data14',
+// 	},
+// 	{
+// 		1: 'data21',
+// 		2: 'data22',
+// 		3: 'data33',
+// 	},
+// 	{
+// 		1: 'data31',
+// 		2: 'data32',
+// 	},
+// ];
+// for (let elem of data) {
+// 	for (let key in elem) {
+// 		console.log(elem[key]);
+// 	}
+// }
+
+// С помощью вложенных циклов выведите на экран все строки с данными.
+let data = [
+	{
+		1: [
+			'data111',
+			'data112',
+			'data113',
+		],
+		2: [
+			'data121',
+			'data122',
+			'data123',
+		],
+	},
+	{
+		1: [
+			'data211',
+			'data212',
+			'data213',
+		],
+		2: [
+			'data221',
+			'data222',
+			'data223',
+			'data224',
+		],
+		3: [
+			'data231',
+			'data232',
+			'data233',
+			'data234',
+			'data235',
+		],
+	},
+	{
+		1: [
+			'data411',
+			'data412',
+			'data413',
+		],
+		2: [
+			'data421',
+		],
+	},
+];
+for (let elem of data) {
+	for (let key in elem) {
+		for (let num of elem[key]) {
+			console.log(num);
+		}
+	}
 }
-console.log('факториал ' + num + ' = ' + result);

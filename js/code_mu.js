@@ -2415,54 +2415,203 @@
 // }
 
 // С помощью вложенных циклов выведите на экран все строки с данными.
-let data = [
-	{
-		1: [
-			'data111',
-			'data112',
-			'data113',
-		],
-		2: [
-			'data121',
-			'data122',
-			'data123',
-		],
-	},
-	{
-		1: [
-			'data211',
-			'data212',
-			'data213',
-		],
-		2: [
-			'data221',
-			'data222',
-			'data223',
-			'data224',
-		],
-		3: [
-			'data231',
-			'data232',
-			'data233',
-			'data234',
-			'data235',
-		],
-	},
-	{
-		1: [
-			'data411',
-			'data412',
-			'data413',
-		],
-		2: [
-			'data421',
-		],
-	},
-];
-for (let elem of data) {
-	for (let key in elem) {
-		for (let num of elem[key]) {
-			console.log(num);
-		}
-	}
+// let data = [
+// 	{
+// 		1: [
+// 			'data111',
+// 			'data112',
+// 			'data113',
+// 		],
+// 		2: [
+// 			'data121',
+// 			'data122',
+// 			'data123',
+// 		],
+// 	},
+// 	{
+// 		1: [
+// 			'data211',
+// 			'data212',
+// 			'data213',
+// 		],
+// 		2: [
+// 			'data221',
+// 			'data222',
+// 			'data223',
+// 			'data224',
+// 		],
+// 		3: [
+// 			'data231',
+// 			'data232',
+// 			'data233',
+// 			'data234',
+// 			'data235',
+// 		],
+// 	},
+// 	{
+// 		1: [
+// 			'data411',
+// 			'data412',
+// 			'data413',
+// 		],
+// 		2: [
+// 			'data421',
+// 		],
+// 	},
+// ];
+// for (let elem of data) {
+// 	for (let key in elem) {
+// 		for (let num of elem[key]) {
+// 			console.log(num);
+// 		}
+// 	}
+// }
+
+ 
+//========================= Математические методы в JavaScript ===========================
+
+// Возведите 2 в 10 степень.
+// console.log(Math.pow(2, 10));
+// console.log(2 ** 10);
+
+// Найдите квадратный корень из 245.
+// console.log(Math.sqrt(245));
+
+// Дан массив с элементами 4, 2, 5, 19, 13, 0, 10. Найдите квадратный корень из суммы кубов его элементов. Для решения воспользуйтесь циклом for.
+// let arr = [4, 2, 5, 19, 13, 0, 10];
+// let result = 0;
+// for (i = 0; i < arr.length; i++) {
+// 	result += Math.pow(arr[i], 3);
+// }
+// console.log(Math.sqrt(result));
+
+// Найдите квадратный корень из 379. Результат округлите до целых, до десятых, до сотых.
+console.log(Math.sqrt(379).toFixed());
+console.log(Math.sqrt(379).toFixed(1));
+console.log(Math.sqrt(379).toFixed(2));
+
+// Найдите квадратный корень из 587. Округлите результат в большую и меньшую стороны, запишите результаты округления в объект с ключами 'floor' и 'ceil'.
+// let obj = {};
+// obj.ceil = Math.ceil(Math.sqrt(587));
+// obj.floor = Math.floor(Math.sqrt(587));
+// console.log(obj);
+
+// Даны числа 4, -2, 5, 19, -130, 0, 10. Найдите минимальное и максимальное число.
+// console.log(Math.max(4, -2, 5, 19, -130, 0, 10));
+// console.log(Math.min(4, -2, 5, 19, -130, 0, 10));
+
+// // Выведите на экран случайное целое число от 1 до 100.
+// function getRandomInt(min, max) {
+// 	return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+// console.log(getRandomInt(1, 100));
+
+// // С помощью цикла заполните массив 10-ю случайными целыми числами.
+// function getRandomInt(min, max) {
+// 	return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+// let arr = [];
+// for (i = 0; i < 10; i++) {
+// 	arr[i] = getRandomInt(1, 1000);
+// }
+// console.log(arr);
+
+// // Даны переменные a и b. Найдите найдите модуль разности a и b. Проверьте работу скрипта самостоятельно для различных a и b.
+// let a = -32,
+// 	b = -393;
+// console.log(Math.abs(a - b));
+
+
+//=========================== Строковые методы JavaScript ================================
+
+// // Дана строка 'js'. Сделайте из нее строку 'JS'.
+// let str = 'js';
+// console.log(str.toUpperCase());
+
+// // Дана строка 'JS'. Сделайте из нее строку 'js'.
+// let str = 'JS';
+// console.log(str.toLowerCase());
+
+// Дана строка 'я учу javascript!'. Вырежьте из нее слово 'учу' и слово 'javascript' тремя разными способами (через substr, substring, slice).
+// let str = 'я учу javascript!';
+// let sub1 = str.substr(2, 3);
+// let sub2 = str.substr(6, 10);
+// console.log(sub1, sub2);
+
+// let str = 'я учу javascript!';
+// let sub1 = str.substring(2, 5);
+// let sub2 = str.substring(6, 16);
+// console.log(sub1, sub2);
+
+// let str = 'я учу javascript!';
+// let sub1 = str.slice(2, 5);
+// let sub2 = str.slice(6, -1);
+// console.log(sub1, sub2);
+
+// Дана строка 'abcde'. Определите позицию буквы 'c' в этой строке.
+// let str = 'abcde';
+// console.log(str.indexOf('c'));
+
+// Дана строка. Проверьте, есть ли в этой строке символ 'a'.
+// let str = 'abcde';
+// if (str.indexOf('a') != -1) {
+// 	console.log('есть');
+// } else {
+// 	console.log('нет');
+// }
+
+// Дана строка. Проверьте, начинается ли эта строка с символа 'a'.
+// let str = 'cabcde';
+// if (str.indexOf('a') == 0) {
+// 	console.log('начинается');
+// } else {
+// 	console.log('нет');
 }
+
+// Дана строка. Проверьте, заканчивается ли эта строка на символ 'a'.
+// let str = 'abcdea';
+// if(str.lastIndexOf('a') == str.length - 1) {
+// 	console.log('да');
+// } else {
+// 	console.log('нет');
+// }
+
+// // Дана строка. Проверьте, начинается ли эта строка на http://.
+// let str = 'http://abcde';
+// if (str.slice(0, 7) == 'http://') {
+// 	console.log('да');
+// } else {
+// 	console.log('нет');
+// }
+
+// Дана строка. Проверьте, заканчивается ли эта строка на .html.
+// let str = 'a.html';
+// let a = '.html'
+// if (str.lastIndexOf(a) == str.length - a.length) {
+// 	console.log('yes');
+// } else {
+// 	console.log('no');
+// }
+
+// Дана строка. Проверьте, начинается ли эта строка на http://
+// let str = 'http://asderf';
+// console.log(str.startsWith('http://'));
+
+// Дана строка. Проверьте, заканчивается ли эта строка на .html.
+// let str = 'dqdwqdqw.htl';
+// console.log(str.endsWith('.html'));
+
+// Дана строка '1-2-3-4-5'. С помощью метода split запишите каждое число этой строки в отдельный элемент массива.
+// let str = '1-2-3-4-5';
+// let arr = str.split('-');
+// console.log(arr);
+
+// Дана строка '12345'. С помощью метода split запишите каждый символ этой строки в отдельный элемент массива.
+// let str = '12345';
+// let arr = str.split('');
+// console.log(arr);
+
+// С помощью метода join слейте его в строку '1-2-3-4-5'.
+let arr = [1, 2, 3, 4, 5];
+let str = arr.join('-');
+console.log(str);

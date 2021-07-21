@@ -2566,7 +2566,7 @@ console.log(Math.sqrt(379).toFixed(2));
 // 	console.log('начинается');
 // } else {
 // 	console.log('нет');
-}
+
 
 // Дана строка. Проверьте, заканчивается ли эта строка на символ 'a'.
 // let str = 'abcdea';
@@ -2612,6 +2612,119 @@ console.log(Math.sqrt(379).toFixed(2));
 // console.log(arr);
 
 // С помощью метода join слейте его в строку '1-2-3-4-5'.
+// let arr = [1, 2, 3, 4, 5];
+// let str = arr.join('-');
+// console.log(str);
+
+
+//======================== Методы для массивов в JavaScript =============================
+
+// Дан массив [1, 2, 3]. Добавьте ему в конец элементы 4, 5, 6.
+// let arr = [1, 2, 3];
+// arr.push(4, 5, 6);
+// console.log(arr);
+
+// Дан массив [1, 2, 3]. Добавьте ему в начало элементы 4, 5, 6.
+// let arr = [1, 2, 3];
+// arr.unshift(4, 5, 6);
+// console.log(arr);
+
+// Дан массив ['js', 'css', 'jq']. Выведите на экран первый элемент.
+// let arr = ['js', 'css', 'jq'];
+// let elem = arr.shift();
+// console.log(elem);
+
+// Дан массив ['js', 'css', 'jq']. Выведите на экран последний элемент.
+// let arr = ['js', 'css', 'jq'];
+// let elem = arr.pop();
+// console.log(elem);
+
+// Дан массив [1, 2, 3, 4, 5]. С помощью метода slice запишите в новый элементы [1, 2, 3].
+// let arr = [1, 2, 3, 4, 5];
+// let newArr = arr.slice(0, 3);
+// console.log(newArr);
+
+// Дан массив [1, 2, 3, 4, 5]. С помощью метода slice запишите в новый элементы [4, 5].
+// let arr = [1, 2, 3, 4, 5];
+// let newArr = arr.slice(3);
+// console.log(newArr);
+
+// Дан массив [1, 2, 3, 4, 5]. С помощью метода splice преобразуйте массив в [1, 4, 5].
+// let arr = [1, 2, 3, 4, 5];
+// arr.splice(1, 2);
+// console.log(arr);
+
+// Дан массив [1, 2, 3, 4, 5]. С помощью метода splice запишите в новый массив элементы [2, 3, 4].
+// let arr = [1, 2, 3, 4, 5];
+// let sub = arr.splice(1, 3);
+// console.log(sub);
+
+// Дан массив [1, 2, 3, 4, 5]. С помощью метода splice сделайте из него массив [1, 2, 3, 'a', 'b', 'c', 4, 5].
+// let arr = [1, 2, 3, 4, 5];
+// arr.splice(3, 0, 'a', 'b', 'c');
+// alert(arr);
+
+// Дан массив [1, 2, 3, 4, 5]. С помощью метода splice сделайте из него массив [1, 'a', 'b', 2, 3, 4, 'c', 5, 'e'].
+// let arr = [1, 2, 3, 4, 5];
+// arr.splice(1, 0, 'a', 'b');
+// arr.splice(6, 0, 'c');
+// arr.splice(8, 0, 'd');
+// console.log(arr);
+
+// Дан массив с числами. Проверьте, есть ли в этом массиве число 3.
 let arr = [1, 2, 3, 4, 5];
-let str = arr.join('-');
-console.log(str);
+console.log(arr.indexOf(3));
+
+
+//===================== Практика на использования изученных методов ========================
+
+// Преобразуйте последнюю букву строки в верхний регистр.
+// let str = 'london';
+// let result = str.slice(0, 5) + str.slice(5).toUpperCase();
+// console.log(result);
+
+// Преобразуйте первые 2 буквы строки в верхний регистр.
+// let str = 'london';
+// let result = str.slice(0, 2).toUpperCase() + str.slice(2);
+// console.log(result);
+
+// Преобразуйте первую букву строки в нижний регистр.
+// let str = 'London';
+// let result = str.slice(0, 1).toLocaleLowerCase() + str.slice(1);
+// console.log(result);
+
+// Давайте напишем код, который преобразует первую букву каждого слова в верхний регистр.
+// let str = 'word1 word2 word3';
+// let words = str.split(' ');
+// for (i = 0; i < words.length; i++) {
+//     words[i] = words[i].slice(0, 1).toUpperCase() + words[i].slice(1);
+// }
+// let result = words.join(' ');
+// console.log(result);
+
+// Преобразуйте строку 'var_test_text' в 'VarTestText'.
+// Написанный код должен работать для любых строк такого типа (то есть для строк, в которых слова разделены символов подчеркивания).
+// let str = 'var_test_text';
+// let arr = str.split('_')
+// for (i = 0; i < arr.length; i++) {
+//     arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+// }
+// let result = arr.join('');
+// console.log(result);
+
+// Модифицируйте предыдущую задачу так, чтобы первая буква новой строки была в нижнем регистре.
+// let str = 'var_test_text';
+// let arr = str.split('_')
+// for (i = 0; i < arr.length; i++) {
+//     arr[i] = arr[i].slice(0, 1)+ arr[i].slice(1);
+// }
+// let result = arr.join('');
+// console.log(result);
+
+// Дана строка со словами. Напишите скрипт, который переставит слова в строке в обратном порядке.
+// let str = 'Один Два Три';
+// let result = str.split(' ').reverse().join(' ');
+// console.log(result);
+
+
+//=============== Основы работы с пользовательскими функциями в JavaScript ================

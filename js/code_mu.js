@@ -2486,9 +2486,9 @@
 // console.log(Math.sqrt(result));
 
 // Найдите квадратный корень из 379. Результат округлите до целых, до десятых, до сотых.
-console.log(Math.sqrt(379).toFixed());
-console.log(Math.sqrt(379).toFixed(1));
-console.log(Math.sqrt(379).toFixed(2));
+// console.log(Math.sqrt(379).toFixed());
+// console.log(Math.sqrt(379).toFixed(1));
+// console.log(Math.sqrt(379).toFixed(2));
 
 // Найдите квадратный корень из 587. Округлите результат в большую и меньшую стороны, запишите результаты округления в объект с ключами 'floor' и 'ceil'.
 // let obj = {};
@@ -2672,8 +2672,8 @@ console.log(Math.sqrt(379).toFixed(2));
 // console.log(arr);
 
 // Дан массив с числами. Проверьте, есть ли в этом массиве число 3.
-let arr = [1, 2, 3, 4, 5];
-console.log(arr.indexOf(3));
+// let arr = [1, 2, 3, 4, 5];
+// console.log(arr.indexOf(3));
 
 
 //===================== Практика на использования изученных методов ========================
@@ -2728,3 +2728,222 @@ console.log(arr.indexOf(3));
 
 
 //=============== Основы работы с пользовательскими функциями в JavaScript ================
+
+// Сделайте функцию, выводящую на экран ваше имя.
+// function func() {
+//     alert('Egor');
+// }
+// func();
+
+// Сделайте функцию, выводящую на экран сумму чисел от 1 до 100.
+// let result = 0;
+// function func() {
+//     for (let i = 1; i <= 100; i++) {
+//         result += i;
+//     }
+//     alert(result);   
+// }
+// func();
+
+
+//====================== Параметры функций в JavaScript ==================================
+
+// Сделайте функцию, которая параметром принимает число и выводит на экран куб этого числа.
+// function func(num) {
+//     alert(num ** 3);
+// }
+// func(10);
+// func(25);
+// func(33);
+
+// Сделайте функцию, которая параметром принимает число и проверяет, положительное это число или отрицательное. В первом случае пусть функция выводит на экран текст '+++', а во втором '---'.
+// function func(num) {
+//     if (num > 0) {
+//         alert('+++');
+//     } else if (num < 0) {
+//         alert('---');
+//     } else {
+//         alert(0);
+//     }
+// }
+// func(90);
+// func(-12);
+// func(0);
+
+// Сделайте функцию, которая параметрами принимает 3 числа и выводит на экран сумму этих чисел.
+// function func(num1, num2, num3) {
+//     alert(num1 + num2 + num3) 
+// }
+// func(12, 33, 55);
+
+// Сделайте функцию func, которая параметром будет принимать 3 числа и выводить на экран их сумму.
+// Пусть даны 3 переменные с числами:
+// let param1 = 1;
+// let param2 = 2;
+// let param3 = 3;
+// С помощью созданной вами функции выведите на экран сумму значений эти переменных.
+
+// function func(num1, num2, num3) {
+//         alert(num1 + num2 + num3) 
+//     }
+// let param1 = 1;
+// let param2 = 2;
+// let param3 = 3;
+// func(param1, param2, param3);
+
+// function func(name1 = 'Аноним', age1 = 'неизвестен') {
+// 	alert('ваше имя: ' + name1 + ' возраст: ' + age1);
+// }
+// func('Вася');
+
+
+//============================== Инструкция return в JavaScript ===========================
+
+// Сделайте функцию, которая параметром принимает число, а возвращает куб этого числа. С помощью этой функции найдите куб числа 3 и запишите его в переменную result.
+// function func(num) {
+//     return num ** 3;
+// }
+// let result = func(3);
+// alert(result);  
+
+// Сделайте функцию, которая параметром принимает число, а возвращает квадратный корень из этого числа.
+// С помощью этой функции найдите корень числа 3, затем найдите корень числа 4. Просуммируйте полученные результаты и выведите их на экран.
+
+// function funk(num) {
+//     return Math.sqrt(num);
+// }
+// let result = funk(3) + funk(4);
+// alert(result);
+
+// Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, округляющая дробь до трех знаков в дробной части:
+// function sqrt(num) {
+// 	return Math.sqrt(num);
+// }
+// function round(num) {
+// 	return num.toFixed(3);
+// }
+// С помощью этих функций найдите квадратный корень из числа 2 и округлите его до трех знаков в дробной части.
+// function sqrt(num) {
+//     	return Math.sqrt(num);
+//     }
+// function round(num) {
+//     return num.toFixed(3);
+// }
+// let result = round(sqrt(2));
+// console.log(result);
+
+// Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, возвращающая сумму трех чисел:
+// function sqrt(num) {
+// 	return Math.sqrt(num);
+// }
+// function sum(num1, num2, num3) {
+// 	return num1 + num2 + num3;
+// }
+// С помощью этих функций найдите сумму корней чисел 2, 3 и 4 и запишите ее в переменную result.
+// function sqrt(num) {
+// 	return Math.sqrt(num);
+// }
+// function sum(num1, num2, num3) {
+// 	return num1 + num2 + num3;
+// }
+// let result = sum(sqrt(2), sqrt(3), sqrt(4));
+// console.log(result);
+
+// Пусть у вас есть функция, округляющая дробь до трех знаков в дробной части:
+// function round(num) {
+// 	return num.toFixed(3);
+// }
+// С помощью этой функции модифицируйте предыдущую задачу так, чтобы в переменную result записывалась дробь, округленная до 3-х знаков в дробной части.
+// function sqrt(num) {
+// 	return Math.sqrt(num);
+// }
+// function sum(num1, num2, num3) {
+// 	return num1 + num2 + num3;
+// }
+// function round(num) {
+//     return num.toFixed(3);
+// }
+// let result = round(sum(sqrt(2), sqrt(3), sqrt(4)));
+// console.log(result);
+
+// Напишите функцию, которая параметром будет принимать число и делить его на 2 столько раз, пока результат не станет меньше 10. Пусть функция возвращает количество итераций, которое потребовалось для достижения результата.
+// function moreThenTen(num) {
+//     for (i = 1; i <= num; i++) {
+//         num = num / 2
+//         if (num < 10) {
+//             return num = i;
+//         }
+//     }
+// }
+// console.log(moreThenTen(100));
+
+// function moreThenTen(num) {
+//     let i = 1;
+//     while(true){
+//         num /= 2;
+//         if(num < 10){
+//         return i;
+//         }
+//     i++;
+//     }
+// }
+// console.log(moreThenTen(0));
+
+// function func(num1, num2) {
+// 	let result;	
+// 	if (num1 > 0 && num2 > 0) {
+// 		result = num1 * num2;
+// 	} else {
+// 		result = num1 - num2;
+// 	}
+// 	return result;
+// }
+// alert(func(3, 4));
+// Перепишите ее в сокращенной форме согласно изученной теории.
+
+// function func(num1, num2) {
+//     if (num1 > 0 && num2 > 0) {
+//         return num1 * num2;
+//     } else {
+//         return num1 - num2;
+//     }
+// }
+// alert(func(3, 4));
+
+
+//====================== Примеры на создание функций в JavaScript ==========================
+
+// Напишите функцию, которая будет находить сумму квадратов элементов массива.
+// function getSum(arr) {
+//     let summ = 0;
+//     for (let elem of arr) {
+//         summ += elem ** 2;
+//     }
+//     return summ;
+// }
+// let arr1 = [1, 2, 3, 4, 5];
+// console.log(getSum(arr1));
+
+// Сделайте функцию getDigitsSum (digit - это цифра), которая параметром будет принимать целое число и возвращать сумму его цифр.
+// function getDigitSum(num) {
+//     num = String(num);
+//     let arr = num.split('');
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += Number(arr[i]);
+//     }
+//     return sum;
+// }
+// console.log(getDigitSum(987));
+
+// Реализуйте функцию getDivisors, которая параметром будет принимать число и возвращать массив его делителей, то есть чисел, на которое делится наше число. К примеру, если мы передадим число 24 - мы должны получить массив [1, 2, 3, 4, 6, 8, 12, 24].
+// function getDivisors(num) {
+//     let arr = [];
+//     for (let i = 1; i <= num; i++) {
+//         if (num % i == 0) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr;
+// }
+// console.log(getDivisors(100));

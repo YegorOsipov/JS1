@@ -2947,3 +2947,51 @@
 //     return arr;
 // }
 // console.log(getDivisors(100));
+
+// Сделайте функцию reverseStr, которая параметром будет принимать строку и переворачивать ее символы в обратном порядке. Решите задачу без цикла, используя комбинацию стандартных функций JavaScript.
+// function reverseStr(str) {
+//     let arr = str.split('');
+//     arr.reverse();
+//     let newStr = arr.join('');
+//     return newStr;
+// }
+// console.log(reverseStr('лига'));
+
+// Сделайте функцию delElem, которая параметрами будет принимать значение и массив и удалять из массива все элементы с таким значением.
+// function delElem(num, arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] == num) {
+//             arr.splice(i, 1);    
+//         }
+//     }
+//     return arr;
+// }
+// console.log(delElem(2, [1, 2, 3, 4, 5]));
+
+// Сделайте функцию, заполняющую массив целыми числами от 1 до заданного.
+// function fillArray(num) {
+//     let arr = [];
+//     for (let i = 1; i <= num; i++) {
+//         arr.push(i);
+//     }
+//     return arr;
+// }
+// console.log(fillArray(25));
+
+// Сделайте функцию, заполняющую массив целыми числами от начального до конечного заданных чисел.
+// let num1 = 1;
+// let num2 = 10;
+// let arr = [];
+// for (let i = num1; i <= num2; i++) {
+//     arr.push(i);
+// }
+// console.log(arr);
+
+// function fillArray(num1, num2) {
+//     let arr = [];
+//     for (let i = num1; i <= num2; i++) {
+//         arr.push(i);
+//     }
+//     return arr;
+// }
+// console.log(fillArray(1, 10));

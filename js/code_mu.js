@@ -2995,3 +2995,41 @@
 //     return arr;
 // }
 // console.log(fillArray(1, 10));
+
+
+//=============================== Флаги в функциях JavaScript ==============================
+
+// Сделайте функцию, которая параметром будет принимать массив с числами, и проверять, что все элементы в этом массиве являются четными числами.
+// function isEven (arr) {
+//     for (let elem of arr) {
+//         if (elem % 2 != 0) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// console.log(isEven([2, 5, 6, 8]));
+
+// Сделайте функцию, которая параметром будет принимать число и проверять, что все цифры 
+// function isUneven(num) {
+//     num = String(num);
+//     let arr = num.split('');
+//     for (let elem of arr) {
+//         if (Number(elem) % 2 == 0) {
+//             return false;
+//         }
+//     }
+//     return true;    
+// }   
+// console.log(isUneven(3157));
+
+// Сделайте функцию, которая параметром будет принимать массив и проверять, есть ли в этом массиве два одинаковых элемента подряд.
+// function noRepeatInArow(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] == arr[i + 1]) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// console.log(noRepeatInArow([1, 2, 3, , 4, 5]));

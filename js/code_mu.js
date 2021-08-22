@@ -1913,7 +1913,7 @@
 
 // Решите предыдущие две задачи через цикл for.
 // let arr = [[1, 2, 3], [4, 5], [6]];
-// let = result = 0;
+// let result = 0;
 // for (let i = 0; i < arr.length; i++) {
 // 	for (let j = 0; j < arr[i].length; j++) {
 // 		result += arr[i][j];
@@ -3033,3 +3033,1939 @@
 //     return true;
 // }
 // console.log(noRepeatInArow([1, 2, 3, , 4, 5]));
+
+
+//=================== Логические операторы без if в функциях JavaScript ====================
+
+// function func(a, b) {
+// 	if (a == b) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+// function func(a, b) {
+// 	return a == b;
+// }
+// console.log(func(3, 2));
+
+// function func(a, b) {
+// 	if (a != b) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+// function func(a, b) {
+// 	return a != b;
+// }
+// console.log(func(2, 3));
+
+
+//====================== Правильное использование функций JavaScript ========================
+
+// Дана функция, проверяющая числа на простоту:
+// function isPrime(num) {
+// 	for (let i = 2; i < num; i++) {
+// 		if (num % i == 0) {
+// 			return false;
+// 		}
+// 	}
+	
+// 	return true;
+// }
+// С помощью приведенной функции найдите все простые числа в интервале от 1 до 100.
+
+// let result = [];
+// for (i = 1; i <= 100; i++) {
+//     if (isPrime(i)) {
+//         result.push(i);
+//     }
+// }
+// console.log(result);
+
+// function isPrime(num) {
+// 	for (let i = 2; i < num; i++) {
+// 		if (num % i == 0) {
+// 			return false;
+// 		}
+// 	}	
+// 	return true;
+// }
+
+// Дана функция getDigitsSum, которая параметром принимает целое число и возвращает сумму его цифр:
+// function getDigitsSum(num) {
+// 	let sum = 0;
+// 	let digits = String(num).split('');
+// 	for (let digit of digits) {
+// 		sum += Number(digit);
+// 	}	
+// 	return sum;
+// }
+// С помощью приведенной функции getDigitsSum найдите все года от 1 до 2030, сумма цифр которых равна 13.
+
+// let result = [];
+// for (let i = 1; i <= 2030; i++) {
+//     if (getDigitsSum(i) == 13) {
+//         result.push(i);
+//     }
+// }
+// alert(result);
+
+// function getDigitsSum(num) {
+//     let sum = 0;
+//     let digits = String(num).split('');
+//     for (let digit of digits) {
+//         sum += Number(digit);
+//     }	
+//     return sum;
+// }
+
+// Пусть дан какой-то массив с числами, например, такой:
+// [123, 456, 789]
+// Давайте сделаем так, чтобы цифры в каждом элементе массива были в обратном порядке. То есть из нашего массива сделаем следующий:
+// [321, 654, 987]
+// Некий программист уже написал код, реализующий описанную задачу:
+// let nums = [123, 456, 789];
+// let result = [];
+// for (let num of nums) {
+// 	result.push(String(num).split('').reverse().join(''));
+// }
+// console.log(result); // выведет [321, 654, 987]
+// Переделайте приведенный код так, чтобы переворот числа выполняла отдельная функция.
+// let nums = [123, 456, 789];
+// let result = [];
+// for (let num of nums) {
+// 	result.push(flipNumbers(num));
+// }
+// console.log(result); 
+
+// function flipNumbers(number) {
+//     let resultate = String(number).split('').reverse().join('');
+//     return resultate;
+// }
+
+// Даны два числа. Необходимо проверить, равна ли сумма цифр первого числа сумме цифр второго числа.
+// Некий программист уже написал решение задачи, вот оно:
+// let num1 = 234;
+// let num2 = 531;
+// let digits1 = String(num1).split('');
+// let digitsSum1 = 0;
+// for (let digit1 of digits1) {
+// 	digitsSum1 += Number(digit1);
+// }
+// let digits2 = String(num1).split('');
+// let digitsSum2 = 0;
+// for (let digit2 of digits2) {
+// 	digitsSum2 += Number(digit2);
+// }
+// if (digitsSum1 == digitsSum2) {
+// 	alert('суммы цифр совпадают');
+// } else {
+// 	alert('суммы цифр не совпадают');
+// }
+// В чем недостатки приведенного кода? Переделайте код так, чтобы он был более удачным.
+// let num1 = 234;
+// let num2 = 531;
+// if (getDigitsSum(num1) == getDigitsSum(num2)) {
+// 	console.log('суммы цифр совпадают');
+// } else {
+// 	console.log('суммы цифр не совпадают');
+// }
+
+// function getDigitsSum(num) {
+//     let digits = String(num).split('');
+//     let digitsSum = 0;
+//     for (let digit of digits) {
+//         digitsSum += Number(digit);
+//     }
+//     return digitsSum;
+// }
+
+// Дан массив с числами. Необходимо перебрать этот массив с числами и вывести в консоль нетривиальные делители этих чисел (то есть исключая число 1 и само число).
+// Некий программист уже написал решение задачи:
+// let nums = [12, 24, 35, 14];
+// for (let num of nums) {
+// 	console.log(num + ': ' + getDivisors(num).join(', '));
+// }
+// function getDivisors(num) {
+// 	let result = [];
+	
+// 	for (let i = 2; i < num; i++) {
+// 		if (num % i == 0) {
+// 			result.push(num);
+// 		}
+// 	}
+	
+// 	return result;
+// }
+// Программист не тестировал отдельно работу функции getDivisors, а написал весь код сразу и затем запустил его. При запуске оказалось, что код работает как-то не так. Видимо, в функции getDivisors была допущена какая-то ошибка.
+// айдите и исправьте ошибку. Потестируйте отдельно функцию getDivisors, чтобы убедиться, что она работает корректно после вашей правки. После того, как вы убедитесь в корректности работы функции - проверьте полный код решения задачи.
+
+// let nums = [12, 24, 35, 14];
+// for (let num of nums) {
+// 	console.log(num + ': ' + getDivisors(num).join(', '));
+// }
+
+// function getDivisors(num) {
+// 	let result = [];
+// 	for (let i = 2; i < num; i++) {
+// 		if (num % i == 0) {
+// 			result.push(i);
+// 		}
+// 	}
+// 	return result;
+// }
+
+ 
+//==================== Комбинация вспомогательных функций JavaScript =======================
+
+// Дана функция getSum, находящая сумму элементов переданного массива:
+// function getSum(arr) {
+// 	let sum = 0;
+// 	for (let elem of arr) {
+// 		sum += Number(elem);
+// 	}
+// 	return sum;
+// }
+// Дана функция getDigits, возвращающая массив цифр числа:
+// function getDigits(num) {
+// 	return String(num).split('');
+// }
+// Используя комбинацию приведенных функций найдите сумму цифр числа 12345.
+// console.log(getSum(getDigits(12345)));
+// function getSum(arr) {
+// 	let sum = 0;
+// 	for (let elem of arr) {
+// 		sum += Number(elem);
+// 	}
+// 	return sum;
+// }
+// function getDigits(num) {
+// 	return String(num).split('');
+// }
+
+// Дано число. Нужно найти его делители (без 1 и самого числа), а затем найти среднее арифметическое (сумма делить на количество) делителей числа и вывести результат на экран.
+// Некий программист уже написал решение задачи:
+// console.log( getAvg(getDivisors(24)) );
+// // Нахождение среднего арифметического:
+// function getAvg(arr) {
+// 	let sum = 0;
+// 	for (let elem of arr) {
+// 		sum = elem;
+// 	}	
+// 	return sum / arr.length;
+// }
+// // Нахождение массива делителей числа:
+// function getDivisors(num) {
+// 	let result = [];	
+// 	for (let i = 2; i > num; i++) {
+// 		if (num % i == 0) {
+// 			result.push(i);
+// 		}
+// 	}
+// }
+// Программист не тестировал отдельно работу своих функций, а написал весь код сразу и затем запустил его. При запуске оказалось, что код работает неверно.
+// Найдите и исправьте ошибки программиста. Потестируйте отдельно работу всех функций, чтобы убедиться, что они работают корректно после ваших правок. После того, как вы убедитесь в корректности работы функций - проверьте полный код решения задачи.
+
+// console.log(getAvg(getDivisors(32)));
+// function getAvg(arr) {
+// 	let sum = 0;
+// 	for (let elem of arr) {
+// 		sum += elem;
+// 	}	
+// 	return sum / arr.length;
+// }
+
+// function getDivisors(num) {
+// 	let result = [];	
+// 	for (let i = 2; i < num; i++) {
+// 		if (num % i == 0) {
+// 			result.push(i);
+// 		}
+// 	}
+//     return result;
+// }
+
+
+//============= Вспомогательные функции внутри других функций в JavaScript =================
+
+// Пусть у нас дан массив с числами. Решим следующую задачу: запишем в новый массив только те элементы, сумма цифр в которых от 1 до 9.
+// let arr = [123, 22, 88, 3]
+// let result = [];
+// function getDigits(num) {
+//     let str = String(num);
+//     return str.split('');
+// }
+
+// function getSum(arr) {
+//     let sum = 0;
+//     for (let elem of arr) {
+//         sum += Number(elem);
+//     }
+//     return sum;
+// }
+
+// function inRange(num) {
+//     let result = getSum(getDigits(num));
+//     return result >= 1 && result <= 9;
+// }
+
+// for (let elem of arr) {
+//     if (inRange(elem)) {
+//         result.push(elem);
+//     }
+// }
+// console.log(result);
+
+
+//======================= Дружественные числа на JavaScript =============================
+
+// function isFreindly(num1, num2) {
+// 	let sum1 = getSum(getOwnDivisors(num1));
+// 	let sum2 = getSum(getOwnDivisors(num2));
+// 	if (sum1 == num2 && sum2 == num1) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
+
+// function getOwnDivisors(num) {
+// 	// тут будет какой-то код
+// }
+
+// function getSum(arr) {
+// 	// тут будет какой-то код
+// }
+// Реализуйте функцию getOwnDivisors. Потестируйте ее работу.
+// Реализуйте функцию getSum. Потестируйте ее работу.
+// Проверьте работу функции isFreindly.
+
+// function isFreindly(num1, num2) {
+//     let sum1 = getSum(getOwnDivisors(num1));
+//     let sum2 = getSum(getOwnDivisors(num2));
+//     if (sum1 == num2 && sum2 == num1) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function getOwnDivisors(num) {
+//     let arr = [];
+//     for (let i = 1; i < num; i++) {
+//         if (num % i == 0) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr;
+// }
+
+// function getSum(arr) {
+//     let sum = 0;
+//     for (elem of arr) {
+//         sum += elem;
+//     }
+//     return sum;
+// }
+// console.log(isFreindly(222, 284));
+
+// Сделайте функцию getFreindly, которая будет находить пары дружественных чисел в заданном промежутке и возвращать их в виде двухмерного массива вида [ [220, 284], [1184, 1210], [2620, 2924] ]. С помощью созданной функции найдите все пары дружественных чисел на промежутке от 1 до 9000.
+
+// function getFreindly(startNum, endNum) {
+//     let arr = [];
+//     let result = [];
+//     for (let i = startNum; i <= endNum; i++) {
+//         if (friendlyNum(i)) {
+//             arr[i] = [];    
+//             arr[i][0] = i;
+//             arr[i][1] = friendlyNum(i);
+//         }
+//     }    
+//     for (let elem of arr) {
+//         if (elem != undefined && ) {
+//         result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// function friendlyNum(num) {
+//     let a = getSum(getOwnDivisors(num));
+//     let b = getSum(getOwnDivisors(a));
+//     if (b == num && a != num) {
+//         return a;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function getOwnDivisors(num) {
+//     let arr = [];
+//     for (let i = 1; i < num; i++) {
+//         if (num % i == 0) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr;
+// }
+
+// function getSum(arr) {
+//     let sum = 0;
+//     for (elem of arr) {
+//         sum += elem;
+//     }
+//     return sum;
+// }
+// console.log(getFreindly(1, 9000));
+
+// Совершенное число - целое число, равное сумме всех своих собственных делителей (то есть всех положительных делителей, отличных от самого числа). Сделайте функцию getPerfect, которая будет находить совершенные числа в заданном диапазоне. Проверьте работу функции в промежутке от 1 до 1000.
+// function getPerfect(numStart, numEnd){
+//     let arr = [];
+//     for (let i = numStart; i <= numEnd; i++){
+//         if (getOwnDivisorsSum(i) == i) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr;
+// }
+// console.log(getPerfect(1, 10000));
+
+// function getOwnDivisorsSum(num) {
+//     let arr = [];
+//     let sum = 0;
+//     for (let i = 1; i < num; i++) {
+//         if (num % i == 0) {
+//             arr.push(i);
+//         }
+//     }
+//     for (let elem of arr) {
+//         sum += elem;
+//     }
+//     return sum;
+// }
+
+// Сделайте функцию getSimpleDivisors, которая будет принимать параметром целое число и находить все делители этого числа, являющиеся простыми числами.
+
+// function getDivisors(num) {
+//     let arr = [];
+//     for (let i = 1; i <= num; i++) {
+//         if (num % i == 0) {
+//             arr.push(i);
+//         }
+//     } 
+//     return arr;
+// }
+
+// function getSimpleDivisors(num) {
+//     let arr = getDivisors(num);
+//     let result = [];
+//     for (let elem of arr) {
+//         let flag = true;
+//         for (let i = 2; i < elem; i++) {
+//             if (elem % i == 0) {
+//                 flag = false;
+//                 break;
+//             }
+//         }
+//         if (flag) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+// console.log(getSimpleDivisors(33));
+
+
+// =========================== Пересечение массивов на JavaScript ==============================
+
+// Давайте напишем функцию getInt, которая будет находить пересечение массивов и возвращать пересечение этих массивов.
+// let result = [];
+// function getInt(arr1, arr2){
+//     for (elem of arr1) {
+//         if (inArray(elem, arr2)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// function inArray(elem, arr) {
+//     return arr.indexOf(elem) != -1;
+// }
+
+// console.log(getInt([1, 2, 3], [2, 3, 4, 5]));
+
+
+//========================== Разность массивов на JavaScript ==================================
+
+// Пусть у нас даны два массива:
+// let arr1 = [1, 2, 3];
+// let arr2 = [2, 3, 4, 5];
+// Можно заметить, что числа 1, 4 и 5 не присутствуют одновременно в обоих массивах. Такие элементы называются разностью массивов
+// Давайте функцию getDiff, которая будет находить разность двух массивов.
+
+// function getDiff(arr1, arr2) {
+//     let diff1 = getFirstDiff(arr1, arr2);
+//     let diff2 = getFirstDiff(arr2, arr1);
+//     return [].concat(diff1, diff2);
+// }
+
+// function getFirstDiff(arr1, arr2) {
+//     let result = [];
+//     for (let elem of arr1) {
+//         if (!inArray(elem, arr2)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// function inArray(elem, arr) {
+//     return arr.indexOf(elem) != -1;
+// }
+// console.log(getDiff([1, 2, 3], [2, 3, 4, 5]));
+
+
+//=========================== Наибольший общий делитель на JavaScript ==========================
+
+// Реализуйте функцию getGreatestCommonDivisor, которая параметрами будет принимать два числа и возвращать НОД этих двух чисел.
+// При решении задачи старайтесь использовать вспомогательные функции, в том числе полученные нами ранее в теоретической части.
+// Обязательно тестируйте каждую вспомогательную функцию перед использованием.
+// function getGreatestCommonDivisor(num1, num2) {
+//     let divisors1 = getDivisors(num1);
+//     let divisors2 = getDivisors(num2);
+//     let commondivisors = getInt(divisors1, divisors2);
+//     let result = Math.max.apply(null, commondivisors);
+//     return result;
+
+// }
+// function getDivisors(num) {
+//     let arr = [];
+//     for (let i = 1; i <= num; i++) {
+//         if (num % i == 0) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr;
+// }
+
+// function inArray(elem, arr) {
+//     return arr.indexOf(elem) != -1;
+// }
+
+// function getInt(arr1, arr2) {
+//     let arr = [];
+//     for (let elem of arr1) {
+//         if (inArray(elem, arr2)) {
+//             arr.push(elem);
+//         }
+//     }
+//     return arr;
+// }
+// console.log(getGreatestCommonDivisor(12, 18));
+
+// Положительные целые числа, не имеющие общих делителей, кроме тривиальной единицы, называются взаимно простыми.
+// Говоря другими словами, два числа можно назвать взаимно простыми, если их НОД равен единице.
+// Напишите функцию, которая параметрами будет принимать два числа и проверять - взаимно простые они или нет.
+// function getMutuallySimpleNumbers(num1, num2) {
+//     let divisors1 = getDivisors(num1);
+//     let divisors2 = getDivisors(num2);
+//     let commondivisors = getInt(divisors1, divisors2);
+//     let result = Math.max.apply(null, commondivisors);
+//     return result == 1;
+// }
+// function getDivisors(num) {
+//     let arr = [];
+//     for (let i = 1; i <= num; i++) {
+//         if (num % i == 0) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr;
+// }
+
+// function inArray(elem, arr) {
+//     return arr.indexOf(elem) != -1;
+// }
+
+// function getInt(arr1, arr2) {
+//     let arr = [];
+//     for (let elem of arr1) {
+//         if (inArray(elem, arr2)) {
+//             arr.push(elem);
+//         }
+//     }
+//     return arr;
+// }
+// console.log(getMutuallySimpleNumbers(22, 17));
+
+
+//=================== Случайный элемент из массива на JavaScript ==============================
+
+// Самостоятельно, не подсматривая в мой код, реализуйте описанную функцию. При решении задачи код функции getRandomInt скопируйте из учебника.
+// function getRandomInt(min, max) {
+// 	return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// let arr = [1, 2, 3, 4, 5];
+// let key = getRandomInt(0, arr.length -1);
+// console.log(key);
+
+// function getRandomArrEl(arr) {
+//     return arr[getRandomInt(0, arr.length -1)];
+// }
+// console.log(getRandomArrEl([1, 2, 3, 4, 5])); 
+
+// Используя созданную функцию, найдите сумму трех случайных элементов из массива.
+// function getRandomInt(min, max) {
+// 	return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// function getRandomArrElemsSum(arr, num) {
+//     let result = arr[getRandomInt(0, arr.length -1)];
+//     let sum = 0;
+//     for (let i = 1; i < num; i++) {
+//         sum += result;
+//     }
+//     return sum;
+// }
+// console.log(getRandomArrElemsSum([1, 2, 3, 4, 5], 3));
+
+
+//========================== Перемешивание массива на JavaScript ===============================
+
+
+// Реализуем функцию shuffle, параметром принимающую массив и перемешивающую его элементы в случайном порядке.
+// Самостоятельно, не подсматривая в мой код, реализуйте описанную функцию. При решении задачи код функции getRandomInt скопируйте из учебника.
+// function getRandomInt(min, max) {
+// 	return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// function shuffle(arr) {
+//     let result = [];
+//     while (arr.length > 0) {
+//         let random = getRandomInt(0, arr.length - 1);
+//         let elem = arr.splice(random, 1)[0];
+//         result.push(elem);
+//     }
+//     return result;
+// }
+// console.log(shuffle([1, 2, 3, 4, 5]));
+
+// Сделайте функцию range принимающую параметрами 2 целых числа - начало и конец диапазона, и возвращающую массив, заполненный целыми числами из этого диапазона.
+// function getRandomInt(min, max) {
+//     	return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// function range(num1, num2) {
+//     let arr = [];
+//     while (arr.length < 10) {
+//         let random = getRandomInt(num1, num2);
+//         arr.push(random);
+//     }
+//     return arr;
+// }
+// console.log(range(1, 25));
+
+// Сделайте функцию rangeRand, возвращающую массив, заполненный случайными целыми числами из заданного диапазона. При этом числа не должны повторяться. Для решения задачи используйте комбинацию функций range и shuffle.
+// function getRandomInt(min, max) {
+//     	return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// function rangeRand(num1, num2) {
+//     let arr = [];
+//     while (arr.length < 10) {
+//         let random = getRandomInt(num1, num2);
+//         if (arr.indexOf(random) == -1) {
+//             arr.push(random);
+//         }
+//     }
+//     return arr;
+// }
+// console.log(rangeRand(1, 23));
+
+
+//======================== Случайные элементы из массива на JavaScript =========================
+
+// Давайте теперь реализуем функцию randoms, возвращающую заданное количество случайных элементов из массива.
+// Пусть первым параметром функция принимает массив, а вторым - количество элементов, которое следует вернуть.
+// function getRandomInt(min, max) {
+//         return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// function shuffle(arr) {
+//     let result = [];
+//     while (arr.length > 0) {
+//         let random = getRandomInt(0, arr.length - 1);
+//         let elem = arr.splice(random, 1)[0];
+//         result.push(elem);
+//     }
+//     return result;
+// }
+
+// function first(arr, length) {
+//     return arr.slice(0, length);
+// }
+
+// function randoms(arr, length) {
+//     return first(shuffle(arr), length);
+// }
+
+// console.log(randoms([1,2,3,4,5], 3));
+
+
+//============================== Счастливые билеты на JavaScript ================================
+
+// Пусть нам нужно вывести на экран все возможные счастливые автобусные билеты. Билет называется счастливым, если сумма первых трех цифр билета равна сумме вторых трех цифр (будем рассматривать только билеты, в номере которых 6 цифр).
+// function getLuckyTickets() {
+//     let arr = [];
+//     for (let i = 1001; i < 999999; i++) {
+//         if (isLucky(i)) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr;
+// }
+
+// function isLucky(num) {
+//     let str = normolizeNum(num);
+//     let sum1 = Number(str[0]) + Number(str[1]) + Number(str[2]);
+//     let sum2 = Number(str[3]) + Number(str[4]) + Number(str[5]);
+//     return sum1 == sum2; 
+// }
+
+// function normolizeNum(num) {
+//     let str = String(num);
+//     if (str.length == 5) {
+//         str = '0' + str;
+//     }
+//     if (str.length == 4) {
+//         str = '00' + str;
+//     }
+//     return str;
+// }
+
+// console.log(getLuckyTickets());
+
+
+//====================== Счастливые билеты любой длины на JavaScript ============================
+
+// function getLuckyTickets(digitsAmount) {
+//     let result = [];
+//     let first = getFirst(digitsAmount);
+//     let last = getLast(digitsAmount);
+//     for (let i = first; i < last; i++) {
+//         let ticketNum = normalizeNum(i, digitsAmount)
+//         if (isLucky(ticketNum)) {
+//             result.push(ticketNum);
+//         }
+//     }
+//     return result;
+// }
+
+// function getFirst(digitsAmount) {
+//    let logic = digitsAmount / 2 - 1;
+//    let num = '11';
+//    let arr = num.split('');
+//     for (let i = 0; i < logic; i++) {
+//         arr.splice(1, 0, '0');
+//     }
+//     return Number(arr.join(''));
+// }
+
+// function getLast(digitsAmount) {
+//     let result = '';
+//     for (let i = 0; i < digitsAmount; i++) {
+//         result += '9';
+//     }
+//     return Number(result);
+// }
+
+// function isLucky(num) {
+//     let sum1 = 0;
+//     let sum2 = 0;
+// 	let result = num.length / 2;
+//     for (let i = 0; i < result; i++) {
+//         sum1 += Number(num[i]);  
+//     }
+//     for (let i = result; i < num.length; i++) {
+//         sum2 += Number(num[i]);
+//     }
+//     return sum1 == sum2;
+// }
+
+// function normalizeNum(num, digitsAmount) {
+// 	let str = String(num);
+// 	return formStr('', digitsAmount - str.length) + str;
+// }
+
+// function formStr(data, digitsAmount) {
+//     while (data.length < digitsAmount) {
+//        data = '0' + data;
+//     }
+//     return data;
+// }
+// console.log(getLuckyTickets(10));
+
+
+//==================== Область видимости переменных в функциях JavaScript =======================
+
+
+// let num = 1;		
+// function func() {
+// 	alert(num);
+// }
+// num = 2;
+// func();
+
+// function func() {
+// 	let num = 5;
+// 	return num;
+// }
+// alert(num);
+
+// function func() {
+// 	let num = 5;
+// 	return num;
+// }
+
+// alert(num);
+
+
+//================== Область видимости и параметры функций JavaScript ==========================
+
+// function func(localNum) {
+// 	localNum = 2; // ничего не меняет снаружи
+// }
+// let num = 1;
+// console.log(func(num));
+
+// function func(localNum) {
+// 	alert(localNum);
+// }
+// let num = 1;
+// func(num);
+
+// function func(localNum) {
+// 	num = 2;
+// }
+
+// let num = 1;
+// func(num);
+// alert(num);
+
+// function func() {
+// 	num = 2;
+// }
+
+// let num = 1;
+// func();
+// alert(num);
+
+
+//====================== Исходный код функции и ее результат в JavaScript ========================
+
+// function func() {
+// 	return '!';
+// }
+
+// alert(func); // не пишем круглые скобки
+
+
+//======================== Функция как переменная в JavaScript =================================
+
+// Сделайте функцию func, которая будет возвращать через return какую-либо строку.
+// function func() {
+//     return 'string';
+// }
+// alert(func());
+
+// Запишите в переменную func число 123, тем самым затерев функцию из этой переменной. Выведите новое значение переменной func на экран.
+// function func() {
+//     return 'string'
+// }
+// func = 123;
+// console.log(func);
+
+// Сделайте функцию func1, которая будет возвращать через return число 3.
+// function func1() {
+//     return 3;
+// }
+// console.log(func1());
+
+// Скопируйте исходный код функции func1, в переменную func2.
+// function func1() {
+//     return 3;
+// }
+// let func2 = func1;
+
+// Выведите на экран сумму результатов работы функций func1 и func2.
+// function func1() {
+//     return 3;
+// }
+// let func2 = func1;
+// console.log(func1() + func2());
+
+// Сделайте безымянную функцию, которая будет возвращать через return число 1. Запишите эту функцию в переменную func1.
+// let func1 = function() {
+//     return 1;
+// };
+
+// Сделайте безымянную функцию, которая будет возвращать через return число 2. Запишите эту функцию в переменную func2.
+// let func2 = function() {
+//     return 2;
+// };
+
+// // Найдите сумму значений функций func1 и func2. Выведите эту сумму алертом на экран.
+// let func1 = function() {
+//     return 1;
+// };
+// let func2 = function() {
+//     return 2;
+// };
+// alert(func1() + func2());
+
+// следует придерживаться правила, общего для всех языков программирования: функции должны быть глаголами, а переменные - существительными.
+
+
+//=============== Function expression и Function declaration в JavaScript ======================
+
+
+//=================== Нюансы функциональных выражений в JavaScript =============================
+
+// func();
+// let test = function func() {
+// 	alert('!');
+// }
+
+// func();
+// alert(
+// 	function func() {
+// 		alert('!');
+// 	}
+// );
+
+// func();
+// +function func() {
+// 	alert('!');
+// }
+
+// func();
+// function func() {
+// 	alert('!');
+// }
+
+
+//======================== Массив с анонимными функциями в JavaScript ============================
+// let arr = [
+// 	function() {alert('1')},
+// 	function() {alert('2')},
+// 	function() {alert('3')},
+// ];
+
+// alert(arr[0]);
+
+// let arr = [
+// 	function() {alert('1')},
+// 	function() {alert('2')},
+// 	function() {alert('3')},
+// ];
+// arr[0]();
+
+// let arr = [
+// 	function() {alert('1')},
+// 	function() {alert('2')},
+// 	function() {alert('3')},
+// ];
+
+// for (let func of arr) {
+// 	func(); // вызываем наши функции в цикле
+// }
+
+// Сделайте массив arr с тремя функциями. Пусть первая возвращает через return число 1, вторая - число 2, третья - число 3.
+// let arr = [
+// 	function() {return 1},
+// 	function() {return 2},
+// 	function() {return 3},
+// ];
+
+// Используя созданный вами массив arr выведите на экран число 3, вызвав соответствующую функцию.
+// let arr = [
+// 	function() {return 1},
+// 	function() {return 2},
+// 	function() {return 3},
+// ];
+// alert(arr[2]());
+
+// Используя созданный вами массив arr найдите сумму результатов функций (без цикла).
+// let arr = [
+// 	function() {return 1},
+// 	function() {return 2},
+// 	function() {return 3},
+// ];
+// let sum = arr[0]() + arr[1]() + arr[2]();
+// alert(sum);
+
+// Переберите созданный вами массив arr циклом и выведите результаты работы всех функций на экран.
+// let arr = [
+// 	function() {return 1},
+// 	function() {return 2},
+// 	function() {return 3},
+// ];
+// for (let elem of arr) {
+// 	alert(elem());
+// }
+
+
+//======================== Объект с анонимными функциями в JavaScript ============================
+
+// Сделайте объект с тремя функциями. Пусть первая возвращает через return число 1, вторая - число 2, третья - число 3. С помощью созданных функций выведите на экран сумму возвращаемых чисел.
+// let obj = {
+// 	func1 : function() {return 1},
+// 	func2 : function() {return 2},
+// 	func3 : function() {return 3}
+// }
+// alert(obj.func1() + obj.func2() + obj.func3());
+
+// Переберите созданный объект циклом и выведите результаты работы функций на экран.
+// let obj = {
+// 	func1 : function() {return 1},
+// 	func2 : function() {return 2},
+// 	func3 : function() {return 3}
+// }
+// for (let elem in obj) {
+// 	alert(obj[elem]());
+// }
+
+// Сделайте объект с тремя функциями, каждая из которых будет принимать параметром массив с числами. Сделайте так, чтобы первая функция возвращала сумму элементов массива, вторая функция - сумму квадратов, а третья - сумму кубов.
+// let obj = {
+// 	func1: function(arr) {
+// 		let sum = 0;
+// 		for (let elem of arr) {
+// 			sum += elem;
+// 		}
+// 		return sum;
+// 	},
+	
+// 	func2: function(arr) {
+// 		let sumSquares = 0;
+// 		for (let elem of arr) {
+// 			sumSquares += elem ** 2;
+// 		}
+// 		return sumSquares;
+// 	},
+
+// 	func3: function(arr) {
+// 		let sumCubes = 0;
+// 		for (let elem of arr) {
+// 			sumCubes += elem ** 3;
+// 		}
+// 		return sumCubes;
+// 	}
+// }
+// for (let elem in obj) {
+// 	alert(obj[elem]([1, 2, 3, 4, 5]));
+// }
+
+//======================= Передача функций параметрами в JavaScript ==============================
+
+// Сделайте функцию test, параметрами принимающую 3 функции. Передайте в нее первым параметром функцию, возвращающую 1, вторым - функцию, возвращающую 2, третьим - функцию, возвращающую 3. Выведите на экран сумму результатов функций.
+// test(
+// 	function() {return 1;}, 
+// 	function() {return 2;}, 
+// 	function() {return 3;}
+// );
+// function test(func1, func2, func3) {
+// 	console.log(func1() + func2() + func3());
+// }	
+
+// Сделайте функцию test, параметрами принимающую 3 функции и возвращающую сумму результатов переданных функций.
+// function test(func1, func2, func3) {
+// 	return alert(func1() + func2() + func3());
+// }
+
+// Сделайте 3 функции, объявив их как Function Declaration и дав им имена func1, func2 и func3. Пусть первая функция возвращает 1, вторая - 2, а третья - 3. Передайте эти функции параметром в функцию test из предыдущей задачи.
+// function func1() {return 1;}
+// function func2() {return 2;}
+// function func3() {return 3;}
+
+// test(func1, func2, func3);
+
+// function test(func1, func2, func3) {
+// 	return alert(func1() + func2() + func3());
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы функции были объявлены как Function Expression с теми же именами.
+// let func1 = function() {return 1;}
+// let func2 = function() {return 2;}
+// let func3 = function() {return 3;}
+
+// test(func1, func2, func3);
+
+// function test(func1, func2, func3) {
+// 	console.log(func1() + func2() + func3());
+// }
+
+// Скопируйте код моей функции test. Вызовите эту функцию, передав ей параметром анонимную функцию, которая параметром будет принимать число и возвращать его куб.
+// test(function(num) {
+// 	return num ** 3;
+// });
+
+// function test(func) {
+// 	alert(func(3));
+// }
+
+// Переделайте ваш код так, чтобы передаваемая функция была не анонимной, а была определена как Function Declaration с именем func.
+// test(function func(num) {
+// 	return num ** 3;
+// });
+
+// function test(func) {
+// 	alert(func(3));
+// }
+
+// Переделайте передаваемую функцию на Function Expression с тем же именем func.
+// let func = function(num) {
+// 	return num ** 3;
+// }
+// test(func);
+
+// function test(func) {
+// 	alert(func(3));
+// }
+
+// Пусть передаваемая функция теперь принимает два параметра и возвращает их сумму. При вызове передаваемая функции внутри test передайте в передаваемую функцию число 2 и число 3. Выведите алертом результат.
+// test(function func(num1, num2) {
+// 	return num1 + num2;
+// });
+
+// function test(func) {
+// 	alert(func(2, 3));
+// }
+
+// Пусть функция test первым параметром принимает число, а вторым и третьим параметрами - функции, также параметром принимающие числа.
+// Пусть функция test возвращает сумму результатов переданных функций:
+// function test(num, func1, func2) {
+// 	return func1(num) + func2(num);
+// }
+// Вызовите функцию test, первым параметром передав число 3, вторым параметром функцию, возводящую число в квадрат, а третьим - функцию, возводящую число в куб. Выведите результат работы на экран.
+// function test(num, func1, func2) {
+// 	return alert(func1(num) + func2(num));
+// }
+// test(3, func1, func2);
+
+// function func1(num) {
+// 	return num * num;
+// }
+// function func2(num) {
+// 	return num * num * num;
+// }
+
+// Давайте сделаем функцию, которая параметром будет принимать массив, а вторым параметром - функцию. Переданная функция должна будет применится к каждому элементу массива:
+// function test(arr, func) {
+// 	for (let i = 0; i < arr.length; i++) {
+// 		arr[i] = func(arr[i]);
+// 	}
+// 	return arr;
+// }
+
+
+
+// let result = test([1, 2, 3, 4, 5], function func(num) {
+// 	return num * num;
+// });
+// console.log(result);
+
+// Вызовите созданную вами функцию test, передав ей параметром массив с числами. Сделайте так, чтобы функция вернула массив с кубами этих чисел.
+// function test(arr, func) {
+// 	for (let i = 0; i < arr.length; i++) {
+// 		arr[i] = func(arr[i]);
+// 	}
+// 	return arr;
+// }
+
+
+
+// let result = test([1, 2, 3, 4, 5], function func(num) {
+// 	return num * num * num;
+// });
+// console.log(result);
+
+
+
+//============================== Функция в функции в JavaScript =================================
+// Сделайте функцию func, которая параметрами будет принимать два числа, а возвращать сумму квадрата первого числа с кубом второго числа.
+// Сделайте для этого вспомогательную функцию square, возводящую число в квадрат, и вспомогательную функцию cube, возводящую число в куб.
+// function func(num1, num2) {
+// 	function square(num) {
+// 		return num * num;
+// 	}
+// 	function cube(num) {
+// 		return num * num * num;
+// 	}
+// 	return square(num1) + cube(num2);
+// }
+// alert(func(5, 10));
+
+
+//=============== Функция в функции и область видимости переменных в JavaScript ==================
+
+// function test() {
+// 	let num = 1;
+// 	function func() {
+// 		alert(num);
+// 	}
+// 	func();
+// }
+// test();
+
+// function test() {
+// 	let num;	
+// 	function func() {
+// 		alert(num);
+// 	}	
+// 	num = 1
+// 	func();	
+// 	num = 2
+// 	func();
+// }
+// test();
+
+// function test(num1, num2) {
+// 	function func() {
+// 		alert(num1 + num2);
+// 	}	
+// 	num1 = 2;
+// 	func();
+// }
+// test(1, 2);
+
+// function test(num) {
+// 	function func(localNum) {
+// 		localNum = 2;
+// 	}
+// 	func(num);
+// 	alert(localNum);
+// }
+// test(1);
+
+// function test(num) {
+// 	function func(num) {
+// 		num = 2;
+// 	}	
+// 	func(num);
+// 	alert(num);
+// }
+// test(1);
+
+// function test(num) {
+// 	function func(num) {
+// 		alert(num);
+// 	}
+// 	func(num);
+// 	num = 2;
+// }
+// test(1);
+
+//======================= Функция, возвращающая функцию в JavaScript ==============================
+
+// Сделайте функцию func1, которая будучи вызвана вот так: func1()(), вернет число 1. Сделайте аналогичную функцию func2, возвращающую число 2. Найдите сумму результатов этих функций.
+// function func1() {
+// 	return function() {
+// 		return 1;
+// 	}
+// }
+// function func2() {
+// 	return function() {
+// 		return 2;
+// 	}
+// }
+// alert(func1()() + func2()());
+
+// Сделайте функцию func, которая будучи вызвана вот так: func()()()()(), вернет '!'.
+// function func() {
+// 	return function() {
+// 		return function() {
+// 			return function() {
+// 				return function() {
+// 					return '!';
+// 				};
+// 			};
+// 		};
+// 	};
+// }
+// alert(func()()()()());
+
+// Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4), вернет сумму переданных в параметры чисел.
+// function func(num1) {
+// 	return function(num2) {
+// 		return function(num3) {
+// 			return num1 + num2+ num3;
+// 		};
+// 	};
+// } 
+// alert(func(1)(2)(3));
+
+// Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4)(5)(), вернет массив переданных в параметры чисел.
+// function func(num1) {
+// 	let arr = [];
+// 	return function(num2) {
+// 		return function(num3){
+// 			return function(num4) {
+// 				return function() {
+// 					return arr = [num1, num2, num3, num4];
+// 				};  
+// 			};
+// 		};
+// 	};
+// } 
+// console.log(func(2)(3)(4)(5)());
+
+
+//========================= Лексическое окружение функций в JavaScript ===========================
+
+// function test() {
+// 	let num1 = 1;
+// 	let num2 = 2;
+// 	return function() {
+// 		return num1 + num2;
+// 	}
+// }
+// let func = test();
+// alert(func());
+
+// function test() {
+// 	let num1 = 1;
+// 	let num2 = 2;
+// 	return function() {
+// 		return num1 + num2;
+// 	}
+// }
+// alert(test()());
+
+// function test() {
+// 	let num = 1;	
+// 	return function() {
+// 		return num;
+// 	}
+// }
+// let num = 2;
+// let func = test();
+// alert(func());
+
+
+//============================== Замыкания в JavaScript =======================================
+
+// Самостоятельно, не подсматривая в мой код, реализуйте счетчик вызова функции, работающий на замыканиях.
+// function func() {
+// 	let num = 1;
+// 	return function() {
+// 		alert(num);
+// 		num++;
+// 	};
+// }
+// let result = func();
+// result();
+// result();
+// result();
+// result();
+// result();
+// result();
+
+// Пусть функция в замыкании хранит число 10. Сделайте так, чтобы каждый вызов функции уменьшал это число на 1 и выводил на экран уменьшенное число.
+// function test() {
+// 	let num = 10;
+// 	return function() {
+// 		console.log(num);
+// 		num--;
+// 	};
+// }
+// let result = test();
+// result();
+// result();
+// result();
+// result();
+
+// Модифицируйте предыдущую задачу так, чтобы отсчет доходил до 0, а затем каждый последующий вызов функции выводил на экран сообщение о том, что отсчет окончен.
+// function test() {
+// 	let num = 10;
+// 	return function() {
+// 		if (num >= 0) {
+// 			console.log(num);
+// 			num--;
+// 		} else {
+// 			console.log('отсчет окончен');
+// 		}
+// 	};
+// }
+// let result = test();
+// result();
+// result();
+// result();
+// result();
+// result();
+// result();
+// result();
+// result();
+// result();
+// result();
+// result();
+// result();
+// result();
+
+// let counter = 0;	
+// function test() {
+// 	return function() {
+// 		alert(counter);
+// 		counter++;
+// 	};
+// };
+// let func = test;
+// let func1 = func();
+// let func2 = func();
+// func1();
+// func2();
+// func1();
+// func2();
+
+// function test() {
+// 	let counter = 0;	
+// 	return function() {
+// 		return function() {
+// 			alert(counter);
+// 			counter++;
+// 		};
+// 	};
+// };
+// let func = test()();
+// let func1 = func;
+// let func2 = func;
+// func1();
+// func2();
+// func1();
+// func2();
+
+// function test() {
+// 	let counter = 0;
+// 	return function() {
+// 		return function() {
+// 			alert(counter);
+// 			counter++;
+// 		};
+// 	};
+// };
+// let func = test();
+// let func1 = func();
+// let func2 = func();
+// func1();
+// func2();
+// func1();
+// func2();
+
+
+//============================= Вызов функции на месте в JavaScript ===============================
+
+// let result = function() {
+// 	return '!';
+// };		
+// alert(result());
+
+// let result = function() {return 1;}() + function() {return 2;}();
+// alert(result);
+
+// let result = (function() {
+// 	return '!';
+// });
+// alert(result);
+
+// let result = (function() {
+// 	return '!';
+// });
+// alert(result());
+
+// (function(num1, num2) {
+// 	alert(num1 + num2);
+// })(1, 2);
+
+// Допишите следующий код так, чтобы его запуск алертом выводил '!':
+// (function() {
+// 	// какой-то код
+// })()()();
+// (function() {
+// 	return function() {
+//         return function() {
+//             alert('!');
+//         };
+//     };
+// })()()();
+
+// Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
+// (function() {
+// 	// какой-то код
+// })(1)(2);
+// (function(num1) {
+// 	return function(num2) {
+//         alert(num1 + num2);
+//     };
+// })(1)(2);
+
+// Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
+// (function() {
+// 	// какой-то код
+// })(1)(2)(3);
+// (function(num1) {
+//     return function(num2) {
+//         return function(num3) {
+//             alert(num1 + num2 + num3);
+//         }
+//     };
+// })(1)(2)(3);
+
+//========================= Замыкания и вызов функции на месте в JavaScript =======================
+
+// Не подсматривая в мой код, самостоятельно реализуйте такой же счетчик.
+// let func = (function() {
+//     let num = 1;
+//     return function() {
+//         alert(num);
+//         num++;
+//     };
+// })();
+// func();
+// func();
+// func();
+// func();
+// func();
+// func();
+
+// Модифицируйте работу счетчика так, чтобы он считал до 5, а потом отсчет начинался сначала.
+// let func = (function() {
+//     let num = 1;
+//     return function() {
+//         if (num <= 5) {
+//             alert(num);
+//             num++;
+//         } else {
+//             num = 1;
+//         }
+//     };
+// })();
+// func();
+// func();
+// func();
+// func();
+// func();
+// func();
+// func();
+// func();
+// func();
+// func();
+
+
+//========================= Понятие функции-коллбэка в JavaScript ================================
+
+// Дан массив со строками. С помощью созданной нами функции each переверните символы каждой строки в обратном порядке.
+// let result = each(['abc', 'def', 'gjk'], function(str) {
+//     return str.split('').reverse().join('');
+// });
+// console.log(result);
+
+// function each(arr, callback) {
+// 	let result = [];
+	
+// 	for (let elem of arr) {
+// 		result.push( callback(elem) );
+// 	}
+	
+// 	return result;
+// }
+
+// Дан массив со строками. С помощью созданной нами функции each сделайте заглавным первый символ каждой строки.
+
+let result = each(['abc', 'def', 'gjk'], function(str) {
+    return str.slice(0, 1).toUpperCase() + str.slice(1);
+});
+console.log(result);
+
+function each(arr, callback) {
+	let result = [];
+	
+	for (let elem of arr) {
+		result.push( callback(elem) );
+	}
+	
+	return result;
+}
+
+// Дан массив с числами. С помощью созданной нами функции each найдите произведение каждого элемента массива на его порядковый номер.
+// let result = each([0, 40, 33, 2, 50], function(elem, index) {
+//     return elem * index;
+// });
+// console.log(result);
+
+// function each(arr, callback) {
+// 	let result = [];
+// 	let i = 1;
+// 	for (let elem of arr) {
+// 		result.push( callback(elem, i++) );
+// 	}
+	
+// 	return result;
+// }
+
+// Дан массив с числами. С помощью созданной нами функции filter оставьте в этом массиве только положительные числа.
+// let result = filter([-1, 2, -3, 4, -5], function(elem) {
+// 	if (elem > 0) {
+// 		return true;
+// 	} else {
+//         return false;
+//     }
+// });
+// console.log(result);
+
+// function filter(arr, callback) {
+//     let result = [];
+//     for (let elem of arr) {
+//         if (callback(elem)){
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// Дан массив со строками. С помощью созданной нами функции filter оставьте в этом массиве только строки, длина которых от 1 до 3 символов.
+// let result = filter(['still', 'fly', 'reebok', 'a', 'by'], function(elem) {
+//     if (elem.length >= 1 && elem.length <= 3) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// });
+// console.log(result);
+
+// function filter(arr, callback) {
+//     let result = [];
+//     for (let elem of arr) {
+//         if (callback(elem)){
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// Реализуйте функцию every, которая будет возвращать true, если для всех элементов массива функция-коллбэк вернула true, и будет возвращать false в противном случае.
+// Пример работы такой функции (проверим, что в массиве только положительные числа):
+// let result = every([1, 22, 13, 4, 50], function(elem) {
+// 	if (elem > 0) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// });
+// console.log(result); // выведет true
+
+// function every(arr, callback) {
+//     let result = [];
+//     for (let elem of arr) {
+//         if (callback(elem)) {
+//             result.push(elem);
+//         }
+//     }
+//     if (arr.length == result.length) {
+//         return true;
+//     } else {
+//         return false;
+//     }   
+// }
+
+// Реализуйте функцию some, которая будет возвращать true, если для хотя бы для одного элемента массива функция-коллбэк вернула true, и будет возвращать false в противном случае.
+// Пример работы такой функции (проверим, что в массиве есть хотя бы одно отрицательное число):
+// let result = some([1, 2, -3, 4, 5], function(elem) {
+// 	if (elem < 0) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// });
+
+// function some(arr, callback) {
+//     let result = [];
+//     for (let elem of arr) {
+//         if (callback(elem)) {
+//             result.push(elem);
+//         }
+//     }
+//     if (result.length > 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }   
+// }
+// console.log(result); // выведет false
+
+// Реализуйте функцию alternate, которая первым параметром будет принимать массив, а вторым и третьим - коллбэки.
+// Функция должна по очереди применять коллбэки к элементам массива. То есть: для первого элемента - первый коллбэк, для второго элемента - второй коллбэк, для третьего - опять первый коллбэк и так далее пока элементы массива не закончатся.
+// Пример работы такой функции ():
+// let result = alternate(
+// 	['a', 'b', 'c', 'd', 'e'],
+// 	function(elem) {
+// 		return elem + '!';
+// 	},
+// 	function(elem) {
+// 		return elem + '?';
+// 	},
+// );
+
+// function alternate(arr, callback1, callback2) {
+//     let result = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if ((i + 1) % 2 != 0 ) {
+//             result.push(callback1(arr[i]));
+//         } else {
+//             result.push(callback2(arr[i]));
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(result); // выведет ['a!', 'b?', 'c!', 'd?', 'e!']
+
+
+//============================= Стрелочные функции в JavaScript ==================================
+
+// // Дана следующая функция с коллбэком:
+// // let result = every([1, 2, 3, 4, 5], function(elem) {
+// // 	if (elem > 0) {
+// // 		return true;
+// // 	} else {
+// // 		return false;
+// // 	}
+// // });
+// // Упростите коллбэк через стрелочную функцию.
+// let result = every([1, 2, 3, 4, 5], elem => elem > 0);
+
+// Дана следующая функция с коллбэком:
+// let result = every([1, 2, 3, 4, 5], function(elem, index) {
+// 	if (elem * index > 10) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// });
+// Упростите коллбэк через стрелочную функцию.
+// let result = every([1, 2, 3, 4, 5], (elem, index) => elem * index > 10);
+
+// Дана следующая функция с коллбэком:
+// let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+// let result = each(arr, function(elem, index) {
+// 	if (elem * index > 10) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// });
+// Упростите коллбэк через стрелочную функцию.
+// let result = each(arr, (elem, index) => elem * index > 10);
+
+// let result = alternate(['a', 'b', 'c', 'd', 'e'], elem => elem + '!', elem => elem + '?');
+
+// function alternate(arr, callback1, callback2) {
+//     let result = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if ((i + 1) % 2 != 0 ) {
+//             result.push(callback1(arr[i]));
+//         } else {
+//             result.push(callback2(arr[i]));
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(result); // выведет ['a!', 'b?', 'c!', 'd?', 'e!']
+
+
+//=============================== Работа с рекурсией в JavaScript =================================
+
+// function func(arr) {
+// 	console.log(arr.shift(), arr);
+	
+// 	if (arr.length != 0) {
+// 		func(arr);
+// 	}
+// }
+
+// func([1, 2, 3]);
+
+// Сделайте функцию, которая с помощью рекурсии выведет первые 10 чисел Фибоначчи. Числа Фибоначчи строятся следующим образом: каждое новое число равно сумме двух предыдущих. Первые два числа Фибоначчи - это 1 и 2. Следующее число будет равно 1 + 2 = 3, следующее число будет равно 2 + 3 = 5 и так далее.
+// function func(prevPrevNum, prevNum){
+// 	// тут код с рекурсией, который вы должны написать
+// }
+// func(1, 2); // вызываем функцию с первыми двумя числами
+
+// function func(prevPrevNum, prevNum){
+// 	let current = prevPrevNum + prevNum;
+// 	console.log(current);
+// 	if (current <= 200) {
+// 		func(prevNum, current);
+// 	}
+// }
+// func(1, 2);
+
+// Модифицируйте предыдущую задачу так, чтобы функция не выводила числа, а возвращала массив первых 10 чисел Фибоначчи:
+// console.log(func(1, 2)); // выведет массив чисел
+
+// function func(prevPrevNum, prevNum){
+// 	let current = prevPrevNum + prevNum;
+// 	let arr = [];
+// 	arr.push(current);
+// 	if (current <= 200) {
+// 		func(prevNum, current);
+		
+// 	}
+// 	console.log
+// }
+// func(1, 2);
+
+//==================== Редуцирование числа =======================
+// Давайте проверим делится ли какое-нибудь число на 9.
+// Самостоятельно, не подсматривая в код, решите описанную задачу.
+// function reduceNum(num) {
+// 	if (getDigitsSum(num) <= 9) {
+// 		return getDigitsSum(num);
+// 	} else {
+// 		return reduceNum(getDigitsSum(num));
+// 	}
+// }
+
+// function getDigitsSum(num) {
+// 	return getSum(getDigits(num));
+// }
+
+// function getSum(arr) {
+// 	let sum = 0;
+// 	for (elem of arr) {
+// 		sum += Number(elem);
+// 	}
+// 	return sum;
+// }
+
+// function getDigits(num) {
+// 	return String(num).split('');
+// }
+// console.log(reduceNum(2187));
+
+
+//=========================== Рекурсия и многомерные структуры в JavaScript =========================
+
+// Дан многомерный объект произвольного уровня вложенности, например, такой:
+// {a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}
+// С помощью рекурсии выведите все примитивные элементы этого объекта на экран.
+
+// function func(obj) {
+// 	for (let key in obj) {
+// 		if (typeof obj[key] == 'object') {
+// 			func(obj[key]);
+// 		} else {
+// 			console.log(obj[key]);
+// 		}
+// 	}
+// }
+// func({a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}});
+
+// дан многомерный объект произвольного уровня вложенности, например, такой:
+// {a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}
+// С помощью рекурсии найдите сумму элементов этого объекта.
+// function func(obj) {
+// 	let sum = 0;
+// 	for (let key in obj) {
+// 		if (typeof obj[key] == 'object') {
+// 			sum += func(obj[key]);
+// 		} else {
+// 			sum += obj[key];
+// 		}
+// 	}
+// 	return sum;
+// }
+// console.log(func({a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}));
+
+// Дан многомерный массив произвольного уровня вложенности, содержащий внутри себя строки, например, такой:
+// ['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]]
+// С помощью рекурсии слейте элементы этого массива в одну строку:
+// 'abcdefgjk'
+// function func(arr) {
+// 	let result = '';
+// 	for (elem of arr) {
+// 		if (typeof elem == 'object') {
+// 			result += func(elem);
+// 		} else {
+// 			result += elem;
+// 		}
+// 	}
+// 	return result;
+// }
+// console.log(func(['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]]));
+
+// Дан многомерный массив произвольного уровня вложенности, например, такой:
+// [1, [2, 7, 8], [3, 4], [5, [6, 7]]]
+// Возведите все элементы-числа этого массива в квадрат.
+// function func(arr) {
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (typeof arr[i] == 'object') {
+// 			arr[i] = func(arr[i]);
+// 		} else {
+// 			arr[i] = arr[i] ** 2;
+// 		}
+// 	}
+// 	return arr;
+// }
+// console.log(func([1, [2, 7, 8], [3, 4], [5, [6, 7]]]));
+
+// Дан многомерный массив произвольного уровня вложенности, например, такой:
+// [1, [2, 7, 8], [3, 4, [5, [6, 7]]]]
+// Напишите код, который развернет наш многомерный массив в одномерный. Для приведенного выше массива это будет выглядеть вот так:
+// [1, 2, 7, 8, 3, 4, 5, 6, 7]
+// let result = [];
+// function func(arr) {
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (typeof arr[i] == 'object') {
+// 			func(arr[i]);
+// 		} else {
+// 			result.push(arr[i]);
+// 		}
+// 	} 
+// 	return result;
+// }
+// console.log(func([1, [2, 7, 8], [3, 4, [5, [6, 7]]]]));
+
+// Дан многомерный массив произвольного уровня вложенности, например, такой:
+// [1, [2, 7, 8], [3, 4], [5, [6, 7]]]
+// Выведите на экран все элементы-массивы, содержащие внутри себя только примитивы.
+
+// function func(arr) {
+// 	let result = [];
+// 		resultFinish = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (typeof arr[i] == 'object') {
+// 			for (let j = 0; j < arr[i].length; j++) {
+// 				if (typeof arr[i][j] == 'object') {
+// 					break;
+// 				} else {
+// 					result.push(arr[i]);
+// 				}
+// 			}
+// 		}
+// 	}
+// 	// for (let i = 0; i < result.length; i++) {
+// 	// 	if (typeof result[i] == 'object') {
+// 	// 		resultFinish.push(result[i]);
+// 	// 	}
+// 	// }
+// 	return result;
+// }
+// console.log(func([1, [2, 7, 8], [3, 4], [5, [6, 7]]])); 
+                    //   не решил!!!!!!
+

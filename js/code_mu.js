@@ -4586,20 +4586,20 @@
 
 // Дан массив со строками. С помощью созданной нами функции each сделайте заглавным первый символ каждой строки.
 
-let result = each(['abc', 'def', 'gjk'], function(str) {
-    return str.slice(0, 1).toUpperCase() + str.slice(1);
-});
-console.log(result);
+// let result = each(['abc', 'def', 'gjk'], function(str) {
+//     return str.slice(0, 1).toUpperCase() + str.slice(1);
+// });
+// console.log(result);
 
-function each(arr, callback) {
-	let result = [];
+// function each(arr, callback) {
+// 	let result = [];
 	
-	for (let elem of arr) {
-		result.push( callback(elem) );
-	}
+// 	for (let elem of arr) {
+// 		result.push( callback(elem) );
+// 	}
 	
-	return result;
-}
+// 	return result;
+// }
 
 // Дан массив с числами. С помощью созданной нами функции each найдите произведение каждого элемента массива на его порядковый номер.
 // let result = each([0, 40, 33, 2, 50], function(elem, index) {
@@ -4967,5 +4967,2156 @@ function each(arr, callback) {
 // 	return result;
 // }
 // console.log(func([1, [2, 7, 8], [3, 4], [5, [6, 7]]])); 
-                    //   не решил!!!!!!
+//   не решил!!!!!!
 
+
+//===================== Метод map для перебора массива в JavaScript ==============================
+
+// Дан массив с числами. Используя метод map извлеките из каждого элемента массива квадратный корень и запишите результат в новый массив.
+// let arr = [1, 2, 3, 4, 5];
+// let result = arr.map(function(elem) {
+// 	return Math.sqrt(elem);
+// });
+// console.log(result);
+
+// Дан массив со строками. Используя метод map в конец значению каждого элемента массива добавьте символ '!'.
+// let arr = ['a', 'b', 'c'];
+// let result = arr.map(function(elem) {
+// 	return elem + '!';
+// });
+// console.log(result);
+
+// Дан массив со строками. Используя метод map переверните символы каждой строки в обратном порядке.
+// let arr = ['ass', 'bss', 'css'];
+// let result = arr.map(function(elem) {
+// 	return elem.split('').reverse().join('');
+// });
+// console.log(result);
+
+// let arr = ['123', '456', '789'];
+// Используя метод map преобразуйте этот массив в следующий:
+// let arr = [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9]
+// ];
+// let arr = ['123', '456', '789'];
+// let result = arr.map(function(elem) {
+// 	return elem.split('');
+// });
+// console.log(result);
+
+// Дан массив с числами. Используя метод map запишите в каждый элемент массива значение этого элемента, умноженное на его порядковый номер в массиве.
+// let arr = [1, 2, 3, 4, 5];
+// let result = arr.map(function(elem, index) {
+// 	return elem * index;
+// });
+// console.log(result);
+
+// ============== Перебор многомерных массивов
+// let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+// let result = arr.map(function(elem) {
+// 	return elem.map(function(num) {
+// 		return num * num;
+// 	});
+// });
+// console.log(result);
+
+
+//========================== Метод forEach для перебора массива в JavaScript ==========================
+
+// // Дан массив с числами. Используя метод forEach найдите сумму квадратов элементов этого массива.
+// let arr = [1, 2, 3, 4, 5];
+// let sum = 0;
+// arr.forEach(function(elem) {
+// 	sum += elem ** 2;
+// });
+// console.log(sum);
+
+// Метод forEach появился в JavaScript раньше, чем новый цикл for-of. По сути, эти два способа перебора похожи, но цикл for-of имеет более простой синтаксис, поэтому, скорее всего, чаще вы будете пользоваться именно им.
+
+
+//==================== Метод filter для фильтрации массива в JavaScript =============================
+// Дан массив с числами. Оставьте в нем только положительные числа.
+// let arr = [1, -2, 3, -4, 5];
+// console.log(arr.filter(elem => elem > 0));
+
+// Дан массив с числами. Оставьте в нем только отрицательные числа.
+// let arr = [1, -2, 3, -4, 5];
+// console.log(arr.filter(elem => elem < 0));
+
+// Дан массив с числами. Оставьте в нем только числа, которые больше нуля, но меньше 10.
+// let arr = [1, -4, 99, 45, -3, 5, 9];
+// console.log(arr.filter(elem => elem > 0 && elem < 10));
+
+// Дан массив со строками. Оставьте в нем только те строки, длина которых больше 5-ти символов.
+// let arr = ['str', 'global', 'fly', 'tetris', 'mom', 'gadget'];
+// console.log(arr.filter(elem => elem.length > 5));
+
+// Дан массив с числами. Оставьте в нем только те числа, произведение которых на их порядковый номер меньше 30.
+// let arr = [1, 20, 3, 47, 5, 4, 66];
+// console.log(arr.filter((elem, index) => elem * index < 30));
+
+// Дан массив, в нем могут быть обычные элементы и подмассивы, например [1, 2, [3, 4], 5, [6, 7]]. Оставьте в нем только обычные элементы.
+// let arr = [1, 2, [3, 4], 5, [6, 7]];
+// console.log(arr.filter(elem => typeof elem != 'object'));
+
+// Дан массив с числами. Посчитайте количество отрицательных чисел в этом массиве.
+// let arr = [-1, -2, 3, 4, 5, -10];
+// console.log(arr.filter(elem => elem < 0).length);
+
+
+//============================= Метод every для проверки массива в JavaScript =========================
+
+// Дан массив с числами. Проверьте то, что все элементы в массиве больше нуля.
+// let arr = [1, 2, -3, 4, 5];
+// let result = arr.every(elem => elem > 0);
+// console.log(result);
+
+// Дан массив с числами. Проверьте то, что для всех элементов произведение их значений на их порядковый номер меньше 30.
+// let arr = [1, 2, 3, 4, 8];
+// let result = arr.every((elem, index) => elem * index < 30);
+// console.log(result);
+
+
+//======================= Метод some для проверки массива в JavaScript =============================
+
+// Дан массив с числами. Проверьте то, что в массиве есть хотя бы одно число больше нуля.
+// let arr = [-1, -2, -3, -4, -5];
+// let result = arr.some(elem => elem > 0);
+// console.log(result);
+
+// Дан массив с числами. Проверьте то, что хотя бы для одного элемента произведение его значения на порядковый номер больше 30.
+// let arr = [1, 2, 3, 4, 1];
+// let result = arr.some((elem, index) => elem * index > 30);
+// console.log(result);
+
+
+//============================= Оператор spread в JavaScript ========================================
+
+// Дан массив:
+// let arr = [1, 2, 3, 4, 5];
+// Дана также функция:
+// function func(num1, num2, num3, num4, num5) {
+// 	return num1 + num2 + num3 + num4 + num5;
+// }
+// Найдите с помощью приведенной функции сумму элементов массива.
+// let arr = [1, 2, 3, 4, 5];
+// function func(num1, num2, num3, num4, num5) {
+//     return num1 + num2 + num3 + num4 + num5;
+// }
+// console.log(func(...arr));
+
+// Дан массив с числами. Используя Math.min и spread выведите на экран минимальное значение массива.
+// let arr= [23, 33, 76, 90, 6, 487];
+// console.log(Math.min(...arr));
+
+
+//============================= Оператор spread и слияние массивов ==================================
+
+// Не запуская код, определите, что выведется в консоль:
+// let arr1 = [1, 2, 3];
+// let arr2 = [...arr1, 4, 5, 6];
+// let arr3 = [...arr2, 7, 8, 9];
+// let arr  = [0, ...arr3];
+// console.log(arr);
+
+
+//=============================== Оператор spread для строк и чисел в JavaScript =======================
+// let arr1 = ['a', 'b', 'c'];
+// let arr2 = [...arr1, ...'12345'];
+
+// console.log(arr2);
+
+
+//================================= Оператор rest в JavaScript =======================================
+
+// func(1, 2, 3, 4, 5);
+// function func(a, b, ...rest) {
+// 	console.log(a); // выведет 1
+// 	console.log(b); // выведет 2
+// 	console.log(rest); // выведет [3, 4, 5]
+
+// func(1, 2);
+// function func(a, b, ...rest) {
+// 	console.log(a); // выведет 1
+// 	console.log(b); // выведет 2
+// 	console.log(rest); // выведет []
+
+
+//========================= Применение операторов rest и spread в JavaScript ===========================
+
+// Напишите функцию, которая будет принимать параметрами произвольное количество чисел и возвращать их среднее арифметическое (сумма делить на количество).
+// function func(...nums) {
+//     let sum = 0;
+//     for (elem of nums) {
+//         sum += elem;
+//     }
+//     let result = sum / nums.length;
+//     return result;
+// }
+// console.log(func(1, 2, 3, 4, 5));
+
+// Для сравнения реализуйте нашу функцию без использования оператора rest.
+// let result = unite([1, 2, 3], [4, 5, 6], [7, 8, 9]);
+// console.log(result); // выведет [ [1, 2, 3,] [4, 5, 6], [7, 8, 9] ]
+// function unite(...arrs){
+// 	return arrs;
+// }
+
+// let result = unite([1, 2, 3], [4, 5, 6], [7, 8, 9]);
+// console.log(result);
+
+// function unite(arr1, arr2, arr3) {
+//     let arrey = [];
+//     arrey.unshift(arr1, arr2, arr3);
+//     return arrey;
+// }
+
+
+//====================== Пересечение произвольного количества массивов на JavaScript ===================
+
+// Самостоятельно, не подсматривая в мой код, повторите решение описанной задачи.
+// Давайте напишем функцию getInt, которая будет находить пересечение любого количества массивов.
+// function getInt(...arrs) {
+//     let result = [];
+//     let arr0 = arrs.shift();
+//     for (let elem of arr0) {
+//         if (inArrays(elem, arrs)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// function inArrays(elem, arrs) {
+//    for (let arr of arrs) {
+//        if (!inArray(elem, arr)) {
+//            return false;
+//        }
+//    }
+//    return true;
+// }
+
+// function inArray(elem, arr){
+// 	return arr.indexOf(elem) !== -1;
+// }
+// console.log(getInt([1, 2, 3], [2, 3, 4], [4, 3, 2]));
+
+
+
+// =================== Разность произвольного количества массивов на JavaScript =======================
+
+// function getDiff(arr1, arr2){
+// 	let result = [];
+	
+// 	let diff1 = getFirstDiff(arr1, arr2);
+// 	let diff2 = getFirstDiff(arr2, arr1);
+	
+// 	return [].concat( diff1, diff2 );
+// }
+
+// function getFirstDiff(arr1, arr2){
+// 	let result = [];
+	
+// 	for (let elem of arr1) {
+// 		if (inArray(elem, arr2)) {
+// 			result.push(elem);
+// 		}
+// 	}
+	
+// 	return result;
+// }
+
+// function inArray(elem, arr){
+// 	return arr.indexOf(elem) !== -1;
+// }
+
+// function getDiff(...arrs) {
+//     let diff1 = getFirstDiff(arrs);
+//     let diff2 = getFirstDiff(arrs.reverse());
+//     return [].concat(diff1, diff2);
+// }
+
+// function getFirstDiff(arrs) {
+//     let result = [];
+//     let arr0 = arrs.shift();
+//     for (let elem of arr0) {
+//         if (inArrays(elem, arrs)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// function inArrays(elem, arrs) {
+//     for (let arr of arrs) {
+//         if (!inArray(elem, arr)) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// function inArray(elem, arr) {
+// 	return arr.indexOf(elem) == -1;
+// }    
+// console.log(getDiff([1, 2, 3], [2, 3, 4, 5]));
+
+// function getDiff(...arrs) {
+//     let result = [];
+//     for (let i = 0; i < arrs.length; i++) {
+//         let arr0 = arrs.pop();
+//         for (let elem of arr0) {
+//             if (checkInArray(elem, arrs)) {
+//                 result.push(elem);
+//             }
+//         }
+//         arrs.unshift(arr0);
+//     }
+//     return result;
+// }
+
+// function checkInArray(elem, arrs) {
+//     let flag = true;
+//     for (let arr of arrs) {
+//         for (let subArr of arr) {
+//             if (inArray(elem, arr)) {
+//                 flag = false;
+//                 break;
+//             }
+//         }
+//     }
+//     return flag;
+// }
+
+// function inArray(elem, arr) {
+// 	return arr.indexOf(elem) !== -1;
+// }    
+
+// console.log(getDiff([1,6, 2, 3,5], [4,1, 2, 3], [12,7,1, 2, 3]));
+
+
+//====================== Деструктуризация массивов в JavaScript ====================================
+
+// В следующем коде части массива записываются в соответствующие переменные:
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// let name       = arr[0];
+// let surname    = arr[1];
+// let department = arr[2];
+// let position   = arr[3];
+// let salary     = arr[4];
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// let [name, surname, department, position, salary] = arr;
+// console.log(position);
+// console.log(name);
+// console.log(salary);
+// console.log(department);
+
+// function func() {
+// 	return ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// }
+// let arr = func();
+// let name       = arr[0];
+// let surname    = arr[1];
+// let department = arr[2];
+// let position   = arr[3];
+// let salary     = arr[4];
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+// function func() {
+//     return ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// }
+// let [name, surname, department, position, salary] = func();
+// console.log(position);
+// console.log(name);
+// console.log(salary);
+// console.log(department);
+
+// В следующем коде части массива записываются в соответствующие переменные:
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// let department = arr[2];
+// let position   = arr[3];
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// let [,, department, position,] = arr;
+// console.log(department);
+// console.log(position);
+
+// В следующем коде части массива записываются в соответствующие переменные:
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// let name    = arr[0];
+// let surname = arr[1];
+// let info = arr.slice(2); // все элементы со второго до конца массива
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// let [name, surname, ...info] = arr;
+// console.log(name);
+// console.log(surname);
+// console.log(info);
+
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист'];
+// let name       = arr[0];
+// let surname    = arr[1];
+// let department = arr[2];
+// let position;
+// if (arr[3] !== undefined) {
+// 	position = arr[3];
+// } else {
+// 	position = 'джуниор';
+// }
+// // Переделайте этот код через деструктуризацию согласно изученной теории.
+// let arr = ['Иван', 'Иванов', 'отдел разработки'];
+// let [name, surname, department, position = 'джуниор'] = arr;
+// console.log(name);
+// console.log(surname);
+// console.log(department);
+// console.log(position);
+
+
+//============================ Деструктуризация объектов в JavaScript ================================
+
+// В следующем коде части объекта записываются в соответствующие переменные:
+// let options = {
+// 	color: 'red',
+// 	width:  400,
+// 	height: 500,
+// };
+// let color  = options.color;
+// let width  = options.width;
+// let height = options.height;
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+// let options = {
+//     color: 'red',
+//     width: 400,
+//     height: 500
+// };
+// let {color, width, height} = options;
+// console.log(color);
+// console.log(width);
+// console.log(height);
+
+// В следующем коде части объекта записываются в соответствующие переменные:
+// let options = {
+// 	color: 'red',
+// 	width:  400,
+// 	height: 500,
+// };
+// let c = options.color;
+// let w = options.width;
+// let h = options.height;
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+// let options = {
+//     color: 'red',
+//     width: 500,
+//     height: 400
+// };
+// let {color: c, width: w, height: h} = options;
+// console.log(c);
+// console.log(w);
+// console.log(h);
+
+// В следующем коде части объекта записываются в соответствующие переменные:
+// let options = {
+// 	width:  400,
+// 	height: 500,
+// };
+// let color;
+// if (options.color !== undefined) {
+// 	color = options.color;
+// } else {
+// 	color = 'black';
+// }
+// let width  = options.width;
+// let height = options.height;
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+// let options = {
+// 	width:  400,
+// 	height: 500,
+// };
+// let {color = 'black', width, height} = options;
+// console.log(color);
+// console.log(width);
+// console.log(height);
+
+// В следующем коде части объекта записываются в соответствующие переменные:
+// let options = {
+// 	width:  400,
+// 	height: 500,
+// };
+// let с;
+// if (options.с !== undefined) {
+// 	с = options.color;
+// } else {
+// 	с = 'black';
+// }
+// let w = options.width;
+// let h = options.height;
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+// let options = {
+//     width:  400,
+//     height: 500,
+// };
+// let {color: c = 'black', width: w, height: h} = options;
+// console.log(c);
+// console.log(w);
+// console.log(h);
+
+
+//======================== Деструктуризация параметров функций в JavaScript ===========================
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+// function func(employee) {
+// 	let name       = employee[0];
+// 	let surname    = employee[1];
+// 	let department = employee[2];
+// 	let position   = employee[3];
+// 	let salary     = employee[4];
+// }
+// func( ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000] );
+
+// func( ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000] );
+// function func([name, surname, department, position, salary]) {
+//     console.log(name);
+//     console.log(surname);
+//     console.log(department);
+//     console.log(position);
+//     console.log(salary);
+// }
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+// function func(employee) {
+// 	let name     = employee[0];
+// 	let surname  = employee[1];
+// 	let info     = employee.slice(2);
+// }
+// func( ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000] );
+
+// func( ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000] );
+// function func([name, surname, ...info]) {
+//     console.log(name);
+//     console.log(surname);
+//     console.log(info);
+// }
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+// function func(employee) {
+// 	let name       = employee[0];
+// 	let surname    = employee[1];
+// 	let department = employee[2];
+// 	let position;
+// 	if (arr[3] !== undefined) {
+// 		position = arr[3];
+// 	} else {
+// 		position = 'джуниор';
+// 	}
+// }
+// func( ['Иван', 'Иванов', 'отдел разработки'] );
+
+// func( ['Иван', 'Иванов', 'отдел разработки'] );
+// function func([name, surname, department, position = 'джуниор']) {
+//     console.log(name);
+//     console.log(surname);
+//     console.log(department);
+//     console.log(position);
+// }
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+// function func(department, employee, hired) {
+// 	let name     = employee[0];
+// 	let surname  = employee[1];	
+// 	let year  = hired[0];
+// 	let month = hired[1];
+// 	let day   = hired[2];
+// }
+// func( 'отдел разработки', ['Иван', 'Иванов'], '2018-12-31' );
+
+// func( 'отдел разработки', ['Иван', 'Иванов'], '2018-12-31' );
+// function func(department, [name, surname], hired) {
+//     console.log(department);
+//     console.log(name);
+//     console.log(surname);
+//     console.log(hired);
+// }
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+// function func(options) {
+// 	let color  = options.color;
+// 	let width  = options.width;
+// 	let height = options.height;
+// }
+// func( {color: 'red', width: 400, height: 500} );
+// function func({color, width, height}) {
+//     console.log(color);
+//     console.log(width);
+//     console.log(height);
+// }
+// func( {color: 'red', width: 400, height: 500} );
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+// function func(options) {
+// 	let width  = options.width;
+// 	let height = options.height;
+// 	let color;
+// 	if (options.color !== undefined) {
+// 		color = options.color;
+// 	} else {
+// 		color = 'black';
+// 	}
+// }
+// func( {color: 'red', width: 400, height: 500} );
+// function func({color = 'black', width, height}) {
+//     console.log(color);
+//     console.log(width);
+//     console.log(height);
+// }
+// func( {width: 400, height: 500} );
+
+
+//================================== Работа с объектом Date в JavaScript ===============================
+
+// Выведите на экран текущий день.
+// let date = new Date();
+// console.log(date.getDate());
+
+// Выведите на экран текущий месяц.
+// let date = new Date();
+// console.log(date.getMonth());
+
+// Выведите на экран текущий год.
+// let date = new Date();
+// console.log(date.getFullYear());
+
+//============================== Форматирование даты в JavaScript ====================================
+
+// Выведите на экран текущую дату-время в формате 12:59:59 31.12.2014. Используйте для всех частей даты (кроме года) созданную нами функцию для добавления нуля при необходимости.
+// function addZero(num) {
+//     if (num >= 0 && num <= 9) {
+//         return '0' + num;
+//     } else {
+//         return num;
+//     }
+// }
+// let date = new Date();
+// console.log(addZero(date.getHours()) + ':' + addZero(date.getMinutes()) + ':' + addZero(date.getSeconds()) + ' ' + addZero(date.getDate()) + '.' + addZero(date.getMonth() + 1) + '.' + date.getFullYear());
+
+// Дана дата в формате год-месяц-день. Преобразуйте эту дату в формат день.месяц.год.
+// let str = '1999-12-12';
+// let result = str.split('-').reverse().join('.');
+// console.log(result);
+
+
+//================================ Получения дня недели на JavaScript =================================
+
+// Выведите на экран номер текущего дня недели.
+// let date = new Date();
+// console.log(date.getDay());
+
+// Определите, является ли текущий день недели выходным или рабочим днем.
+// let date  = new Date();
+// if (date.getDay() == 0 || date.getDay() == 6) {
+//     console.log('сегодня выходной');
+// } else {
+//     console.log('рабочий день');
+// }
+
+// Определите сколько дней осталось до ближайшего воскресенья.
+// let date = new Date();
+// if (date.getDay() != 0) {
+//     let result = 7 - date.getDay();
+//     console.log(result + ' осталось до воскресения');
+// } else {
+//     console.log('сегодня воскресение');
+// }
+
+
+//===================== Вывод частей даты словом в JavaScript ====================================
+
+// Пусть дан следующий массив:
+// let months = [
+// 	'янв', 'фев', 'мар', 'апр', 'май', 'июн',
+// 	'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'
+// ];
+// Выведите с помощью этого массива название текущего месяца.
+// let date = new Date();
+// let month = date.getMonth();
+// let months = ["янв", "фев", "март", "апр", "май", "июнь", "июль", "авг", "сент", "окт", "нояб", "дек"];
+// console.log(months[month]);
+
+
+//============================ Установка времени в объекте Date в JavaScript ============================
+
+// Узнайте, какой день недели был в ваш день рождения.
+// let date = new Date(2021, 12, 15);
+// let day = date.getDay();
+// let days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+// console.log(days[day]);
+
+// let date = new Date(2021, 9, 10); // установим 5 ноября 2025 года
+// let day  = date.getDay();
+// let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+// console.log(days[day]);
+
+
+//=================================== Работа с getTime ============================================
+
+// Выведите на экран timestamp, соответствующий дате 1 января 2025 года.
+// let date = new Date(2025, 1, 1, 23, 59, 59);
+// console.log(date.getTime());
+
+// Выведите на экран количество дней, прошедшее между 1 марта 1988 года и 10 января 2000 года.
+// let date1 = new Date(2000, 1, 10, 23, 59, 59);
+// let date2 = new Date(1988, 3, 1, 23, 59, 59);
+// let diff = date1.getTime() - date2.getTime();
+// console.log(diff / (1000 * 60 * 60 * 24)); 
+
+// Выведите на экран количество месяцев, прошедшее между вашим рождением и текущим моментом времени.
+// let now = new Date();
+// let birthday = new Date(1989, 12, 15);
+// let diff = now.getTime() - birthday.getTime();
+// console.log(diff / (1000 * 60 * 60 * 24 * 30));
+
+
+//============================ Разница между объектами с датой в JavaScript =========================
+
+// Выведите на экран количество миллисекунд, прошедшее между 1 сентября 2000 года и 15 февраля 2010 года.
+// let date1 = new Date(2010, 2, 15);
+// let date2 = new Date(2000, 9, 1);
+// diff = date1 - date2;
+// console.log(diff);  
+
+// Модифицируйте предыдущую задачу так, чтобы на экран выводилась разница в днях.
+// let date1 = new Date(2010, 2, 15);
+// let date2 = new Date(2000, 9, 1);
+// diff = date1 - date2;
+// console.log(diff / (1000 * 60 * 60 * 24));
+
+// Модифицируйте предыдущую задачу так, чтобы на экран выводилась разница в месяцах.
+// let date1 = new Date(2010, 2, 15);
+// let date2 = new Date(2000, 9, 1);
+// diff = date1 - date2;
+// console.log(diff / (1000 * 60 * 60 * 24 * 30));
+
+// Модифицируйте предыдущую задачу так, чтобы на экран выводилась разница в годах.
+// let date1 = new Date(2010, 2, 15);
+// let date2 = new Date(2000, 9, 1);
+// diff = date1 - date2;
+// console.log(diff / (1000 * 60 * 60 * 24 * 365));
+
+
+//=============================== Автоматическая корректировка дат в JavaScript =========================
+
+// // let date = new Date(2018, 1, 31);
+// // console.log(date); // какая дата будет?
+
+// let date = new Date(2018, 12, 33);
+// console.log(date); // какая дата будет?
+
+// let date = new Date(2018, 33, 33);
+// console.log(date); // какая дата будет?
+
+// let date = new Date(2018, 0, 0);
+// console.log(date); //
+
+// Определите, в какую дату JavaScript преобразует следующий момент времени:
+
+// let date = new Date(2018, -12, -33);
+// console.log(date); // какая дата будет?
+
+// let date = new Date(2018, 0, 1, 23, 0, 0);
+// console.log(date); // какая дата будет?
+
+// let date = new Date(2018, 0, 1, 24, 0, 0); // указываем 24-тый час
+// console.log(date); 
+
+
+//======================== Нахождение последнего дня месяца в JavaScript ==============================
+
+// Оформите этот способ решения проблемы в виде функции, которая параметрами будет принимать месяц и год и возвращать номер последнего дня этого месяца.
+
+// function getLastDay(month, year) {
+//     let date = new Date(year, month, 0);
+//     return date.getDate();
+// }
+// console.log(getLastDay(6, 2021));
+
+// Определите, какой день недели будет в последнем дне пятого месяца 2025 года.
+// function getLastDayWeak(month, year) {
+//     let day = getLastDay(month, year);
+//     return getDayOfWeak(day, month - 1, year);
+// }
+// console.log(getLastDayWeak(12, 2021));
+
+// function getLastDay(month, year) {
+//     let date = new Date(year, month, 0,);
+//     return date.getDate();
+// }
+// // console.log(getLastDay(9, 2021));
+
+// function getDayOfWeak(day, month, year) {
+//     let date = new Date(year, month, day);
+//     let day1 = date.getDay();
+//     let days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+//     return days[day1];
+// }
+// // console.log(getDayOfWeak(30, 8, 2021));
+
+// // Сделайте функцию isLeap, которая параметром будет принимать год и возвращать true, если этого год високосный, и false - если нет.
+// function isLeap(year) {
+//     let date = new Date(year, 2, 0);
+//     return date.getDate() == 29;
+// }
+// console.log(isLeap(2021));
+
+
+//=========================== Проверка корректности даты в JavaScript ==================================
+
+// Сделайте функцию checkDate, которая будет выполнять описанную проверку. Пусть функция возвращает true, если дата корректна и false, если нет. Пример работы этой функции для 31 января и 32 января:
+// function checkDate(year, month, day) {
+//     let date = new Date(year, month, day);
+//     return date.getFullYear() == year && date.getMonth() == month && date.getDate() == day;
+// }
+// // console.log(checkDate(2025, 0, 31)); // выведет true
+// console.log(checkDate(2025, 0, 32)); // выведет false
+
+
+//========================= Получение моментов времени в JavaScript ====================================
+
+// Определите, какой день недели будет 31 декабря текущего года.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), 11, 31);
+// console.log(date.getDay());
+
+// Определите, какой день недели будет 1 числа текущего месяца.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), 1);
+// let day = date.getDay();
+// let days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+// console.log(days[day]);
+
+// Определите, какой день недели будет 31 декабря следующего года.
+// let now = new Date();
+// let date = new Date(now.getFullYear() + 1, 11, 31);
+// let day = date.getDay();
+// let days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+// console.log(days[day]);
+
+// Определите, какой день недели будет через год в такую же дату, как сегодня.
+// let now = new Date();
+// let date = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
+// let day = date.getDay();
+// let days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+// console.log(days[day]);
+
+// Определите, какой день недели был год назад в такую же дату, как сегодня.
+// let now = new Date();
+// let date = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
+// let day = date.getDay();
+// let days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+// console.log(days[day]);
+
+// Определите, какой день недели был месяц назад в такой же день месяца, как сегодня.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth() - 1, now.getDate());
+// let day = date.getDay();
+// let days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+// console.log(days[day]);
+
+// Определите, сколько дней между 1 января и 10 сентября текущего года.
+// let date1 = new Date(2021, 0, 1);
+// let date2 = new Date(2021, 8, 10);
+// console.log((date2 - date1) / (1000 * 60 * 60 * 24));
+
+// Определите, сколько дней между 20 числом текущего месяца и 10 числом следующего.
+// let now = new Date();
+// let date1 = new Date(now.getFullYear(), now.getMonth(), 20);
+// let date2 = new Date(now.getFullYear(), now.getMonth() + 1, 10);
+// console.log((date2 - date1) / (1000 * 60 * 60 * 24));
+
+// Определите, сколько часов прошло между вчерашним полднем и текущим моментом времени.
+// let now = new Date();
+// let date1 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12);
+// let date2 = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1, 12);
+// console.log((date1 - date2) / (1000 * 60 * 60));
+
+
+// Определите, сколько часов прошло между началом дня и текущим моментом времени.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+// console.log((now - date) / (1000 * 60 * 60));
+
+// Определите, сколько часов осталось до конца дня.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+// console.log((date - now) / (1000 * 60 * 60));
+
+// Рассмотрите промежуток от 2000 года до текущего года. Определите, сколько раз 1 января в этом промежутке попадало на выходной день, то есть на субботу или на воскресенье.
+// let now = new Date();
+// let sum = 0;
+// for (let year = 2000; year <= now.getFullYear(); year++) {
+// 	let date = new Date(year, 0, 1);
+// 	if (date.getDay() == 0 || date.getDay() == 6) {
+// 		sum += 1;
+// 	}
+// }
+// console.log(sum);
+
+
+//===================== Практика на получение моментов времени в JavaScript =============================
+
+// Определите, сколько секунд прошло с начала дня до настоящего момента времени.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+// console.log((now - date) / 1000);
+
+// Определите, сколько секунд секунд осталось до конца дня.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+// console.log((date - now) / 1000);
+
+// Определите, сколько дней осталось до нового года.
+// let now = new Date();
+// let date1 = new Date(2022, 0, 1);
+// console.log((date1 - now) / (1000 * 60 * 60 * 24));
+
+// Определите, сколько пятниц 13-е в текущем году.
+// let now = new Date();
+// let year = now.getFullYear();
+// let sum = 0;
+// for (let month = 0; month <= 11; month++) {
+//     let date = new Date(year, month, 13);
+//     if (date.getDay() == 5) {
+//         sum += 1;
+//     }
+// }
+// console.log(sum);
+
+// Определите, какой год был 3 месяца назад
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth() - 3);
+// console.log(date.getFullYear());
+
+// Определите, какой день недели будет в последнем дне текущего месяца.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), 30);
+// console.log(date.getDay());
+
+// Напишите код, который будет определять, високосный ли текущий год.
+// let now = new Date();
+// let date = new Date(now.getFullYear() - 1, 2, 0);
+// if (date.getDate() == 29) {
+//     console.log('высокосный год');
+// } else {
+//     console.log('не высокосный год');
+// }
+
+// Напишите код, который будет находить предыдущий високосный год.
+// let now = new Date();
+// let sum = 0
+// // while (year == 0) {
+// //     if (date.getDate() == 29) {
+// //         console.log(year + ' - высокосный год');
+// //         break;
+// //     } else {
+// //         year--;
+// //     }
+// // }
+// for (let year = now.getFullYear(); year >= 2000; year--) {
+//     if (now.getDate() == 29) {
+//         console.log(year + ' - высокосный год');
+//     } else {
+//         sum += 1;
+//         console.log(sum);
+//     }
+// } неполучилось(((
+
+
+//=========================== Строковое сравнение дат на JavaScript =======================================
+
+// Напишите код, который сравнит две приведенные ниже даты и выведет сообщение о том, какая из них больше:
+// let date1 = '2020-11-31';
+// let date2 = '2020-12-01';
+// if (date1 > date2) {
+//     console.log(date1 + ' больше ' + date2);
+// } else {
+//     console.log(date2 + ' больше ' + date1);
+// }
+
+// Напишите код, который сравнит две приведенные ниже даты и выведет сообщение о том, какая из них больше:
+// let date1 = '09-21';
+// let date2 = '09-23';
+// if (date1 > date2) {
+//     console.log(date1 + ' больше ' + date2);
+// } else {
+//     console.log(date2 + ' больше ' + date1);
+// }
+
+// Дана дата, содержащая месяц и день. Определите знак Зодиака, на которую приходится эта дата.
+// let date = '08.12';
+// if (date >= '03.21' && date <= '04.19') {
+//     console.log('Это Овен');
+// }
+// if (date >= '04.20' && date <= '05.20') {
+//     console.log('Это Телец');
+// }
+// if (date >= '05.21' && date <= '06.21') {
+//     console.log('Это Близнецы');
+// }
+// if (date >= '06.22' && date <= '07.22') {
+//     console.log('Это Рак');
+// }
+// if (date >= '07.23' && date <= '08.22') {
+//     console.log('Это Лев');
+// }
+// if (date >= '08.23' && date <= '09.22') {
+//     console.log('Это Дева');
+// }
+// if (date >= '09.23' && date <= '10.23') {
+//     console.log('Это Весы');
+// }
+// if (date >= '10.24' && date <= '11.22') {
+//     console.log('Это Скорпион');
+// }
+// if (date >= '11.23' && date <= '11.22') {
+//     console.log('Это Скорпион');
+// }
+// if (date >= '10.24' && date <= '12.21') {
+//     console.log('Это Стрелец');
+// }
+// if (date >= '12.22' && date <= '01.20') {
+//     console.log('Это Козерог');
+// }
+// if (date >= '01.21' && date <= '02.18') {
+//     console.log('Это Водолей');
+// }
+// if (date >= '02.19' && date <= '03.20') {
+//     console.log('Это Скорпион');
+// }
+
+
+//============================ Сравнение объектов с датами в JavaScript ================================
+
+// Получите объект с датой, содержащий текущий момент времени. Получите объект с датой, содержащий полдень текущего дня. Сравните два этих объекта и определите, был ли уже полдень или нет.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0);
+// if (now > date) {
+//     console.log('полдень уже был');
+// } else {
+//     console.log('полдень еще не наступил');
+// }
+
+// Получите объект с датой, содержащий текущий момент времени. Получите объект с датой, содержащий 15 число текущего месяца. Сравните два этих объекта и определите, прошла ли уже половина месяца или нет.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), now.getMonth(), 15);
+// if (now > date) {
+//     console.log('половина месяца уже прошла');
+// } else {
+//     console.log('половина месяца еще не прошла');
+// }
+
+
+//========================= Количество времени до ближайшей даты на JavaScript ===========================
+
+// Используя приведенный мною код, окончательно решите задачу.
+// let now  = new Date();
+// let date = new Date(now.getFullYear(), 2, 8); // текущий год
+// let diff = Math.floor((date - now) / (1000 * 60 * 60 * 24));
+// if (diff > 0) {
+// 	console.log(diff + ' дн. осталось до 8 марта');
+// } else if (diff == 0) {
+// 	console.log('сегодня 8 марта');
+// } else {
+// 	date = new Date(now.getFullYear() + 1, 2, 8);
+//     diff = Math.floor((date - now) / (1000 * 60 * 60 * 24));
+//     console.log(diff + ' дн. осталось до 8 марта');
+// }
+
+// Пусть ваш День Рождения - первое марта. Определите, сколько дней осталось до вашего ближайшего дня рождения.
+// let now = new Date();
+// let date = new Date(now.getFullYear(), 11, 15);
+// let diff = Math.floor((date - now) / (1000 * 60 * 60 * 24));
+// if (diff > 0) {
+// 	console.log(diff + ' д. осталось до дня рождения');
+// } else if (diff == 0) {
+// 	console.log('сегодня 8 марта');
+// } else {
+// 	date = new Date(now.getFullYear() + 1, 11, 15);
+//     diff = Math.floor((date - now) / (1000 * 60 * 60 * 24));
+//     console.log(diff + ' д. осталось до дня рождения');
+// }
+
+// Пусть теперь День Рождения может быть произвольным и содержится в переменных month и day. Определите, сколько дней осталось до заданного этой датой праздника. Учтите при решении, что есть счастливчики, которые родились 29 февраля. Не забудьте их учесть в вашем решении.
+
+// function getDaysBeforeBirthday(day, month) {
+//     let now = new Date();
+//     let date = new Date(now.getFullYear(), month - 1, day);
+//     let diff = Math.floor((date - now) / (1000 * 60 * 60 * 24));
+//     if (diff > 0) {
+//     console.log(diff + ' д. осталось до дня рождения');
+//     } else if (diff == 0) {
+//     console.log('сегодня 8 марта');
+//     } else {
+//     date = new Date(now.getFullYear() + 1, month - 1, day);
+//     diff = Math.floor((date - now) / (1000 * 60 * 60 * 24));
+//     console.log(diff + ' д. осталось до дня рождения');
+//     }
+// }
+// getDaysBeforeBirthday(29, 2);
+
+
+
+//================================ Основы работы с DOM в JavaScript =======================================
+
+//============================== Получение DOM элемента в JavaScript ====================================
+// Даны 3 абзаца:
+// <p id="elem1">1</p>
+// <p id="elem2">2</p>
+// <p id="elem3">3</p>
+// Запишите ссылку на каждый из абзацев в отдельную переменную и выведите содержимое каждой из этих переменных в консоль.
+// let p1 = document.querySelector('#elem1');
+// let p2 = document.querySelector('#elem2');
+// let p3 = document.querySelector('#elem3');
+// console.log(p1);
+// console.log(p2);
+// console.log(p3);
+
+// let button = document.querySelector('#button');
+// console.log(button);
+
+
+//=================== <!-- Получение DOM элемента в JavaScript --> =====================
+
+// let p1 = document.querySelector('#elem1');
+// let p2 = document.querySelector('#elem2');
+// let p3 = document.querySelector('#elem3');
+// console.log(p1);
+// console.log(p2);
+// console.log(p3);
+
+// Получите ссылку на первый абзац из дива с id, равным block.
+// let elem = document.querySelector('.elem');
+// console.log(elem);
+
+// Получите ссылку на первый абзац из дива с классом block.
+// let elem = document.querySelector('.elem');
+// console.log(elem);
+
+// Получите ссылку на первый абзац с классом www.
+// let elem = document.querySelector('.www');
+// console.log(elem);
+
+// Сделайте так, чтобы по клику на первую кнопку на экран выводилось число 1, по клику на вторую - число 2, а по клику на третью - число 3.
+// let button1 = document.querySelector('#button1');
+// let button2 = document.querySelector('#button2');
+// let button3 = document.querySelector('#button3');
+
+// button1.addEventListener('click', function() {
+//     alert(1);
+// });
+// button2.addEventListener('click', function() {
+//     alert(2);
+// });
+// button3.addEventListener('click', function() {
+//     alert(3);
+// });
+
+
+//============================ Другие типы событий в JavaScript =============================
+
+// Дана кнопка. По двойному клику по ней выведите на экран какое-нибудь сообщение.
+// let btn = document.querySelector('#elem');
+// btn.addEventListener('dblclick', function() {
+//     alert('ура!!!');
+// });
+
+// Дана кнопка. По наведению на нее выведите на экран какое-нибудь сообщение.
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('mouseover', function() {
+//     alert('оппа!!!');
+// });
+
+// Дана кнопка. По уходу курсора с нее выведите на экран какое-нибудь сообщение.
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('mouseout', function() {
+//     alert('круть!!!');
+// });
+
+
+//===================== Именованные обработчики событий в JavaScript ======================
+// Сделайте так, чтобы по клику на первую кнопку выполнилась функция func1, а по клику на вторую - функция func2.
+// let button1 = document.querySelector('#button1');
+// let button2 = document.querySelector('#button2');
+// button1.addEventListener('click', func1);
+// button2.addEventListener('click', func2);
+// function func1() {
+//     alert(1);
+// }
+
+// function func2() {
+//     alert(2);
+// }
+
+
+//=================== Привязывание одного обработчика ко многим элементам =========================
+// Привяжите эту функцию ко всем 5-ти абзацам.
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+// let elem4 = document.querySelector('#elem4');
+// let elem5 = document.querySelector('#elem5');
+
+// elem1.addEventListener('mouseover', func);
+// elem2.addEventListener('mouseover', func);
+// elem3.addEventListener('mouseover', func);
+// elem4.addEventListener('mouseover', func);
+// elem5.addEventListener('mouseover', func);
+
+// function func() {
+//     alert('message');
+// }
+
+
+//=============== Несколько обработчиков одного события в JavaScript ===========================
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', func1);
+// elem.addEventListener('click', func2);
+// elem.addEventListener('click', func3);
+// function func1() {
+//     alert('1');
+// }
+
+// function func2() {
+//     alert('2');
+// }
+
+// function func3() {
+//     alert('3');
+// }
+
+// Дана кнопка. Привяжите к ней три анонимных обработчика двойного клика по ней. Пусть первый обработчик выводит число 1, второй обработчик - число 2, а третий - число 3.
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('dblclick', function() {
+//     alert(1);
+// });
+// btn.addEventListener('dblclick', function() {
+//     alert(2);
+// });
+// btn.addEventListener('dblclick', function() {
+//     alert(3);
+// });
+
+
+//============================= Работа с текстом тега на JavaScript ===============================
+// Даны два абзаца, содержащие своим текстом какие-то числа, и кнопка. По нажатию на кнопку выведите на экран сумму хранящихся чисел.
+// let p1 = document.querySelector('#p1');
+// let p2 = document.querySelector('#p2');
+// let btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function() {
+//     alert(Number(p1.innerHTML) + Number(p2.innerHTML));
+// });
+
+// Даны два абзаца и две кнопки. Пусть нажатие на первую кнопку выводит текст первого абзаца, а нажатие на вторую кнопку - текст второго абзаца.
+// let p1 = document.querySelector('#p1');
+// let p2 = document.querySelector('#p2');
+// let btn1 = document.querySelector('#btn1');
+// let btn2 = document.querySelector('#btn2');
+
+// btn1.addEventListener('click', function() {
+//     alert(p1.innerHTML);
+// });
+// btn2.addEventListener('click', function() {
+//     alert(p2.innerHTML);
+// });
+
+
+// Дан абзац и две кнопки. По нажатию на первую кнопку запишите в абзац слово 'привет', а по нажатию на вторую кнопку - слово 'пока'.
+// let p = document.querySelector('#p');
+// let btn1 = document.querySelector('#btn1');
+// let btn2 = document.querySelector('#btn2');
+
+// btn1.addEventListener('click', function() {
+//     p.innerHTML = 'привет';
+// });
+// btn2.addEventListener('click', function() {
+//     p.innerHTML = 'пока';
+// });
+
+// Даны 3 абзаца с текстом. По нажатию на первый абзац запишите в его текст число 1, по нажатию на второй абзац запишите в его текст число 2, а по нажатию на третий - запишите в его текст число 3.
+// let p1 = document.querySelector('#p1');
+// let p2 = document.querySelector('#p2');
+// let p3 = document.querySelector('#p3');
+// p1.addEventListener('click', function() {
+//     p1.innerHTML = 1;
+// });
+// p2.addEventListener('click', function() {
+//     p2.innerHTML = 2;
+// });
+// p3.addEventListener('click', function() {
+//     p3.innerHTML = 3;
+// });
+
+// Дан абзац и кнопка. В абзаце записано какое-то число. По нажатию на кнопку возведите значение абзаца в квадрат и запишите его обратно.
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = Number(p.innerHTML) ** 2;
+// });
+
+// Дан абзац с числом и кнопка. По нажатию на кнопку прибавьте к значению абзаца единицу и запишите полученное число обратно.
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = Number(p.innerHTML) + 1;
+// });
+
+// Дан абзац с текстом и кнопка. По нажатию на кнопку запишите в конец текста абзаца восклицательный знак.
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = p.innerHTML + '!';
+// });
+
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = '!' + p.innerHTML;
+// });
+
+// Дан абзац и кнопка. По нажатию на кнопку запишите в абзац текст '<i>hello</i>'.
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = '<i>hello</i>';
+// });
+
+// Дан абзац с текстом и кнопка. По нажатию на кнопку прочитайте текст абзаца, оберните этот текст в теги <b> и запишите новый текст обратно в абзац.
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = '<b>' + p.innerHTML + '</b>';
+// });
+
+
+//==================== Работа с атрибутами тегов через свойства элементов =========================
+// Дан следующий инпут:
+// <input id="elem" type="email">
+// Дана также кнопка. По нажатию на кнопку выведите на экран содержимое атрибута type указанного выше инпута.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     alert(elem.type);
+// });
+
+// Дан следующий инпут:
+// <input id="elem" type="email">
+// Дана также кнопка. По нажатию на кнопку запишите в атрибут type значение submit.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     elem.type = 'submit';
+// });
+
+// Пусть у вас есть ссылка в виде тега a, кнопка и абзац. По нажатию на кнопку выведите в абзац содержимое атрибута href ссылки.
+// let a = document.querySelector('#a');
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = a.href;
+// });
+
+// Пусть у вас есть ссылка и кнопка. По нажатию на кнопку добавьте в конец текста ссылки содержимое ее атрибута href в круглых скобках.
+// let a = document.querySelector('#a');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     a.innerHTML = a.innerHTML + '(' + a.href + ')'; 
+// });
+
+// Пусть у вас есть картинка. Разместите ее на странице в помощью тега img. Пусть даны также кнопка и абзац. Сделайте так, чтобы по клику на кнопку в абзац записался путь к картинки из ее атрибута src.
+// let img = document.querySelector('#img');
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = img.src;
+// });
+
+// Дана картинка в теге img и кнопка. По нажатию на кнопку в атрибут width запишите значение 300.
+// let img = document.querySelector('#img');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     img.width = 300;
+// });
+
+// Дана картинка в теге img и кнопка. Пусть в атрибуте width задана некоторая ширина. Сделайте кнопку, по нажатию на которую ширина картинки будет увеличиваться в 2 раза.
+// let img = document.querySelector('#img');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     img.width = img.width * 2;
+// });
+
+// Пусть у вас есть две картинки. Сделайте на странице тег img и две кнопки. По нажатию на первую кнопку запишите в атрибут src путь к первой картинке, а по нажатию на вторую - путь ко второй картинке.
+// let img = document.querySelector('#img');
+// let btn1 = document.querySelector('#btn1');
+// let btn2 = document.querySelector('#btn2');
+// btn1.addEventListener('click', function() {
+//     img.src = 'https://static4.depositphotos.com/1000423/454/i/600/depositphotos_4548401-stock-photo-symbol-of-yin-and-yang.jpg';
+// });
+// btn2.addEventListener('click', function() {
+//     img.src = 'https://st.depositphotos.com/1288351/3081/i/600/depositphotos_30815063-stock-photo-paint-smears.jpg';
+// });
+
+
+//============================= Работа с текстовыми полями в JavaScript ===============================
+// Сделайте кнопку, нажатие на которую будет выводить текущий текст инпута. После захода на страницу нажмите на кнопку, чтобы увидеть текущий текст инпута, затем поредактируйте текст в инпуте и еще раз нажмите на кнопку. Убедитесь в том, что выведется новый текст инпута.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     alert(elem.value);
+// });
+
+// Дан инпут и кнопка. По нажатию на кнопку запишите в инпут какой-нибудь текст.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     elem.value = 'какой-нибудь текст';
+// });
+
+// Дан инпут, абзац и кнопка. По нажатию на кнопку запишите в абзац текст из инпута.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// let p = document.querySelector('#p');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = elem.value;
+// });
+
+// Даны два инпута и кнопка. В первый инпут пользователем вводится число. По нажатию на кнопку запишите во второй инпут квадрат введенного числа.
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     elem2.value = Number(elem1.value) ** 2;
+// });
+
+// Даны два инпута и кнопка. По нажатию на кнопку запишите в первый инпут значение второго инпута, а во второй инпут - значение первого. Ваш код должен работать универсально, для любых значений инпутов.
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     let elem3 = elem1.value;
+//     elem1.value = elem2.value;
+//     elem2.value = elem3;
+// });
+
+// Даны 5 инпутов, абзац и кнопка. В инпут вводятся числа. По нажатию на кнопку запишите среднее арифметическое введенных чисел в абзац.
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+// let elem4 = document.querySelector('#elem4');
+// let elem5 = document.querySelector('#elem5');
+// let btn = document.querySelector('#btn');
+// let p = document.querySelector('#p');
+// btn.addEventListener('click', function() {
+//     p.innerHTML = (Number(elem1.value) + Number(elem2.value) + Number(elem3.value) + Number(elem4.value) + Number(elem5.value)) / 5;
+// });
+
+// ============================ Фокус текстовых полей в JavaScript ================================
+// Дан инпут. По получению фокуса запишите в него число 1, а по потери фокуса - число 2.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('focus', function() {
+//     elem.value = 1;
+// });
+// elem.addEventListener('blur', function() {
+//     elem.value = 2;
+// });
+
+// Дан инпут. Пусть в него вводится число. По потери фокуса выведите на экран квадрат этого числа.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     elem.value = Number(elem.value) ** 2;
+// });
+
+// Дан инпут, в котором изначально есть какой-то текст. По получению фокуса инпутом очистите содержимое этого инпута.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('focus', function() {
+//     elem.value = '';
+// });
+
+
+// ========================== Исключения при работе с атрибутами в JavaScript =========================
+// Дан див:
+// <div id="elem" class="content no-gap"></div>
+// Дана также кнопка. По нажатию на кнопку прочитайте и выведите на экран значение атрибута class нашего дива.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     alert(elem.className);
+// });
+
+// Дан див:
+// <div id="elem"></div>
+// Дана также кнопка. По нажатию на кнопку запишите в атрибут class нашего дива какой-нибудь класс.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     elem.className = 'this class';
+// });
+
+// Дан див с несколькими CSS классами, записанными через пробел:
+// <div id="elem" class="aaa bbb ccc"></div>
+// Дана также кнопка. По нажатию на кнопку получите массив CSS классов нашего дива.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     let str = elem.className;
+//     let arr = str.split(' ');
+//     console.log(arr);
+// });
+
+
+//======================= Цепочки методов и свойств в JavaScript ==================================
+// Дан следующий код:
+// <img id="image" src="avatar.png">
+// let image = document.querySelector('#image');
+// console.log(image.src);
+// Переделайте приведенный выше код так, чтобы вместо введения переменной image использовалась цепочка.
+// console.log(document.querySelector('#image').src);
+
+// <img id="image" src="avatar.png" width="300" height="500">
+// console.log(document.querySelector('#image').src);
+// console.log(document.querySelector('#image').width);
+// console.log(document.querySelector('#image').height);
+// Укажите на недостатки данного кода. Исправьте их.
+// let elem = document.querySelector('#elem');
+// console.log(elem.src);
+// console.log(elem.width);
+// console.log(elem.height);
+
+// Дан инпут. По получению фокуса этим инпутом запишите в него число 1, а по потери фокуса - число 2. Для обращения у инпуту внутри функции-обработчика используйте объект this.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('focus', function() {
+//     this.value = 1;
+// });
+// elem.addEventListener('blur', function() {
+//     this.value = 2;
+// });
+
+// Дана кнопка, значением которой служит число 1. Сделайте так, чтобы по клику на эту кнопку ее значение каждый раз увеличивалось на единицу.
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     this.innerHTML = Number(this.innerHTML) + 1;
+// });
+
+// Даны 5 абзацев с какими-то текстами. По клику на любой абзац запишите в конец его текста восклицательный знак.
+// let p1 = document.querySelector('#p1');
+// let p2 = document.querySelector('#p2');
+// let p3 = document.querySelector('#p3');
+// let p4 = document.querySelector('#p4');
+// let p5 = document.querySelector('#p5');
+
+// p1.addEventListener('click', func);
+// p2.addEventListener('click', func);
+// p3.addEventListener('click', func);
+// p4.addEventListener('click', func);
+// p5.addEventListener('click', func);
+
+// function func() {
+//     this.innerHTML = this.innerHTML + '!';
+// }
+
+// Даны 3 инпута, в которых записаны какие-то числа. По потери фокуса в любом из инпутов возведите стоящее в нем число в квадрат.
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+
+// elem1.addEventListener('blur', func);
+// elem2.addEventListener('blur', func);
+// elem3.addEventListener('blur', func);
+
+// function func() {
+//     this.value = Number(this.value) ** 2;
+// }
+
+
+//============================= Получение группы элементов ====================================
+// Даны абзацы и кнопка. По нажатию на кнопку найдите все абзацы, переберите из циклом и установите текст каждого абзаца в значение 'text'.
+// let elems = document.querySelectorAll('.par');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     for (let elem of elems) {
+//         elem.innerHTML = 'текст';
+//     }
+// });
+
+// Даны абзацы с текстом и кнопка. По нажатию на кнопку запишите в конец текста каждого абзаца его порядковый номер.
+// let elems = document.querySelectorAll('.par');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     for (let i = 0; i < elems.length; i++) {
+//         elems[i].innerHTML += i + 1; 
+//     }
+// });
+
+// Даны инпуты с числами, абзац и кнопка. По нажатию на кнопку найдите сумму чисел из инпутов и запишите эту сумму в текст абзаца.
+// let elems = document.querySelectorAll('.digits');
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     let sum = 0;
+//     for (let elem of elems) {
+//         sum += Number(elem.value);
+//     }
+//     p.innerHTML = sum;
+// });
+
+// Дана следующая функция:
+// function func() {
+//     this.value = Number(this.value) + 1;
+// }
+// Даны также инпуты. Сделайте так, чтобы по потери фокуса в любом из наших инпутов выполнялась приведенная выше функция.
+// let elems = document.querySelectorAll('.class');
+// for (let elem of elems) {
+//     elem.addEventListener('blur', func);
+// }
+
+// function func() {
+//     this.value = Number(this.value) + 1;
+// }
+
+// Даны абзацы с числами. Сделайте так, чтобы по клику на любой абзац его число в нем возводилось в квадрат.
+// let elems = document.querySelectorAll('.class');
+// for (let elem of elems) {
+//     elem.addEventListener('click', func);
+// }
+
+// function func() {
+//     this.innerHTML = Number(this.innerHTML) ** 2;
+// }
+
+// Дан следующий код:
+// <div>1</div>
+// <div>2</div>
+// <div>3</div>
+// <div>4</div>
+// <div>5</div>
+// let divs = document.querySelectorAll('div');
+// for (let div of divs) {
+//     div.addEventListener('click', func);
+// }
+
+// function func() {
+//     this.innerHTML++;
+// }
+// Сделайте функцию-обработчик анонимной.
+// let divs = document.querySelectorAll('div');
+// for (let div of divs) {
+//     div.addEventListener('click', function() {
+//         this.innerHTML++;
+//     });
+// }
+
+
+//====================== Отвязывание событий через removeEventListener ================================
+// Дана ссылка. По нажатию на эту ссылку добавьте в конец ее текста содержимое ее атрибута href в круглых скобках. Сделайте так, чтобы это добавление происходило лишь по первому нажатию.
+// let link = document.querySelector('#link');
+// link.addEventListener('click', func);
+
+// function func() {
+//     link.innerHTML = link.innerHTML + '(' + link.href + ')';
+//     this.removeEventListener('click', func);
+// }
+
+// Дана кнопка, значением которой служит число 1. Сделайте так, чтобы по клику на эту кнопку ее значение каждый раз увеличивалось на единицу. После того, как значение кнопки достигнет 10 - отвяжите обработчик события, чтобы кнопка больше не реагировала на нажатие.
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', func);
+
+// function func() {
+//     if (btn.innerHTML < 10) {
+//         btn.innerHTML = Number(btn.innerHTML) + 1;
+//     } else {
+//         this.removeEventListener('click', func);
+//     }
+// }
+
+
+//========================== Отвязывание обработчиков событий в цикле ===============================
+// Даны абзацы. По нажатию на любой из абзацев добавьте ему в конец восклицательный знак. Сделайте так, чтобы это добавление происходило лишь по первому нажатию.
+// let elems = document.querySelectorAll('p');
+// for (let elem of elems) {
+//     elem.addEventListener('click', func);
+// }
+
+// function func() {
+//     this.innerHTML += '!';
+//     this.removeEventListener('click', func);
+// }
+
+
+//============================= Отвязывание анонимных функций в JavaScript ===========================
+// Пусть мы хотим отвязать эту функцию от абзаца после клика по этому абзацу. Нас, однако, ждет проблема: у функции нет имени, а значит мы не сможем обратится к ней по этому имени, чтобы отвязать ее.
+// Для решения проблему нужно дать имя функции, сделав из нее именованное функциональное выражение.
+
+// let elems = document.querySelectorAll('p');
+
+// for (let elem of elems) {
+//     elem.addEventListener('click', function func() {
+//         alert(this.innerHTML);
+//         this.removeEventListener('click', func); // отвязываем функцию
+//     });
+// }    
+
+
+
+//=========================== Работа с атрибутами через методы в JavaScript ===========================
+// <input id="elem" value="text">
+// Получите значение его атрибута value.   
+// let elem = document.querySelector('#elem');
+// let value = elem.getAttribute('value');
+// console.log(value);
+
+// <input id="elem" class="www zzz">
+// Получите значение его атрибута class.
+// let elem = document.querySelector('#elem');
+// let clas = elem.getAttribute('class');  
+// console.log(clas);
+
+// <input id="elem">
+// Установите его атрибут value в значение 'text'.
+// let elem = document.querySelector('#elem');
+// elem.setAttribute('value', 'text');
+
+// <input id="elem">
+// Установите ему атрибут class в значение 'valid'.
+
+// let elem = document.querySelector('#elem');
+// elem.setAttribute('class', 'valid');
+
+// <input id="elem" value="text">
+// Удалите у него атрибут value.
+// let elem = document.querySelector('#elem');
+// elem.removeAttribute('value');
+
+// <input id="elem" value="text">
+// Проверьте наличие у него атрибута value.
+// let elem = document.querySelector('#elem');
+// console.log(elem.hasAttribute('value'));
+
+
+//============================== Разница между способами получения атрибутов ===========================
+// Дан инпут с каким-то начальным значением. Дана также кнопка. По нажатию на кнопку определите, было ли изменено пользователем начальное значение инпута.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     if (elem.value == elem.getAttribute('value')) {
+//         alert('значение не изменилось');
+//     } else {
+//         alert('значение поменялось');
+//     }
+// });
+
+// Дан инпут с каким-то начальным значением. Пусть пользователь меняет это значение. Сделайте рядом с инпутом кнопку, по нажатию на которую value инпута вернется в изначальное значение.
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     if (elem.value != elem.getAttribute('value')) {
+//        elem.value = elem.getAttribute('value');
+//     }
+// });
+
+
+//========================== Манипулирование CSS классами в JavaScript ================================
+// Дан элемент:
+// <p id="elem" class="www ggg zzz"></p>
+// Узнайте количество его классов.
+// let elem = document.querySelector('#elem');
+// let classNames = elem.classList;
+// console.log(classNames.length);
+
+// <p id="elem" class="www ggg zzz"></p>
+// Переберите в цикле его классы.
+// let elem = document.querySelector('#elem');
+// let classNames = elem.classList;
+// for (let className of classNames) {
+//     console.log(className);
+// }
+
+// Дан элемент:
+// <p id="elem" class="www ggg zzz"></p>
+// Добавьте ему класс xxx.
+// let elem = document.querySelector('#elem');
+// elem.classList.add('xxx');
+
+// Удалите у него класс www и класс zzz.
+// let elem = document.querySelector('#elem');
+// elem.classList.remove('zzz', 'www');
+
+// Проверьте наличие у него класса ggg.
+// let elem = document.querySelector('#elem');
+// console.log(elem.classList.contains('ggg'));
+
+// Дан элемент. Добавьте ему класс www, если его нет и удалите - если есть.
+// let elem = document.querySelector('#elem');
+// elem.classList.toggle('www');
+
+
+//================= Стилизация элементов через атрибут style в JavaScript ==========================
+// Дан див и кнопка. По клику на кнопку добавьте диву ширину, высоту и границу.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     elem.style.width = '120px';
+//     elem.style.height = '120px';
+//     elem.style.border = 'solid';
+// });
+
+// Дан див с текстом и кнопка. По клику на кнопку установите диву размер шрифта в 20px, а также верхнюю границу и фон.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     elem.style.fontSize = '20px';
+//     elem.style.borderTop = 'solid';
+//     elem.style.backgroundColor = 'blue';
+// });
+
+
+//====================== Стилизация с помощью CSS классов на JavaScript ============================
+
+// Дан абзац. Даны кнопки 'перечеркнуть', 'сделать жирным', 'сделать красным'. Пусть по нажатию на каждую кнопку заданное действие происходит с абзацем (становится красным, например).
+// let elem = document.querySelector('#elem');
+// let btn1 = document.querySelector('#btn1');
+// let btn2 = document.querySelector('#btn2');
+// let btn3 = document.querySelector('#btn3');
+
+// btn1.addEventListener('click', function() {
+//     elem.classList.toggle('cross-out');
+// });
+// btn2.addEventListener('click', function() {
+//     elem.classList.toggle('bold');
+// });
+// btn3.addEventListener('click', function() {
+//     elem.classList.toggle('colored');
+// });
+
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     elem.classList.toggle('active');
+// });
+
+
+//============================= Нахождение элементов по родственным связям =================================
+// Найдите первого потомка этого элемента и сделайте его текст красного цвета.
+// let elem = document.querySelector('#elem');
+// let child = elem.firstElementChild.classList.toggle('colored');
+
+// Найдите последнего потомка этого элемента и сделайте его текст красного цвета.
+// let elem = document.querySelector('#elem');
+// let child = elem.lastElementChild.classList.toggle('colored');
+
+// Найдите всех потомков этого элемента и добавьте им в конец текст '!'.
+// let elem = document.querySelector('#elem');
+// let children = elem.children;
+// for (let child of children) {
+//     child.innerHTML += '!';
+// }
+
+// Найдите его родителя и задайте ему красную границу.
+// let elem = document.querySelector('#elem');
+// let parent = elem.parentElement.classList.toggle('brd')
+
+// Найдите его родителя его родителя и задайте ему красную границу.
+// let elem = document.querySelector('#elem');
+// let parent = elem.parentElement.parentElement.classList.toggle('brd');
+
+// Найдите ближайшего родителя этого элемента, являющегося тегом div.
+// let elem = document.querySelector('#elem');
+// let parent = elem.closest('div');
+// console.log(parent.id);
+
+// let elem = document.querySelector('#child');
+// let parent = elem.closest('.www');
+// console.log(parent.id);
+
+
+// Найдите его соседа сверху и добавьте ему в конец текст '!'.
+// let elem = document.querySelector('#elem');
+// elem.previousElementSibling.innerHTML = elem.previousElementSibling.innerHTML + '!';
+
+// Найдите его соседа снизу и добавьте ему в конец текст '!'.
+// let elem = document.querySelector('#elem');
+// elem.nextElementSibling.innerHTML += '!';
+
+// Найдите его соседа снизу его соседа снизу (следующий элемент за соседним) и добавьте ему в конец текст '!'.
+// let elem = document.querySelector('#elem');
+// let neighbor = elem.nextElementSibling;
+// neighbor.nextElementSibling.innerHTML += '!';
+
+// Поменяйте местами текст его соседа сверху и текст его соседа снизу.
+// let elem = document.querySelector('#elem');
+// let neighborUp = elem.previousElementSibling;
+// let neighborDown = elem.nextElementSibling;
+// let some = neighborUp.innerHTML;
+// neighborUp.innerHTML = neighborDown.innerHTML;
+// neighborDown.innerHTML = some;
+
+
+//========================= Другие полезные методы для поиска элементов =================================
+// Получите этот элемент с помощью метода getElementById и установите ему какой-нибудь текст.
+// let elem = document.getElementById('elem');
+// elem.innerHTML = 'what about lorem???'
+
+// Получите все теги li по имени тега и сделайте их текст красного цвета.
+// let elems= document.getElementsByTagName('li');
+// for (let elem of elems) {
+//     elem.classList.toggle('colored');
+// }
+
+// Получите эти элементы по имени класса и сделайте их текст красного цвета.
+// let elems = document.getElementsByClassName('www');
+// for (let elem of elems) {
+//     elem.classList.toggle('colored');
+// }
+
+
+//========================= Поиск элементов внутри другого элемента ===================================
+// Найдите внутри родителя элементы с классом www и запишите их в переменную elems1. Затем найдите внутри родителя элементы с классом ggg и запишите их в переменную elems2.
+// let parent = document.querySelector('#parent');
+// let elems1 = parent.querySelectorAll('.www');
+// let elems2 = parent.querySelectorAll('.ggg');
+
+
+//============================= Пользовательские атрибуты в JavaScript =================================
+// Сделайте так, чтобы по клику на див в конец его текста добавилось содержимое его атрибута data-text.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function() {
+//     elem.innerHTML += elem.dataset.text;
+// });
+
+
+
+// // Сделайте так, чтобы по клику на любой из дивов ему в конец записывался его порядковый номер.
+// let elems = document.getElementsByTagName('div');
+// for (let elem of elems) {
+//     elem.addEventListener('click', function() {
+//         this.innerHTML += this.dataset.num;
+//     });
+// }
+
+// Дана кнопка. Сделайте так, чтобы эта кнопка считала количество кликов по ней, записывая их в какой-нибудь пользовательский атрибут. Пусть по двойному клику на эту кнопку на экран выводится, сколько кликов по этой кнопке было сделано.
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     btn.dataset.click = Number(btn.dataset.click) + 1;
+// });
+// btn.addEventListener('dblclick', function() {
+//     alert(btn.dataset.click);
+// });
+
+// В этом инпуте в атрибуте data-length содержится количество символов, которое нужно ввести в инпут. Сделайте так, чтобы по потери фокуса, если количество введенных символов не совпадает с заданным, выводилось сообщение об этом.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     if (elem.value.length != elem.dataset.length) {
+//         alert('должно быть ' + elem.dataset.length + ' символов');
+//     }
+// });
+
+// В этом инпуте атрибуты data-min и data-max содержат диапазон. Сделайте так, чтобы по потери фокуса, если количество введенных символов не попадает в этот диапазон, выводилось сообщение об этом.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     if (elem.value.length < elem.dataset.min || elem.value.length > elem.dataset.max) {
+//         alert('количество символов должно быть в диапозоне от ' + elem.dataset.min + ' до ' + elem.dataset.max);
+//     }
+// });
+
+// Сделайте так, чтобы по клику на див в конец его текста добавлялась стоимость покупки, равная цене, умноженной на количество.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function() {
+//     elem.innerHTML = elem.innerHTML + ' ' + Number(elem.dataset.productPrice) * Number(elem.dataset.productAmount);
+// });
+
+// Даны абзацы. Переберите их циклом и каждому абзацу в атрибут data-num запишите порядковый номер этого абзаца. Используйте метод setAttribute.
+// let elems = document.getElementsByTagName('p');
+// for (let i = 0; i < elems.length; i++) {
+//     elems[i].dataset.num = i ;
+// }
+
+
+//================================ Работа с узлами в JavaScript =======================================
+// Переберите циклом все узлы этого дива и выведите их в консоль.
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+//     console.log(node);
+// }
+
+// Переберите циклом все узлы этого дива и выведите в консоль их названия.
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+//     console.log(node.nodeName);
+// }
+
+// Переберите циклом все узлы этого дива и выведите в консоль только узлы-элементы и текстовые узлы.
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+//     if (node.nodeType == 1 || node.nodeType == 3) {
+//         console.log(node);
+//     }
+// }
+
+// Переберите циклом все узлы этого дива и выведите в консоль тексты всех узлов.
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+//     console.log(node.textContent);
+// }
+
+// Переберите циклом все узлы этого дива и выведите в консоль тексты всех комментариев и текстовых узлов.
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+//     if (node.data) {
+//         console.log(node.data);
+//     }
+// }
+
+// Переберите циклом все узлы этого дива и выведите в консоль тексты текстовых узлов и элементов.
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+//     if (node.nodeType == 1 || node.nodeType == 3) {
+//         console.log(node.textContent);
+//     }
+// }
+
+// Переберите циклом все узлы этого дива и каждому узлу в конец запишите его тип.
+// let elem = document.querySelector('#elem');
+// for (let node of elem.childNodes) {
+//     if (node.nodeType == 1) {
+//         console.log(node + ' элемент');
+//     }
+//     if (node.nodeType == 3) {
+//         console.log(node + ' текстовый');
+//     }
+//     if (node.nodeType == 8) {
+//         console.log(node + ' комментарий');
+//     }
+// }
+
+
+//============================= Отработка изученного материала на работу с DOM ===============================
+// Дан инпут и абзац. По потери фокуса в инпуте запишите значение инпута в конец текста абзаца.
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('#p');
+// elem.addEventListener('blur', function() {
+//     p.innerHTML += elem.value;
+// });
+
+// Дано несколько инпутов, абзац и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац.
+// let put = document.querySelectorAll('.put');
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function() {
+//     let sum = 0;
+//     for (let elem of put) {
+//         sum += Number(elem.value);
+//     }
+//     p.innerHTML = sum;
+// });
+
+// Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     let arr = elem.value.split('');
+//     let sum = 0;
+//     for (let el of arr) {
+//         sum += Number(el);
+//     }
+//     console.log(sum);
+// });
+
+// Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество).
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     let arr = elem.value.split(',');
+//     let sum = 0;
+//     for (let el of arr) {
+//         sum += Number(el);
+//     }
+//     console.log(sum / arr.length);
+// });
+
+// Даны 4 инпута. В первый инпут вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в остальные 3 инпута.
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+// let elem4 = document.querySelector('#elem4');
+
+// elem1.addEventListener('blur', function() {
+//     let arr = elem1.value.split(' ');
+//     elem2.value = arr[0];
+//     elem3.value = arr[1];
+//     elem4.value = arr[2];
+// });
+
+// // Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы. Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в этом же инпуте).
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('blur', function() {
+//     let arr = elem.value.split(' ');
+//     let result = '';
+//     let fullResult = '';
+//     for (let el of arr) {
+//         result = el.slice(0, 1).toUpperCase() + el.slice(1);
+//         fullResult = fullResult + result + ' ';
+//     }
+//     elem.value = fullResult;
+// });
+
+// Дан инпут. В него вводится текст. По потери фокуса узнайте количество слов в этом тексте.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     let arr = elem.value.split(' ');
+//     console.log(arr.length);
+// });
+
+// Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     let arr = elem.value.split('.').reverse().join('-');
+//     elem.value = arr;
+// });
+
+// Дан инпут. В него вводится слово. По нажатию на кнопку проверьте то, что это слово читается с начала и с конца одинаково (например, мадам).
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     let arr = elem.value.split('');
+//     console.log(elem.value == arr.reverse().join(''));
+// });
+
+// Дан инпут. В него вводится число. Проверьте по потери фокуса, что это число содержит внутри себя цифру 3.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     if (elem.value.indexOf(3) != -1) {
+//         console.log(true);
+//     } else {
+//         console.log(false);
+//     }
+// });
+
+// Даны несколько абзацев и кнопка. По нажатию на кнопку запишите в конец каждого абзаца его порядковый номер.
+// let elems = document.getElementsByTagName('p');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     for (let i = 1; i < elems.length; i++) {
+//         elems[i].innerHTML += i;
+//     }
+// });
+
+// Даны ссылки. Добавьте в конец каждой ссылки ее href в круглых скобках.
+// let elems = document.getElementsByTagName('a');
+// for (let elem of elems) {
+//     elem.innerHTML += '(' + elem.href + ')';
+// }
+
+// Даны ссылки. Если ссылка начинается с http://, то добавьте ей в конец стрелку → (делается так: &rarr;).
+let elems = document.getElementsByTagName('a');
+for (let elem of elems) {
+    if (elem.href.startsWith('https://')) {
+        elem.innerHTML += '&rarr;';
+    }
+}

@@ -7114,9 +7114,1394 @@
 // }
 
 // Даны ссылки. Если ссылка начинается с http://, то добавьте ей в конец стрелку → (делается так: &rarr;).
-let elems = document.getElementsByTagName('a');
-for (let elem of elems) {
-    if (elem.href.startsWith('https://')) {
-        elem.innerHTML += '&rarr;';
-    }
-}
+// let elems = document.getElementsByTagName('a');
+// for (let elem of elems) {
+//     if (elem.href.startsWith('https://')) {
+//         elem.innerHTML += '&rarr;';
+//     }
+// }
+
+// Даны несколько абзацев с числами. По нажатию на любой абзац запишите в него квадрат числа, которое в нем находится.
+// let elems = document.getElementsByTagName('p');
+// for (let elem of elems) {
+//     elem.addEventListener('click', function() {
+//         this.innerHTML = Number(this.innerHTML) ** 2;
+//     });
+// }
+
+// Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса узнайте день недели (словом), который приходится на эту дату.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     let arr = elem.value.split('.');
+//     let date = new Date(arr[2], arr[1] - 1, arr[0]);
+//     let day = date.getDay();
+//     let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+//     elem.value = days[day];
+// });
+
+// Дан инпут. Реализуйте кнопочки +1, -1, которые будут увеличивать или уменьшать на 1 значение инпута. Сделайте так, чтобы это значение не могло стать меньше нуля.
+// let elem = document.querySelector('#elem');
+// let btnPlus1 = document.querySelector('#btnPlus1');
+// let btnMinus1 = document.querySelector('#btnMinus1');
+
+// btnPlus1.addEventListener('click', function() {
+//     elem.value = Number(elem.value) + 1;
+// });
+// btnMinus1.addEventListener('click', function() {
+//     elem.value = Number(elem.value) - 1;
+//     if (elem.value < 0) {
+//         elem.value = 0;
+//         alert('значение не может быть меньше 0');
+//     }
+// });
+
+// Дан инпут. Даны абзацы. Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам.
+// let el = document.querySelector('#elem');
+// let elems = document.getElementsByTagName('p');
+
+// for (let elem of elems) {
+//     elem.addEventListener('click', function() {
+//         el.value = Number(el.value) + 1;
+//     });
+// }
+
+// На странице есть дивы. В них есть текст. Обойдите все дивы и обрежьте тот текст, который в них стоит так, чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста
+// let elems = document.getElementsByTagName('div');
+// for (let elem of elems) {
+//     elem.innerHTML = elem.innerHTML.slice(0, 11) + '...';
+// }
+
+// Дан инпут. В него вводится число. По потери фокуса проверьте, что в нем лежит число от 1 до 100. Если это так - покрасьте инпут в зеленый цвет, а если не так - в красный.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', function() {
+//     if (elem.value >= 1 && elem.value <= 100) {
+//         elem.classList.toggle('colored-green');
+//     } else {
+//         elem.classList.toggle('colored-red');
+//     }
+// });
+
+// Дан инпут, кнопка и абзац. В инпут вводится число. По нажатию на кнопку выведите в абзац факториал этого числа.
+// let elem = document.querySelector('#input');
+// let p = document.querySelector('#p');
+// let btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function() {
+//    let num = Number(input.value);
+//    let result = 1;
+//    for (let i = 1; i <= num; i++) {
+//        result *= i;
+//    }
+//    p.innerHTML = result;
+// });
+
+
+//==================================== Работа с текстареа в JavaScript ========================================
+// Дан текстареа и абзац. По потери фокуса в текстареа запишите его текст в абзац.
+// let elem = document.querySelector('#elem');
+// let p = document.querySelector('#p');
+
+// elem.addEventListener('blur', function() {
+//     p.innerHTML = elem.value;
+//     elem.value = '';
+// });
+
+
+//================================== Атрибут disabled в JavaScript ============================================
+// Дан инпут и кнопка. По нажатию на кнопку заблокируйте инпут.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function() {
+//     elem.disabled = true;
+// });
+
+// Дан инпут и две кнопки. Пусть нажатие на первую кнопку блокирует инпут, а нажатие на вторую - отблокирует.
+// let elem = document.querySelector('#elem');
+// let btnDis = document.querySelector('#btn-dis');
+// let btnEn = document.querySelector('#btn-en');
+
+// btnDis.addEventListener('click', function() {
+//     elem.disabled = true;
+// });
+// btnEn.addEventListener('click', function() {
+//     elem.disabled = false;
+// });
+
+// // Дан инпут и кнопка. По нажатию на кнопку узнайте, заблокирован инпут или нет.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function() {
+//     if (elem.disabled) {
+//         elem.value = 'Поле заблокировано';
+//     } else {
+//        elem.value = 'Поле не заблокировано';
+//     }
+// });
+
+ 
+//================================== Работа с чекбоксами в JavaScript ========================================
+// Дан чекбокс и две кнопки. По нажатию на первую кнопку установите чекбокс в отмеченное состояние, а по нажатию на вторую - в неотмеченное.
+// let elem =document.querySelector('#elem');
+// let on =document.querySelector('#on');
+// let off =document.querySelector('#off');
+
+// on.addEventListener('click', function() {
+//   elem.checked;
+// });
+// off.addEventListener('click', function() {
+//   elem.checked = false;
+// });
+
+// Дан чекбокс, кнопка и абзац. По нажатию на кнопку, если чекбокс отмечен, выведите в абзац слово 'привет', а если чекбокс не отмечен, то слово 'пока'.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+// let text = document.querySelector('#text');
+
+// btn.addEventListener('click', function() {
+//     if (elem.checked) {
+//         text.innerHTML = 'Привет';
+//     } else {
+//         text.innerHTML = 'Пока';
+//     }
+// });
+
+
+//================================== Чередование атрибутов без значений ====================================
+// Дан чекбокс и кнопка. Сделайте так, чтобы каждый клик по кнопке приводил к смене состояния чекбокса.
+// let elem = document.querySelector('#elem');
+// let btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function() {
+//     if (elem.checked) {
+//         elem.checked = false;
+//     } else {
+//         elem.checked = true;
+//     }
+// });
+
+
+//===================================== Работа с радиокнопками в JavaScript =======================================
+// Даны 3 радиокнопки, абзац и кнопка. По клику на кнопку выведите в абзац value отмеченной радиокнопки.
+// let radios = document.querySelectorAll('input[type="radio"]');
+// let text = document.querySelector('#text');
+// let btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function() {
+//     for (let radio of radios) {
+//         if (radio.checked) {
+//             text.innerHTML = radio.value;
+//         }
+//     }
+// });
+
+
+//========================================== Событие change в JavaScript ===========================================
+// Дан инпут и абзац. По изменению инпута выведите его текст в абзац.
+// let elem = document.querySelector('#elem');
+// let text = document.querySelector('#text');
+
+// elem.addEventListener('change', function() {
+//     text.innerHTML = this.value;
+// });
+
+// Дан чекбокс. По изменению чебокса выведите на экран его новое состояние.
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('change', function() {
+//     if (elem.checked) {
+//         console.log(elem.checked);
+//     } else {
+//         console.log(elem.checked);
+//     }
+// });
+
+// Дан инпут. По его изменению проверьте, количество символов в нем меньше 5-ти или нет. Если меньше - покрасьте границу инпута в зеленый цвет, а если больше - в красный.
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('change', function() {
+//     if (this.value.length < 5) {
+//         this.classList.toggle('colored-border-green');
+//     } else {
+//         this.classList.toggle('colored-border-red')
+//     }
+// });
+
+
+//==================================== Событие input в JavaScript ===========================================
+// Дан инпут. Пусть в него вводится текст. Как только длина текста достигнет 5-ти, выведите на экран сообщение об этом.
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('input', function() {
+//     if (this.value.length >= 5) {
+//         console.log('длина текста достигла 5 символов');
+//     }
+// });
+
+// // Дан инпут. Пусть в него разрешено ввести 5 символов. Дан также абзац. По мере ввода символов в инпут пишите, сколько еще символов можно ввести. Когда количество символов превысит 5-ти, то в абзац выводите то, на сколько символов превышена длина текста.
+// let elem = document.querySelector('#elem');
+// let text = document.querySelector('#text');
+
+// elem.addEventListener('input', function() {
+//     let i = this.value.length;
+//     if (i < 5) {
+//         text.innerHTML = 'можно ввести еще ' + (5 - i) + ' симв.';
+//     }
+//     if (i == 5) {
+//         text.innerHTML = 'стоп больше вводить нельзя';
+//     }
+//     if (i > 5) {
+//         text.innerHTML = 'длина текста превышена на ' + (i - 5) + ' симв.'
+//     }
+// });
+
+
+//=================================== Методы focus и blur в JavaScript ========================================
+// Даны два инпута. Сделайте так, чтобы после ввода двух символов фокус ввода переходил ко второму инпуту, а после ввода двух символов в этот инпут - фокус из него убирался.
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+
+// elem1.addEventListener('input', function() {
+//     if (this.value.length == 2) {
+//         elem2.focus();
+//     }
+// });
+// elem2.addEventListener('input', function() {
+//     if (elem2.value.length == 2) {
+//         elem2.blur();
+//     }
+// });
+
+
+//================================== Работа с выпадающими списками в JavaScript =====================================
+// Дан селект, абзац и кнопка. По клику на кнопку выведите текст выбранного пункта списка в абзац.
+// let select = document.querySelector('#select');
+// let text = document.querySelector('#text');
+// let btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function() {
+//     text.innerHTML = select.value;
+// });
+
+// Сделайте выпадающий список годов от 2020 до 2030. При выборе какого-нибудь пункта списка выведите сообщение о том, високосный этот год или нет.
+// let select = document.querySelector('#select');
+// // let year = select.value;
+// select.addEventListener('change', function() {
+//     let date = new Date(select.value, 2, 0);
+//     if (date.getDate() == 29) {
+//         console.log('високосный год');
+//     } else {
+//         console.log('невисокосный год');
+//     }
+// });
+
+
+// Сделайте выпадающий список с названиями дней недели. В качестве атрибутов value пунктов списка добавьте номера дней недели от 1 до 7. По изменению списка выведите на экран сообщение о том, выбран выходной день или рабочий.
+// let select = document.querySelector('#select');
+// select.addEventListener('change', function() {
+//     if (Number(select.value) >= 1 && Number(select.value) <= 5) {
+//         console.log('рабочий день');
+//     } else {
+//         console.log('выходной день');
+//     }
+// });
+
+
+//================================= Изменение выбранного пункта списка на JavaScript ===============================
+// Сделайте выпадающий список с названиями месяцев. Сделайте так, чтобы по JavaScript по умолчанию выбирал в этом списке текущий месяц.
+// let select = document.querySelector('#select');
+// let date = new Date();
+// select.value = date.getMonth() + 1;
+
+
+//=============================== Номер выбранного пункта выпадающего списка =====================================
+// Дан инпут и селект. В инпут вводится какое-то число. По потери фокуса сделайте выделенным пункт списка, номер которого равен значению из инпута.
+// let elem = document.querySelector('#elem');
+// let select = document.querySelector('select');
+
+// elem.addEventListener('blur', function() {
+//     select.selectedIndex = this.value - 1;
+// });
+
+// Сделайте выпадающий список с названиями дней недели. Сделайте так, чтобы по JavaScript по умолчанию выбирал в этом списке текущий день.
+// let select = document.querySelector('#select');
+// let date = new Date();
+// select.selectedIndex = date.getDay() - 1;
+
+
+//=============================== Получение пунктов выпадающего списка на JavaScript ================================
+// Переберите все пункты списка циклом и в конец текста каждого пункта добавьте значение его атрибута value
+// let select = document.querySelector('#select');
+// for (let option of select) {
+//     option.innerHTML += ' - ' + option.value; 
+// }
+
+
+//=========================== Работа с пунктами выпадающего списка на JavaScript =================================
+// Переберите пункты списка циклом и для выбранного пункта в конец текста добавьте восклицательный знак, а для невыбранных пунктов - вопросительный.
+// let select = document.querySelector('#select');
+// for (let option of select) {
+//     if (option.selected) {
+//         option.text += '!';
+//     } else {
+//         option.text += '?';
+//     }
+// }
+
+// Дан выпадающий список и кнопка. По клику на кнопку сделайте отмеченным последний пункт списка.
+// let select = document.querySelector('#select');
+// let btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function() {
+//     let lastOption = select[select.length - 1];
+//     lastOption.selected = true;
+// });
+
+// Дан селект и кнопка. По нажатию на кнопку выведите на экран текст отмеченного пункта списка.
+// let select = document.querySelector('#select');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     console.log(select[select.selectedIndex].text);
+// });
+
+// Дан селект и кнопка. По нажатию на кнопку добавьте в конец текста выбранного пункта восклицательный знак.
+// let select = document.querySelector('#select');
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function() {
+//     select[select.selectedIndex].text += '!';
+// });
+
+
+//================================ Основы работы с объектом Event в JavaScript ====================================
+// Самостоятельно проделайте описанные манипуляции и выведите объект с событием в консоль. Изучите структуру этого объекта.
+// let btn = document.querySelector('#btn');
+// btn.addEventListener('click', function(event) {
+//     console.log(event)
+// });
+
+
+//======================================= Координаты события в JavaScript =======================================
+// Сделайте так, чтобы при движении мышки по странице, отображались координаты курсора, подобно тому, как это сделано в следующем образце:
+// let elem = document.getElementById('elem');
+// document.addEventListener('mousemove', function(event) {
+//     elem.innerHTML = event.clientX + ' : ' + event.clientY; 
+// });
+
+
+//================================== Тип события в объекте Event в JavaScript ===================================
+// Допишите код функции func так, чтобы при клике на элемент этот элемент красился в зеленый цвет, а при двойном клике - в красный.
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', func);
+// elem.addEventListener('dblclick', func);
+
+// function func(event) {
+// 	if (event.type == 'click') {
+//         elem.classList.toggle('colored-green');
+//     }
+//     if (event.type == 'dblclick') {
+//         elem.classList.toggle('colored-red');
+//     }
+// }
+
+
+//================================ Элемент события в объекте Event в JavaScript ====================================
+// Привяжите к тегу ul обработчик клика. В этом обработчике проверяйте с помощью свойства tagName, по какому тегу был клик. Если клик был по тегу li - добавьте в конец текста этого тега восклицательный знак. А если клик был по тегу ul - добавьте ему в конец еще один пункт списка.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function(event) {
+//     if (event.target.tagName == 'LI') {
+//         event.target.innerHTML += '!'
+//     }
+//     if (event.target.tagName == 'UL') {
+//         event.target.innerHTML += '<li>text</li>';
+//     }
+// });
+
+
+// =============================== Получение нажатых клавиш в JavaScript ===================================
+// Дан абзац и инпут. В него вводится текст и нажимается клавиша Enter. Сделайте так, чтобы по нажатию Enter введенный текст попадал в абзац под инпутом, а содержимое инпута очищалось.
+// let elem = document.querySelector('#elem');
+// let text = document.querySelector('#text');
+
+// elem.addEventListener('keydown', function(event) {
+//     if (event.code == 'Enter') {
+//         text.innerHTML = this.value;
+//     }
+// });
+
+
+//=========================== Отслеживание клавиш-модификаторов в JavaScrip ======================================
+// Дан элемент. Сделайте так, чтобы по клику на него он красился в красный цвет, но только если в момент клика нажата клавиша Alt.
+// let elem = document.querySelector('#elem');
+
+// elem.addEventListener('click', function(event) {
+//     if(event.altKey) {
+//         elem.classList.toggle('colored');
+//     }
+// });
+
+
+// Сделайте так, чтобы по клику на любую li, в конец ее текста добавлялось число 1, если нажата клавиша Ctrl, и число 2, если нажата клавиша Shift.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function(event) {
+//     if (event.target.tagName == 'LI') {
+//         if (event.ctrlKey) {
+//             event.target.innerHTML += 1;
+//         }
+//         if (event.shiftKey) {
+//             event.target.innerHTML += 2;
+//         }  
+//     }
+// });
+
+
+//====================================== Отмена действия по умолчанию в JavaScript ======================================
+// Даны ссылки. Сделайте так, чтобы по клику на ссылку ей в конец записывался ее href, а перехода по ссылке не происходило.
+// let elems = document.querySelectorAll('a');
+// for (let elem of elems) {
+//     elem.addEventListener('click', function(event) {
+//         event.preventDefault();
+//         elem.innerHTML += elem.href;
+//     });
+// }
+
+// Даны два инпута, абзац и ссылка. Пусть в инпуты вводятся числа. Сделайте так, чтобы по клику на ссылку в абзац записалась сумма введенных чисел.
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let link = document.querySelector('#link');
+// let text = document.querySelector('#text');
+
+// link.addEventListener('click', function(event) {
+//     event.preventDefault();
+//     text.innerHTML = Number(elem1.value) + Number(elem2.value);
+// });
+
+
+//====================================== Всплытие событий в JavaScript ============================================
+// Самостоятельно напишите код, который будет демонстрировать всплытие событий. Проверьте на нем всплытие различных типов событий. Учтите, что всплывать могут не все события. Экспериментально найдите хотя бы одно событие, которое не будет всплывать.
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+
+// elem1.addEventListener('mouseout', function() {
+//     alert('голубой');
+// });
+// elem2.addEventListener('mouseout', function() {
+//     alert('розовый');
+// });
+// elem3.addEventListener('mouseout', function() {
+//     alert('желтый');
+// });
+
+
+//================================== Получение целевого элемента при всплытии событий =====================================
+// Навешайте на див обработчик клика. В этом обработчике определите, в каком из тегов сработало событие.
+// let elem = document.querySelector('div');
+// elem.addEventListener('click', function(event) {
+//     if (event.target.tagName == 'DIV') {
+//         console.log('клик по диву');
+//     }
+//     if (event.target.tagName == 'UL') {
+//         console.log('клик по всему списку');
+//     } 
+//     if (event.target.tagName == 'LI') {
+//         console.log('клик по элементу списка');
+//     }
+// });
+
+// Модифицируйте предыдущую задачу. Сделайте так, чтобы при клике на li, ей в конец добавлялся восклицательный знак, а при клике на ul - ей в конец добавлялась новая li.
+// let elem = document.querySelector('div');
+// let i = 4;
+// elem.addEventListener('click', function(event) {
+//     if (event.target.tagName == 'DIV') {
+//         console.log('клик по диву');
+//     }
+//     if (event.target.tagName == 'UL') {
+//         event.target.innerHTML += '<li>' + i++ + '</li>'
+
+//     } 
+//     if (event.target.tagName == 'LI') {
+//         event.target.innerHTML += '!';
+//     }
+// });
+
+
+//============================== Прекращение всплытия событий в JavaScript ==========================================
+// Самостоятельно реализуйте корректную работу описанной задачи.
+// мы можем сделать так, чтобы при клике на кнопку отменить всплытие, родитель не реагировал на этот клик.
+// let parent = document.querySelector('#parent');
+// let button = document.querySelector('button');
+// let block  = document.querySelector('#block');
+
+// button.addEventListener('click', function(event) {
+// 	block.classList.add('active');
+//     event.stopImmediatePropagation();
+// });
+// parent.addEventListener('click', function() {
+// 	block.classList.remove('active');
+// });
+
+
+//===================================== Погружение событий в JavaScript ===========================================
+// elem1.addEventListener('click', function() {
+// 	alert('зеленый - погружение');
+// }, true);
+// elem1.addEventListener('click', function() {
+// 	alert('зеленый - всплытие');
+// }, false);
+
+// elem2.addEventListener('click', function() {
+// 	alert('голубой - погружение');
+// }, true);
+// elem2.addEventListener('click', function() {
+// 	alert('голубой - всплытие');
+// }, false);
+
+// elem3.addEventListener('click', function() {
+// 	alert('красный - погружение');
+// }, true);
+// elem3.addEventListener('click', function() {
+// 	alert('красный- всплытие');
+// }, false);
+
+
+//============================== Навешивание обработчиков на новые элементы в JavaScript ===================================
+// let button = document.querySelector('button');
+// let list   = document.querySelector('ul');
+// let items  = list.querySelectorAll('li');
+
+// for (let item of items) {
+// 	item.addEventListener('click', handler);
+// 
+
+// button.addEventListener('click', function() {
+// 	let item = document.createElement('li');
+// 	item.innerHTML = 'item';
+	
+// 	item.addEventListener('click', handler);
+	
+// 	list.appendChild(item);
+// });
+
+// function handler() {
+// 	this.innerHTML = this.innerHTML + '!';
+// }
+
+
+//=================================== Делегирование событий в JavaScript =====================================
+// let btn = document.querySelector('button');
+// let list = document.querySelector('ul');
+// let items = list.querySelectorAll('li');
+
+// list.addEventListener('click', function(event) {
+// 	let li = event.target.closest('li');
+// 	if (li) {
+// 		li.innerHTML += '!';
+// 	}
+// });
+
+// btn.addEventListener('click', function() {
+// 	let elem = document.createElement('li');
+// 	elem.innerHTML = 'item <i>italic</i> item';
+// 	list.append(elem);
+
+// 	// elem.addEventListener('click', func); / упростил
+// });
+
+// // function func() {
+// // 	this.innerHTML += '!'; / упростил
+// // }
+
+
+//==================================== Основы работы с контекстом в JavaScript ==========================================
+
+
+//====================================== Потеря контекста в JavaScript ==========================================
+// "use strict";
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', parent);
+
+// function parent() {
+// 	console.log(this); // выведет ссылку на наш инпут
+	
+// 	function child() {
+// 		console.log(this); // выведет undefined
+// 	}
+// 	child();
+// }
+
+// "use strict";
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', parent);
+
+// function parent() {
+// 	console.log(this.value); // что выведет?
+	
+// 	function child() {
+// 		console.log(this.value); // что выведет?
+// 	}
+// 	child();
+// }
+
+
+//================================= Решение проблемы с контекстом в JavaScript ===================================
+// Автор кода хотел, чтобы по потери фокуса на экран вывелся квадрат числа из value инпута. Однако, почему-то при потери фокуса в консоль выдается ошибка. Исправьте ошибку автора кода. Напишите текст, в котором вы дадите объяснение автору кода, почему возникла его ошибка.
+
+// 1-й способ
+// "use strict";
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', func);
+
+// function func() {
+// 	let self = this;
+// 	square();
+// 	function square() {
+// 		alert(self.value * self.value);
+// 	}
+// }
+
+// Возьмите код из предыдущей задачи и исправьте проблему кода с помощью изученного второго способа.
+// 2-й способ
+// "use strict";
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', func);
+
+// function func() {
+// 	square(this);
+// 	function square(param) {
+// 		alert(param.value ** 2);
+// 	}
+// }
+
+// Возьмите код из предыдущей задачи и исправьте проблему кода с помощью изученного третьего способа.
+// 3-й способ
+// "use strict";
+
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('blur', func);
+
+// function func() {
+// 	let square = () => {
+// 		alert(this.value * this.value);
+// 	}
+// 	square();
+// }
+
+
+//===================================== Привязывание контекста через метод call в JavaScript ===============================
+// С помощью метода call и функции func выведите на экран value каждого из инпутов.
+// function func() {
+// 	console.log(this.value);
+// }
+
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+// let elem3 = document.querySelector('#elem3');
+
+// func.call(elem1);
+// func.call(elem2);
+// func.call(elem3);
+
+// let elems = document.querySelectorAll('input'); // по другому
+// for (let elem of elems) { 
+// 	console.log(elem.value);
+// }
+
+// Добавьте в последнюю строчку метод call так, чтобы на экран вывелось 'привет, Иванов Иван'. Слово 'привет' должно взяться из value инпута, а 'Иванов' и 'Иван' должны быть параметрами функциями.
+// let elem = document.querySelector('#elem');
+// function func(surname, name) {
+// 	console.log(this.value + ', ' + surname + ' ' + name);
+// }
+// func.call(elem, 'Иванов', 'Иван'); // тут должно вывести 'привет, Иванов Иван'
+
+
+//=================================== Привязывание контекста через метод apply в JavaScript ===============================
+// Добавьте в последнюю строчку метод apply так, чтобы на экран вывелось 'привет, Иванов Иван'. Слово 'привет' должно взяться из value инпута, а 'Иванов' и 'Иван' должны быть параметрами функциями.
+// let elem = document.querySelector('#elem');
+// function func(surname, name) {
+// 	console.log(this.value + ', ' + surname + ' ' + name);
+// }
+// func.apply(elem, ['Иванов', 'Иван']); // тут должно вывести 'привет, Иванов Иван'
+
+
+//================================= Привязывание контекста через метод bind в JavaScript =================================
+// Напишите в указанном месте конструкцию с методом bind так, чтобы this внутри функции func всегда указывал на инпут из переменной elem.
+// let elem = document.getElementById('elem');
+// function func(surname, name) {
+// 	console.log(this.value + ', ' + surname + ' ' + name);
+// }
+// func = func.bind(elem);
+// func('Иванов', 'Иван'); // тут должно вывести 'привет, Иванов Иван'
+// func('Петров', 'Петр'); // тут должно вывести 'привет, Петров Петр'
+
+
+//========================== Основы работы с функцией setInterval в JavaScript ====================================
+// Запустите таймер, который каждые 3 секунды будет что-нибудь выводить в консоль.
+// setInterval(function() {
+// 	console.log('У меня все получиться!!! Я стану очень крутым программистом, за которым в очередь будут выстраиваться очень крутые компании!!!')
+// }, 3000);
+
+
+//================================ Счетчик через функцию setInterval в JavaScript ======================================
+// Пусть дана переменная, в которой изначально хранится число 100. Запустите таймер, который каждую секунду будет уменьшать значение этой переменной на 1 и выводить это значение в консоль.
+// let i = 100;
+// setInterval(() => console.log(i--), 1000);
+
+
+//========================================== Остановка таймера JavaScript ================================================
+// Пусть дана переменная, в которой изначально хранится число 10. Запустите таймер, который каждую секунду будет уменьшать значение этой переменной на 1 и выводить это значение в консоль. Как только значение переменной достигнет нуля - остановите таймер.
+// let i = 10;
+// let timerId = setInterval(() => {
+// 	console.log(--i);
+// 	if (i <= 0) {
+// 		clearInterval(timerId);
+// 	}
+// }, 1000);
+
+
+//======================================== Кнопка для запуска таймера на JavaScript ===================================
+// Сделайте кнопку, по нажатию на которую в консоль будет выводится обратный отсчет, начиная с 100.
+// let start = document.querySelector('#start');
+// start.addEventListener('click', function func() {
+// 	let i = 100;
+// 	setInterval(() => console.log(i--), 1000);
+
+// 	this.removeEventListener('click', func)
+// });
+
+
+//============================== Кнопки для запуска и остановки таймера на JavaScript ===================================
+// Пусть дана переменная, в которой изначально хранится число 100. Даны также две кнопки. По нажатию на первую кнопку запустите таймер, который каждую секунду будет уменьшать значение переменной на 1 и выводить новое значение в консоль. Как только значение переменной достигнет нуля - остановите таймер.
+
+// По нажатию на вторую кнопку остановите таймер. Также остановите таймер, если вторая кнопка не была нажата, но значение переменной достигло нуля.
+
+
+// let timerId;
+// let start = document.getElementById('start');
+// let finish = document.getElementById('stop');
+
+// start.addEventListener('click', function func() {
+// 	let i = 100;
+// 	timerId = setInterval(() => {
+// 		console.log(i--);
+
+// 		if (i <= -1) {
+// 			clearInterval(timerId);
+// 		}
+// 	}, 1000);
+// 	this.removeEventListener('click', func);
+// });
+
+// finish.addEventListener('click', function func() {
+// 	clearInterval(timerId);
+// });
+
+// Некоторый программист написал код, который по нажатию на кнопку запускает таймер, выводящий в консоль текущий момент времени:
+// После запуска кода, однако, оказалось, что кнопка остановки не работает. Исправьте ошибку автора кода.
+// let start = document.querySelector('#start');
+// let finish  = document.querySelector('#stop');
+// let timerId;
+
+// start.addEventListener('click', function() {
+// 	timerId = setInterval(function() {
+// 		let date = new Date;
+// 		console.log(date.getMinutes() + ' ' + date.getSeconds());
+// 	}, 1000);
+// });
+
+// finish.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// });
+
+// Еще один программист также написал код для решения предыдущей задачи:
+// После запуска кода, однако, опять оказалось, что кнопка остановки не работает. Исправьте ошибку автора кода.
+// let start = document.querySelector('#start');
+// let finish  = document.querySelector('#stop');
+// let timerId;
+// start.addEventListener('click', function() {
+// 	timerId = setInterval(function() {
+// 		let date = new Date;
+// 		console.log(date.getMinutes() + ' ' + date.getSeconds());
+// 	}, 1000);
+// });
+// finish.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// });
+
+// Еще один программист также написал код для решения предыдущей задачи:
+// После запуска кода, однако, опять оказалось, что кнопка остановки не работает. Исправьте ошибку автора кода.
+// let start = document.querySelector('#start');
+// let stop  = document.querySelector('#stop');
+// let timerId;
+// start.addEventListener('click', function() {
+// 	timerId = setInterval(function() {
+// 		let date = new Date;
+// 		console.log(date.getMinutes() + ' ' + date.getSeconds());
+// 	}, 1000);
+// });
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// });
+
+// Еще один программист также написал код для решения предыдущей задачи:
+// После запуска кода, однако, опять оказалось, что кнопка остановки не работает. Исправьте ошибку автора кода.
+// let start = document.querySelector('#start');
+// let stop  = document.querySelector('#stop');
+// let timerId;
+// start.addEventListener('click', function() {
+// 	timerId = setInterval(function() {
+// 		let date = new Date;
+// 		console.log(date.getMinutes() + ' ' + date.getSeconds());
+// 	}, 1000);
+// });
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// });
+
+// Приведенный мною в теоретической части код не учитывает то, что на кнопку старт можно сделать несколько нажатий. Для исправления этой проблемы можно по нажатию на кнопку старт отвязывать событие от этой кнопки, а по нажатию на кнопку стоп - привязывать обратно. Исправьте проблему.
+// let timerId;
+// let start = document.getElementById('start');
+// let stop = document.getElementById('stop');
+// start.addEventListener('click', newStart);
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// 	start.addEventListener('click', newStart);
+// });
+// function newStart() {
+// 	let i = 100;
+// 	timerId = setInterval(() => {
+// 		console.log(i--);
+// 		if (i <= -1) {	
+// 			clearInterval(timerId);
+// 		}
+// 		start.removeEventListener('click', newStart);
+// 	}, 1000);
+	
+// } 
+
+
+//=============================== Практика на таймеры и работу с DOM в JavaScript ========================================
+// Пусть в инпуте в атрибуте value изначально записано число 10. Запустите таймер, который каждую секунду будет уменьшать это число на единицу.
+// let elem = document.getElementById('elem');
+// setInterval(() => {
+// 	elem.value = Number(elem.value) - 1;
+// }, 1000);
+
+// Модифицируйте предыдущую задачу так, чтобы, как только содержимое инпута станет равно нулю, таймер прекратил свою работу.
+// let elem = document.getElementById('elem');
+// let timerId = setInterval(() => {
+// 	elem.value = Number(elem.value) - 1;
+// 	if (elem.value == 0) {
+// 		clearInterval(timerId);
+// 	}
+// }, 1000);
+
+
+//==================================== Таймеры и потеря контекста в JavaScript ===========================================
+// Автор кода хотел, чтобы по нажатию на кнопку, значение этой кнопки каждую секунду увеличивалось на 1. Однако, по нажатию на кнопку вообще ничего не происходит. Исправьте ошибку автора кода. Напишите текст, в котором вы дадите объяснение автору кода, почему возникла его ошибка.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function() {
+// 	let self = this;
+// 	setInterval(function() {
+// 		self.value = Number(self.value) + 1;
+// 	}, 1000);
+// });
+// Исправьте проблему предыдущей задачи через стрелочную функцию.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function() {
+// 	setInterval( () => this.value = Number(this.value) + 1, 1000);
+// });
+
+
+//===================================== Передача контекста параметром функции setInterval ==================================
+// Автор кода хотел, чтобы по нажатию на кнопку, значение этой кнопки каждую секунду уменьшалось на 1. Однако, по нажатию на кнопку вообще ничего не происходит. Исправьте ошибку автора кода, используя изученный в данном уроке способ.
+// let elem = document.querySelector('#elem');
+// elem.addEventListener('click', function() { // через объявленную функцию
+// 	setInterval(func, 1000, this);
+// 	function func(self) {
+// 		self.value--;
+// 	}
+// });
+// elem.addEventListener('click', function() { // через анонимную функцию
+// 	setInterval(function(self) {
+// 		self.value--;
+// 	}, 1000, this);
+// });
+
+
+//============================ Практика на таймеры и работу с DOM в JavaScript ==========================================
+// Дана кнопка. Дан абзац, текстом которого является число. По нажатию на кнопку запустите таймер, который каждую секунду будет увеличивать текст абзаца на 1.
+// let btn = document.getElementById('btn');
+// let text = document.getElementById('text');
+// btn.addEventListener('click', function() {
+// 	setInterval(() => {
+// 		text.innerHTML = Number(text.innerHTML) + 1;
+// 	}, 1000);
+// });
+
+// Дана кнопка. Дан абзац, текстом которого является число, например, 10. По нажатию на кнопку запустите таймер, который каждую секунду будет уменьшать текст абзаца на 1. Как только значение абзаца станет равно нулю - остановите таймер.
+// let btn = document.getElementById('btn');
+// let text = document.getElementById('text');
+// btn.addEventListener('click', function() {
+// 	let timerId = setInterval(() => {
+// 		text.innerHTML = Number(text.innerHTML) - 1;
+// 		if (text.innerHTML == 0) {
+// 			clearInterval(timerId);
+// 		}
+// 	}, 1000);
+// });
+
+
+// Дан инпут с числом. Сделайте так, чтобы каждую секунду в нем появлялся квадрат того числа, которое в нем записано.
+// let elem = document.getElementById('elem');
+// setInterval(func, 1000, elem);
+// function func(self) {
+// 	self.value = Number(self.value) ** 2;
+// }
+
+// Дан инпут. В него вводится число. По потери фокуса сделайте так, чтобы в абзаце ниже начал тикать обратный отсчет, начиная с введенного числа. Когда отсчет дойдет до нуля - он должен закончится.
+// let elem = document.getElementById('elem');
+// let text = document.getElementById('text');
+// elem.addEventListener('blur', function() {
+// 	text.innerHTML = this.value;
+// 	let timerId = setInterval(function() {
+// 		text.innerHTML = Number(text.innerHTML) - 1;
+// 		if (text.innerHTML == 0) {
+// 			clearInterval(timerId);
+// 		}
+// 	}, 1000);
+// });
+
+// Дан инпут, кнопка и абзац. В инпут вводится какое-то число. По нажатию на кнопку запишите введенное число в текст абзаца и запустите обратный отсчет в абзаце: пусть каждую секунду число в абзаце уменьшается на единицу, пока не дойдет до нуля.
+// let elem = document.getElementById('elem');
+// let btn = document.getElementById('btn');
+// let text = document.getElementById('text');
+// btn.addEventListener('click', function() {
+// 	text.innerHTML = elem.value;
+// 	let timerId = setInterval(function() {
+// 		text.innerHTML--;
+// 		if (text.innerHTML == 0) {
+// 			clearInterval(timerId);
+// 		}
+// 	}, 1000);
+// });
+
+// Дан абзац и две кнопки. Сделайте так, чтобы по нажатию на первую кнопку в абзаце начал тикать таймер от 1 до бесконечности, а по нажатию на вторую таймер останавливался.
+// let timer = document.getElementById('timer');
+// let start = document.getElementById('start');
+// let stop = document.getElementById('stop');
+// let timerId;
+// let i = 1;
+// start.addEventListener('click', func);
+// stop.addEventListener('click', function() {
+// 	clearInterval(timerId);
+// 	start.addEventListener('click', func);
+// });
+// function func() {
+// 	timer.innerHTML = i;
+// 	timerId = setInterval(function() {
+// 		timer.innerHTML = Number(timer.innerHTML) + 1;
+// 		i = Number(timer.innerHTML);
+// 	}, 1000);
+// 	start.removeEventListener('click', func);
+// }
+
+// Дан абзац. Сделайте так, чтобы каждую секунду он менял свой цвет с красного на зеленый и наоборот.
+// let elem = document.getElementById('text');
+// let i = 1;
+// elem.classList.add('colored-red');
+// setInterval(function() {
+// 	i += 1;
+// 	if (i % 2 == 0) {
+// 		elem.classList.add('colored-green');
+// 		elem.classList.remove('colored-red');
+// 	} else {
+// 		elem.classList.add('colored-red');
+// 		elem.classList.remove('colored-green');
+// 	}
+// }, 1000);
+
+// Если выводить на экран каждую секунду текущий момент времени, то можно сделать тикающие часы. Реализуйте такие же часики, как показано ниже в образце:
+// let clock = document.getElementById('clock');
+// setInterval(function() {
+// 	let date = new Date();
+// 	let	h = addZero(date.getHours());
+// 	let	m = addZero(date.getMinutes());
+// 	let	s = addZero(date.getSeconds());
+// 	clock.innerHTML = h + ':' + m + ':' + s;
+// }, 1000);
+
+// function addZero(num) {
+// 	if (num <= 9) {
+// 		return '0' + num;
+// 	} else {
+// 		return num;
+// 	}
+// }
+
+
+//==================================== Функция setTimeout в JavaScript ========================================
+// Дан абзац. Напишите код, который выведет сообщение в этот абзац через 10 секунд после загрузки страницы.
+// let text = document.getElementById('text');
+// setTimeout(function() {
+// 	text.innerHTML = 'Ты станешь крутым программистом и самые крутые компании будут выстраиваться в очередь, чтобы ты на них поработал!!!!!!';
+// }, 10000);
+
+// Выведите в консоль число 0. Через секунду выведите число 1, через две секунды выведите число 2, через 3 секунды выведите число 3. И так далее до бесконечности.
+// let i = 1;
+// setTimeout(function timer() {  // не решил
+// 	console.log(i++);
+// 	timer();
+// }, i * 1000);
+
+
+// let i = 0;
+// func();
+
+// function func() {
+// 	console.log(i++);
+// 	if (i <= 10) {
+// 		setTimeout(func, 1000);
+// 	}
+// };
+
+
+//===================================== Создание и вставка элементов на JavaScript =======================================
+// Вставьте ему в конец li с текстом 'пункт'.
+// let elem = document.getElementById('elem');
+// let li = document.createElement('li');
+// li.innerHTML = 'пункт';
+// elem.appendChild(li);
+
+// Сделайте так, чтобы по клику на кнопку в конец списка добавлялся li с текстом 'пункт'.
+// let elem = document.getElementById('elem');
+// let btn = document.getElementById('button');
+// btn.addEventListener('click', function() {
+// 	let li = document.createElement('li');
+// 	li.innerHTML = 'пункт';
+// 	elem.appendChild(li); 
+// });  
+
+
+//=============================== Привязывание событий при вставке элементов ========================================
+// Дан ol и кнопка. Сделайте так, чтобы по клику на кнопку в конец ol добавлялся тег li. Сделайте так, чтобы по клику на любой из добавленных li в конец его текста записывался восклицательный знак.
+// let elem = document.getElementById('elem');
+// let btn = document.getElementById('btn');
+
+// btn.addEventListener('click', function(){
+//     let li = document.createElement('li');
+//     li.addEventListener('click', function(){
+//         this.innerHTML += '!';
+//     });
+//     elem.appendChild(li);
+// });
+
+
+//===================================== Создание элементов в цикле на JavaScript ===========================================
+// Дан пустой ul. Запустите цикл, который вставит в него 10 тегов li. Сделайте так, чтобы текстом каждой li был ее порядковый номер.
+// let elem = document.getElementById('elem');
+// for (let i = 1; i <= 10; i++) {
+//     let li = document.createElement('li');
+//     li.innerHTML = i;
+//     elem.appendChild(li);
+// }
+
+
+//============================== Навешивание обработчиков в цикле на JavaScript ==================================
+// Дан див. Запустите цикл, который добавит в наш див 5 инпутов. Пусть дан также абзац. Сделайте так, чтобы каждый из новых инпутов по потери фокуса записывал свой текст в абзац.
+// let parent = document.getElementById('parent');
+// let text = document.getElementById('text');
+
+// for (let i = 1; i <= 5; i++) {
+//     let input = document.createElement('input');
+//     input.addEventListener('blur', function() {
+//         if (i == 1) {
+//             text.innerHTML = text.innerHTML + input.value;
+//         } else {
+//         text.innerHTML = text.innerHTML + '<br>' + input.value;
+//         }
+//     });
+//     parent.appendChild(input);
+// }
+
+
+//================================== Создание элементов из массива на JavaScript =========================================
+// Модифицируйте мой код так, чтобы по клику на абзац к его содержимому прибавлялась единица.
+// let arr = [1, 2, 3, 4, 5];
+// let parent = document.getElementById('parent');
+
+// for (let elem of arr) {
+//     let p = document.createElement('p');
+//     p.innerHTML = elem;
+//     p.addEventListener('click', function() {
+//         p.innerHTML = Number(p.innerHTML) + 1;
+//     }); 
+//     parent.appendChild(p);
+// }
+
+
+//==================================== Практика на создание списков ul на JavaScript ======================================
+// Дан массив. Вставьте элементы этого массива в конец ul так, чтобы каждый элемент стоял в своем li.
+// let elems = document.getElementById('elem');
+// let arr = [11, 22, 33, 44, 55];
+
+// for (let elem of arr) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem;
+//     elems.appendChild(li);
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы по клику на любой из вставленных элементов на экран выводился текст этого элемента.
+// let elems = document.getElementById('elem');
+// let arr = [11, 22, 33, 44, 55];
+
+// for (let elem of arr) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem;
+//     li.addEventListener('click', function() {
+//         console.log(li.innerHTML);
+//     });
+//     elems.appendChild(li);
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы по клику на li ей в конец добавлялся '!'.
+// let elems = document.getElementById('elem');
+// let arr = [11, 22, 33, 44, 55];
+
+// for (let elem of arr) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem;
+//     li.addEventListener('click', function() {
+//         console.log(li.innerHTML);
+//         li.innerHTML += '!';
+//     });
+//     elems.appendChild(li);
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы по повторное нажатие на li не приводило к добавлению второго '!'.
+// let elems = document.getElementById('elem');
+// let arr = [11, 22, 33, 44, 55];
+
+// for (let elem of arr) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem;
+//     li.addEventListener('click', function() {
+//         console.log(li.innerHTML);
+//     });
+//     li.addEventListener('click', function func() {
+//         li.innerHTML += '!';
+//         li.removeEventListener('click', func);
+//     });    
+//     elems.appendChild(li);
+// }
+
+
+//===================================== Создание HTML таблиц на JavaScript =============================================
+// Дана пустая HTML таблица. С помощью двух вложенных циклов for заполните эту таблицу 5-ю рядами с 5-ю колонками.
+// let table = document.getElementById('table');
+
+// for (let i = 0; i < 5; i++) {
+//     let tr = document.createElement('tr');
+
+//     for (let i = 0; i < 5; i++) {
+//         let td = document.createElement('td');
+//         tr.appendChild(td);
+//     }
+
+//     table.appendChild(tr);
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы таблица создавалась размером 10 рядов на 5 колонок.
+// let table = document.getElementById('table');
+
+// for (let i = 0; i < 10; i++) {
+//     let tr = document.createElement('tr');
+
+//     for (let i = 0; i < 5; i++) {
+//         let td = document.createElement('td');
+//         tr.appendChild(td);
+//     }
+
+//     table.appendChild(tr);
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы в каждую td добавлялся текст 'x'.
+// let table = document.getElementById('table');
+
+// for (let i = 0; i < 10; i++) {
+//     let tr = document.createElement('tr');
+
+//     for (let i = 0; i < 5; i++) {
+//         let td = document.createElement('td');
+//         td.innerHTML = 'x';
+//         tr.appendChild(td);
+//     }
+
+//     table.appendChild(tr);
+// }
+
+// Реализуйте генератор таблиц, ширина и высота таблиц задается в двух инпутах (например, таблица 5 на 10 ячеек).
+// let table = document.getElementById('table');
+// let width = document.getElementById('width');
+// let height = document.getElementById('height');
+
+// width.addEventListener('blur', func);
+// height.addEventListener('blur', func);
+
+
+// function func() {
+//     for (let i = 0; i < Number(width.value); i++) {
+//         let tr = document.createElement('tr');
+    
+//         for (let i = 0; i < Number(height.value); i++) {
+//             let td = document.createElement('td');
+//             tr.appendChild(td);
+//         }
+    
+//         table.appendChild(tr);
+//     }
+
+// }
+
+
+//========================================= Последовательное заполнение HTML таблиц =====================================
+// Выведите на экран таблицу table размером 5 рядов на 5 колонок так, чтобы в ее ячейках последовательно стояли числа от 1 до 25.
+// let table = document.getElementById('table');
+// let k = 1;
+// for (let i = 0; i < 5; i++) {
+//     let tr = document.createElement('tr');
+//         for (let i = 0; i < 5; i++) {
+//             let td = document.createElement('td');
+//             td.innerHTML = k;
+//             k++;
+//             tr.appendChild(td);
+//         }
+//     table.appendChild(tr);
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы в ячейках таблицы были записаны четные числа в промежутке от 2 до 50.
+
+// let table = document.getElementById('table');
+// let k = 1;
+// for (let i = 0; i < 5; i++) {
+//     let tr = document.createElement('tr');
+//         for (let i = 0; i < 10; i++) {
+//             let td = document.createElement('td');
+//             td.innerHTML = k;  
+//             k++;
+//             if (td.innerHTML % 2 == 0 && k <= 51) {
+//                 tr.appendChild(td);
+//             }
+//         }
+//     table.appendChild(tr);
+// }
+
+
+//============================= Создание HTML таблицы из массива на JavaScript =========================================
+// Не подсматривая в теоретическую часть урока, выведите элементы приведенного массива в виде HTML таблицы table.
+// let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
+// let table = document.getElementById('table');
+
+// for (let subArr of arr) {
+//     let tr = document.createElement('tr');
+    
+//     for(let elem of subArr) {
+//         let td = document.createElement('td');
+//         td.innerHTML = elem;
+//         tr.appendChild(td);
+//     }
+
+//     table.appendChild(tr);
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы в таблицу записывались не элементы, а квадраты этих элементов.
+// let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
+// let table = document.getElementById('table');
+
+// for (let subArr of arr) {
+//     let tr = document.createElement('tr');
+    
+//     for(let elem of subArr) {
+//         let td = document.createElement('td');
+//         td.innerHTML = elem ** 2;
+//         tr.appendChild(td);
+//     }
+
+//     table.appendChild(tr);
+// }
+
+
+//=================================== Создание HTML таблицы из массива объектов ========================================
+// Выведите элементы этого массива в виде HTML таблицы.
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+// let table = document.getElementById('table');
+
+// for (let elem of employees) {
+//     let tr = document.createElement('tr');
+
+//     let td1 = document.createElement('td');
+//     td1.innerHTML = elem.name;
+//     tr.appendChild(td1);
+
+//     let td2 = document.createElement('td');
+//     td2.innerHTML = elem.age;
+//     td2.addEventListener('click', function() {
+//         this.innerHTML = Number(this.innerHTML) + 1;
+//     });
+//     tr.appendChild(td2);
+
+//     let td3 = document.createElement('td');
+//     td3.innerHTML = elem.salary;
+//     tr.appendChild(td3);
+
+//     table.appendChild(tr);
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы по клику на любую ячейку с зарплатой ее содержимое увеличивалось на 10%.
+
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+// let table = document.getElementById('table');
+
+// for (let elem of employees) {
+//     let tr = document.createElement('tr');
+
+//     let td1 = document.createElement('td');
+//     td1.innerHTML = elem.name;
+//     tr.appendChild(td1);
+
+//     let td2 = document.createElement('td');
+//     td2.innerHTML = elem.age;
+//     td2.addEventListener('click', function() {
+//         this.innerHTML = Number(this.innerHTML) + 1;
+//     });
+//     tr.appendChild(td2);
+
+//     let td3 = document.createElement('td');
+//     td3.innerHTML = elem.salary;
+//     td3.addEventListener('click', function() {
+//         this.innerHTML = Number(this.innerHTML) + Number(this.innerHTML) * 0.1;
+//     });
+//     tr.appendChild(td3);
+
+//     table.appendChild(tr);
+// }
+
+
+//========================================= Добавление рядов и колонок в HTML таблицу ====================================
+
+
+

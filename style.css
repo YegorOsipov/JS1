@@ -39,6 +39,132 @@ color: red;
 /*=============================== Другие полезные методы для поиска элементов ===============================*/
 /* Получите все теги li по имени тега и сделайте их текст красного цвета. */
 /* Получите эти элементы по имени класса и сделайте их текст красного цвета. */
-.colored {
+/* .colored {
     color: red;
+} */
+
+
+/*============================ Отработка изученного материала на работу с DOM ================================*/
+/* .colored-green {
+    background-color: green;
 }
+
+.colored-red {
+    background-color: red;
+} */
+
+
+/*======================================== Событие change в JavaScript ======================================*/
+/* .colored-border-red {
+    border: 3px solid red;
+}
+
+.colored-border-green {
+    border: 3px solid green;
+} */
+
+
+/*=============================== Тип события в объекте Event в JavaScript =====================================*/
+/* .colored-red {
+    background-color: red;
+}
+.colored-green {
+    background-color: greenyellow;
+} */
+
+
+/*================================== Элемент события в объекте Event в JavaScript ==============================*/
+/* ul {
+	padding: 30px;
+	border: 1px solid red;
+}
+li {
+	list-style-type: none;
+	margin-bottom: 20px;
+	border: 1px dashed black;
+} */
+
+
+/*========================== Отслеживание клавиш-модификаторов в JavaScript ===================================*/
+/* .www {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000;
+}
+.colored {
+    background-color: red;
+} */
+
+
+/*========================================== Всплытие событий в JavaScript ==========================================*/
+/* .colored-sky {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    background-color: skyblue;
+    position: relative;
+}
+.colored-pink {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.colored-yellow {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+
+    position: absolute;
+    top: 50px;
+    left: 50px;
+} */
+
+
+/*============================== Получение целевого элемента при всплытии событий ================================*/
+/* div, ul, li {
+	padding: 20px;
+}
+
+div {
+	border: 1px solid red;
+}
+ul {
+	border: 1px solid orange;
+}
+li {
+	border: 1px solid green;
+} */
+
+
+/*===================================== Прекращение всплытия событий в JavaScript =================================*/
+/* #block:not(.active) {
+	display: none;
+} */
+
+
+/*=================================== Практика на таймеры и работу с DOM в JavaScript =================================*/
+/* .colored-red {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.colored-green {
+    color: greenyellow;
+    font-size: 24px;
+    font-weight: bold;
+} */
+
+/* table {
+    border:1px solid red;
+} */
+
+td {
+    border:1px solid black;
+    padding:30px;
+}
+  

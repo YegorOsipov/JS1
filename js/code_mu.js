@@ -8502,6 +8502,1787 @@
 
 
 //========================================= Добавление рядов и колонок в HTML таблицу ====================================
+// Сделайте кнопку, по нажатию на которую в таблицу будет добавляться новый ряд.
+// let table = document.getElementById('table');
+// let btn = document.getElementById('btn');
+
+// btn.addEventListener('click', function() {
+//     let tr = document.createElement('tr');
+
+//     for (let i = 1; i <= 3; i++) {
+//         let td = document.createElement('td');
+//         tr.appendChild(td);
+//     }
+//     table.appendChild(tr);
+// });
+
+
+// Дана также кнопка. Сделайте так, чтобы по нажатию на кнопку таблица увеличивалась на один ряд и на одну колонку.
+// let table = document.getElementById('table');
+// let btn = document.getElementById('btn');
+
+// btn.addEventListener('click', function() {
+//     let tr = document.createElement('tr'); 
+//     let trs = document.querySelectorAll('#table tr');
+//     for (let i = 1; i <= trs.length + 1; i++) {
+//         let td = document.createElement('td');
+//         tr.appendChild(td);
+//     }
+
+//     for(let tr of trs) {
+//         let td = document.createElement('td');
+//         tr.appendChild(td);
+//     }
+//     table.append(tr);
+// });
+
+
+//===================================== Изменение ячеек HTML таблицы на JavaScript ========================================
+// Пусть дана некоторая HTML таблица с числами и кнопка. По нажатию на кнопку увеличьте число в каждой ячейки таблицы в два раза.
+
+// let tds = document.querySelectorAll('#table td');
+// let btn = document.getElementById('btn');
+
+// btn.addEventListener('click', function() {
+//     for (let td of tds) {
+//         td.innerHTML = Number(td.innerHTML) * 2;
+//     }
+// });
+
+
+// Порядковый номер ячейки таблицы на JavaScript
+// Дана HTML таблица. Запишите в каждую ячейку ее порядковый номер с конца. То есть последней ячейке запишите 1, предпоследней - 2, и так далее.
+// let tds = document.querySelectorAll('#table td');
+// for (let i = 0; i < tds.length; i++) {
+//     tds[i].innerHTML = tds.length - i;
+// }
+
+
+//================================= Номер колонки и ряда таблицы на JavaScript =========================================
+// let trs = document.querySelectorAll('#table tr');
+
+// for (let i = 0; i < trs.length; i++) {
+// 	let tr = trs[i];
+// 	let tds = tr.querySelectorAll('td');
+	
+// 	for (let j = 0; j < tds.length; j++) {
+// 		let td = tds[j];
+// 		td.innerHTML = (i + 1) + '.' + (j + 1);
+// 	}
+// }
+
+// Дана HTML таблица. Запишите в каждую ячейку ее порядковый номер в ряду.
+// let trs = document.querySelectorAll('#table tr');
+
+// for (let i = 0; i < trs.length; i++) {
+// 	let tr = trs[i];
+// 	let tds = tr.querySelectorAll('td');
+	
+// 	for (let j = 0; j < tds.length; j++) {
+// 		let td = tds[j];
+// 		td.innerHTML = j + 1;
+// 	}
+// }
+
+
+//============================ Порядковый номер ячейки по клику на JavaScript =====================================
+// Дана HTML таблица. Сделайте так, чтобы по клику на любую ячейку в эту ячейку записывался порядковый номер этой ячейки с конца таблицы.
+// let tds = document.querySelectorAll('#table td');
+// for (let i = 0; i < tds.length; i++) {
+//     tds[i].addEventListener('click', function() {
+//         tds[i].innerHTML = tds.length - i;
+//     });
+// }
+
+
+//============================== Порядковый номер клика в ячейке HTML таблицы ==========================================
+// Модифицируйте код теоретической части урока так, чтобы повторное нажатие по ячейке не приводило к увеличению счетчика.
+// let tds = document.querySelectorAll('#table td');
+// let i = 1;
+// for (let td of tds) {
+// 	td.addEventListener('click', function func() {
+// 		this.innerHTML = i;
+// 		i++;
+//         td.removeEventListener('click', func);
+// 	});
+// }
+
+// Модифицируйте описанную в теоретической части урока задачу так, чтобы при кликах на ячейки чередовались числа 1, 2 и 3.
+// let tds = document.querySelectorAll('#table td');
+
+// let i = 1;
+// for (let td of tds) {
+// 	td.addEventListener('click', function() {
+// 		this.innerHTML = i;
+		
+// 		if (i == 1) {
+// 			i = 2;
+// 		} else if (i == 2) {
+// 			i = 3;
+// 		} else {
+//             i = 1;
+//         }
+// 	});
+// }
+
+
+//========================================= Удаление элементов на JavaScript ============================================
+// let parent = document.getElementById('parent');
+// let btn = document.getElementById('button');
+// let elem = document.getElementById('elem');
+
+// btn.addEventListener('click', function() {
+//     parent.removeChild(elem);
+// });
+
+// Сделайте так, чтобы по каждому клику на кнопку удалялся последний элемент из #parent.
+// let parent = document.getElementById('parent');
+// let btn = document.getElementById('button');
+// let li = document.querySelectorAll('li');
+
+// btn.addEventListener('click', func);
+// function func() {
+//     let last = li[li.length - 1];
+//     last.parentNode.removeChild(last);
+// }
+
+// Сделайте так, чтобы по нажатию на #elem этот элемент удалился.
+// let elem = document.getElementById('elem');
+// elem.parentElement.removeChild(elem);
+
+// Сделайте так, чтобы по нажатию на #elem этот элемент удалился.
+// let elem = document.getElementById('elem');
+// elem.remove();
+
+
+//====================================== Самоудаление элементов на JavaScript ==========================================
+// Сделайте так, чтобы любая li удалялась по клику на нее.
+// let parent = document.getElementById('parent');
+// let elems = document.querySelectorAll('li');
+// for (let elem of elems) {
+//     elem.addEventListener('click', function() {
+//         elem.remove();
+//     });
+// }
+
+
+//==================================== Самоудаление новых элементов на JavaScript ==================================
+// Сделайте так, чтобы по клику на кнопку в список добавлялся новый элемент. Сделайте так, чтобы любая li удалялась по клику на нее. Речь идет как о тех li, которые уже есть в списке, так о новых, созданных после нажатия на кнопку.
+// let parent = document.getElementById('parent');
+// let btn = document.getElementById('button');
+// let elems = document.querySelectorAll('li');
+// let i = 3;
+
+// btn.addEventListener('click', function() {
+//     let li = document.createElement('li');
+//     li.innerHTML = i + 1;
+//     i++;
+//     parent.appendChild(li);
+
+//     li.addEventListener('click', function() {
+//         li.parentElement.removeChild(this);
+//     });
+// });
+
+// for (let elem of elems) {
+//     elem.addEventListener('click', function() {
+//         elem.remove();
+//     });
+// }
+
+
+//====================================== Ссылка на удаление элемента на JavaScript ======================================
+// Самостоятельно, не подсматривая в мой код, решите описанную задачу.
+// let elem = document.getElementById('elem');
+// let remove = document.getElementById('remove');
+
+// remove.addEventListener('click', function(event) {
+//     elem.parentElement.removeChild(elem);
+//     event.preventDefault();
+// });
+
+
+//================================== Создание ссылок для удаление элементов на JavaScript ==================================
+// Дан тег ul. Добавьте в конец каждого тега li ссылку на удаления этого li из списка.
+
+// let elems = document.querySelectorAll('li');
+
+// for (let elem of elems) {
+//     let link = document.createElement('a');
+//     link.href = '';
+//     link.innerHTML = 'remove';
+//     elem.appendChild(link);
+
+//     link.addEventListener('click', function(event) {
+//         elem.parentElement.removeChild(elem);
+//         event.preventDefault();
+//     });
+// }
+
+// Дана HTML таблица. Добавьте в нее еще одну колонку, в которой для каждого ряда таблицы будет стоять ссылка на удаление этого ряда.
+// let trs = document.querySelectorAll('tr');
+
+// for (let tr of trs) {
+//     let td = document.createElement('td');
+//     let a = document.createElement('a');
+//     a.href = '';
+//     a.innerHTML = 'remove';
+//     tr.appendChild(td);
+//     td.appendChild(a);
+
+//     a.addEventListener('click', function(event) {
+//         tr.parentElement.removeChild(tr);
+//         event.preventDefault();
+//     });
+// }
+
+
+//=================================== Вставка элементов в начало или в конец на JavaScript ================================
+// Вставьте ему в начало элемент с текстом 'start', а в конец - элемент с текстом 'finish'.
+// let elem = document.getElementById('elem');
+
+// let liFirst = document.createElement('li');
+// liFirst.innerHTML = 'start';
+// elem.prepend(liFirst);
+
+// let liLast = document.createElement('li');
+// liLast.innerHTML = 'finish';
+// elem.append(liLast)
+
+// Вставьте перед этим элементом элемент с текстом 'new'.
+// let parent = document.getElementById('parent');
+// let elem = document.getElementById('elem');
+
+// let li = document.createElement('li');
+// li.innerHTML = 'new';
+// parent.insertBefore(li, elem);
+
+// Модифицируйте предыдущую задачу так, чтобы клик на вставленный элемент приводил к тому, что в конец его текста будет добавляться '!'.
+// let parent = document.getElementById('parent');
+// let elem = document.getElementById('elem');
+
+// let li = document.createElement('li');
+// li.innerHTML = 'new';
+
+// li.addEventListener('click', function() {
+//     this.innerHTML += '!';
+// });
+// parent.insertBefore(li, elem);
+
+
+//=================================== Смежная вставка элементов на JavaScript ===========================================
+// Вставьте перед ним абзац с текстом '!!!'.
+// let p = document.createElement('p');
+// p.innerHTML = '!!!';
+
+// let elem = document.getElementById('elem');
+// elem.insertAdjacentElement('beforeBegin', p);
+
+// Вставьте после него абзац с текстом '!!!'.
+// let p = document.createElement('p');
+// p.innerHTML = '!!!';
+
+// let elem = document.getElementById('elem');
+// elem.insertAdjacentElement('afterEnd', p);
+
+// Вставьте ему в начало абзац с текстом '!!!'.
+// let p = document.createElement('p');
+// p.innerHTML = '!!!';
+
+// let elem = document.getElementById('elem');
+// elem.insertAdjacentElement('afterBegin', p);
+
+
+// Вставьте ему в конец абзац с текстом '!!!'.
+// let p = document.createElement('p');
+// p.innerHTML = '!!!';
+
+// let elem = document.getElementById('elem');
+// elem.insertAdjacentElement('beforeEnd', p);
+
+
+// Дан элемент. Вставьте перед ним следующий тег:
+// let elem = document.getElementById('elem');
+// elem.insertAdjacentHTML('beforeBegin', '<div class="www"><p>text</p><p>text</p><input></div>');
+
+
+//========================================= Клонирование элементов на JavaScript ==========================================
+// Дан инпут. Дана кнопка. По нажатию на кнопку клонируйте этот инпут.
+// let elem = document.getElementById('elem');
+// let btn = document.getElementById('btn');
+
+// btn.addEventListener('click', function() {
+//     let clone = elem.cloneNode(true);
+// elem.insertAdjacentElement('beforeBegin' , clone);
+
+// });
+
+
+//========================================= Проверка элементов в JavaScript ==============================================
+// Проверьте, является ли этот элемент элементом с классом www.
+// let elem = document.getElementById('elem');
+// console.log(elem.matches('div.www'));
+
+// Дан элемент. Проверьте, является ли этот элемент абзацем.
+// let elem = document.getElementById('elem');
+// console.log(elem.matches('p.www'));
+
+// Проверьте, является ли элемент из elem2 потомком элемента из elem1.
+// let elem1 = document.getElementById('elem1');
+// let elem2 = document.getElementById('elem2');
+
+// let contains = elem1.contains(elem2);
+// console.log(contains);
+
+
+//============================= Редактирование отдельного элемента на JavaScript ========================================
+// Модифицируйте приведенный выше код так, чтобы текст абзаца менялся не по потери фокуса, а по мере ввода текста в инпут.
+// let elem = document.getElementById('elem');
+// let input = document.getElementById('input');
+
+// input.value = elem.innerHTML;
+
+// input.addEventListener('input', function() {
+//     elem.innerHTML = this.value;
+// });
+
+//Самостоятельно, не подсматривая в мой код, решите описанную задачу.
+// let parent = document.getElementById('parent');
+// let elem = document.getElementById('elem');
+
+// elem.addEventListener('click', function func() {
+//     let input = document.createElement('input');
+    
+//     input.value = elem.innerHTML;
+//     input.addEventListener('input', function() {
+//         elem.innerHTML = this.value;
+//     });
+//     parent.appendChild(input);
+
+//     this.removeEventListener('click', func);
+// });
+
+
+//============================== Прячем текст при редактировании элемента на JavaScript =============================
+// let elem = document.getElementById('elem');
+// elem.addEventListener('click', function func() {
+//     let input = document.createElement('input');
+//     input.value = elem.innerHTML;
+//     elem.innerHTML = '';
+//     elem.appendChild(input);
+
+//     input.addEventListener('blur', function() {
+//         elem.innerHTML = this.value;
+//         elem.addEventListener('click', func);
+//     });
+//     this.removeEventListener('click', func);
+// });
+
+
+//===================================== Редактирование в группе элементов на JavaScript ===================================
+// Дан тег ul. Сделайте так, чтобы по клику на любую li в ней появлялся инпут, с помощью которого можно будет поредатировать текст этой li.
+// let elems = document.querySelectorAll('#parent li');
+// for (let elem of elems) {
+//     elem.addEventListener('click', function func() {
+//     let input = document.createElement('input');
+//     input.value = elem.innerHTML;
+//     elem.innerHTML = '';
+//     elem.appendChild(input);
+
+//     input.addEventListener('blur', function() {
+//         elem.innerHTML = this.value;
+//         elem.addEventListener('click', func);
+//     });
+    
+//     this.removeEventListener('click', func);
+//     });
+// }
+
+
+// Дана HTML таблица. Сделайте так, чтобы по клику на любую ячейку в ней появлялся инпут для редактирования текста этой ячейки.
+// let elems = document.querySelectorAll('td');
+// for(let elem of elems) {
+//     elem.addEventListener('click', function func() {
+    //     let input = document.createElement('input');
+    //     input.value = elem.innerHTML;
+    //     elem.innerHTML = '';
+    //     elem.appendChild(input);
+
+    //     input.addEventListener('blur', function() {
+    //         elem.innerHTML = this.value;
+    //         elem.addEventListener('click', func);
+//     });
+    
+//     this.removeEventListener('click', func);
+//     });
+// }
+
+
+//============================== Одновременное редактирование и удаление элементов ====================================
+// Добавьте ссылку на удаление в конец каждого абзаца.
+// Сделайте так, чтобы по клику на span в нем появлялся инпут для редактирования.
+// let parent = document.getElementById('parent');
+// let elems = document.querySelectorAll('#parent p');
+// let spans = document.querySelectorAll('#parent span');
+
+// for (let elem of elems) {
+//     let removeLink = document.createElement('a');
+//     removeLink.href = '';
+//     removeLink.innerHTML = 'remove';
+//     elem.appendChild(removeLink);
+
+//     removeLink.addEventListener('click', function(event) {
+//         elem.parentElement.removeChild(elem);
+//         event.preventDefault();
+//     });
+// }
+// for (let span of spans) {
+//     span.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = this.innerHTML;
+//         span.innerHTML = '';
+//         span.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             span.innerHTML = this.value;
+//             span.addEventListener('click', func);
+//         });
+
+//         this.removeEventListener('click', func);
+//     }); 
+// }
+
+// Оберните сначала текст абзаца в теги span, добавьте к этим тегам возможность редактирования, а затем добавьте в конец каждого абзаца ссылку на удаление.
+
+// let elems = document.querySelectorAll('p');
+
+// for (let elem of elems) {
+//     let span = document.createElement('span');
+//     span.innerHTML = elem.innerHTML;
+//     elem.innerHTML = '';
+//     elem.appendChild(span);
+
+//     let removeLink = document.createElement('a');
+//     removeLink.href = '';
+//     removeLink.innerHTML = 'remove';
+//     elem.appendChild(removeLink);
+
+//     removeLink.addEventListener('click', function(event) {
+//         elem.parentElement.removeChild(elem);
+//         event.preventDefault();
+//     });
+// }
+
+// let spans = document.querySelectorAll('span');
+// for (let span of spans) {
+//     span.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = this.innerHTML;
+//         span.innerHTML = '';
+//         span.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             span.innerHTML = this.value;
+//             span.addEventListener('click', func);
+//         });
+
+//     this.removeEventListener('click', func);
+//     }); 
+// }
+
+
+//==================================== Стилизация элементов на JavaScript ================================================
+// Добавьте в конец каждого абзаца ссылку, по клику на которую текст абзаца будет перечеркиваться (а ссылка - нет).
+// let elems = document.querySelectorAll('p');
+// for (let elem of elems) {
+//     let span = document.createElement('span');
+//     span.innerHTML = elem.innerHTML;
+//     elem.innerHTML = '';
+//     elem.appendChild(span);
+
+//     let a = document.createElement('a');
+//     a.href = '';
+//     a.innerHTML = 'перечеркнуть';
+//     elem.appendChild(a);
+
+//     a.addEventListener('click', function(event) {
+//         span.classList.toggle('through');
+//         event.preventDefault();
+
+//     });
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы после нажатия на ссылку эта ссылка удалялась из абзаца (а текст абзаца становился перечеркнутым).
+// let elems = document.querySelectorAll('p');
+// for (let elem of elems) {
+//     let span = document.createElement('span');
+//     span.innerHTML = elem.innerHTML;
+//     elem.innerHTML = '';
+//     elem.appendChild(span);
+
+//     let a = document.createElement('a');
+//     a.href = '';
+//     a.innerHTML = 'перечеркнуть';
+//     elem.appendChild(a);
+
+//     a.addEventListener('click', function(event) {
+//         span.classList.toggle('through');
+//         event.preventDefault();
+//         this.parentElement.removeChild(this);    
+//     });
+// }
+
+// Дана некоторая HTML таблица. Добавьте в эту таблицу еще одну колонку со ссылкой. По нажатию на эту ссылку ряд с этой ссылкой должен стать зеленого фона.
+// Модифицируйте предыдущую задачу так, чтобы первое нажатие по ссылке красило ряд в зеленый фон, а второе нажатие отменяло это действие.
+// let parent = document.getElementById('parent');
+// let trs = document.querySelectorAll('#parent tr');
+
+// for (let tr of trs) {
+//     let td = document.createElement('td');
+//     tr.append(td);
+
+//     let a = document.createElement('a');
+//     a.href = '';
+//     a.innerHTML = 'green';
+//     td.appendChild(a);
+
+//     a.addEventListener('click', function(event) {
+//         tr.classList.toggle('colored-green');
+//         event.preventDefault();
+//     });
+// }
+
+
+//=================================== Кнопки для скрытия и показа элемента на JavaScript ====================================
+// Модифицируйте мой код так, чтобы была только одна кнопка. Пусть по первому клику на эту кнопку элемент показывается, а по второму - скрывается.
+// let elem = document.querySelector('#elem');
+// let show = document.querySelector('#show');
+// // let hide = document.querySelector('#hide');
+
+// show.addEventListener('click', function() {
+//     elem.classList.toggle('hidden');
+// });
+
+ 
+//=================================== Много элементов с кнопками показа на JavaScript ==================================
+// Изучите мое решение, а затем самостоятельно, не подсматривая в мой код, решите эту задачу.
+// Первый способ
+// let btns = document.querySelectorAll('button');
+
+// for (let btn of btns) {
+//     btn.addEventListener('click', function() {
+//         let elem = document.querySelector('#' + this.dataset.elem);
+//         elem.classList.toggle('hidden');
+//     });
+// }
+
+// Изучите мое решение, а затем самостоятельно, не подсматривая в мой код, решите эту задачу.
+// Второй способ
+// let btns = document.querySelectorAll('button');
+// let elems = document.querySelectorAll('p');
+
+// for (let i = 0; i < btns.length; i++) {
+//     btns[i].addEventListener('click', function() {
+//         elems[i].classList.toggle('hidden');
+//     });
+// }
+
+// Изучите мое решение, а затем самостоятельно, не подсматривая в мой код, решите эту задачу.
+// Третий способ
+// let btns = document.querySelectorAll('button');
+
+// for (let btn of btns) {
+//     btn.addEventListener('click', function() {
+//         this.previousElementSibling.classList.toggle('hidden');
+//     });
+// }
+
+
+//=================================== Активация элементов на JavaScript ===============================================
+// Дана HTML список ul. Сделайте так, чтобы по нажатию на любой пункт списка он активировался красным фоном.
+// Модифицируйте предыдущую задачу так, чтобы по нажатию на активированный пункт списка активация с него снималась.
+// let elems = document.querySelectorAll('li');
+
+// for (let elem of elems) {
+//     elem.addEventListener('click', function() {
+//         this.classList.toggle('active');
+//     });
+// }
+
+
+//====================================== Чередование стилей активации на JavaScript =======================================
+// Разберите мой код, а затем самостоятельно повторите решение этой задачи.
+// let tds = document.querySelectorAll('td');
+// let color = 'color1';
+
+// for (let td of tds) {
+//     td.addEventListener('click', function() {
+//         if (color == 'color1') {
+//             color = 'color2';
+//         } else {
+//             color = 'color1';
+//         }
+//         td.classList.add(color);
+//     })
+// }
+
+// Чередование многих цветов из массива
+// let tds = document.querySelectorAll('#table td');
+
+// let i = 0;
+// let colors = ['color1', 'color2', 'color3'];
+
+// for (let td of tds) {
+// 	td.addEventListener('click', function() {
+// 		this.classList.add(colors[i]);
+		
+// 		i++;
+// 		if (i == colors.length) {
+// 			i = 0;
+// 		}
+// 	});
+// }
+
+
+//==================================== Активация ограниченного количества элементов =====================================
+// // Сделайте так, чтобы в одном ряду таблице можно было активировать не более 5-ти ячеек.
+// let trs = document.querySelectorAll('tr');
+// for (let i = 0; i < trs.length; i++) {
+//     let tds = document.querySelectorAll('td');
+//     for (let td of tds) {
+//         td.addEventListener('click', function() {
+//             let activeTds = document.querySelectorAll('td.active');
+//             if (activeTds && activeTds.length < 5) {
+//                     this.classList.add('active');
+//             }
+//         });
+//     } ////////   не сделал!!!!!!!!!!!!!!!!!! //////////////////////
+// }
+
+
+//=============================== Практика на изменение элементов на JavaScript ================================
+// Дан массив. Выведите его элементы в виде списка ul.
+// let arr = [1, 2, 3, 4, 5, 6];
+// let parent = document.getElementById('parent');
+// for (let elem of arr) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem;
+//     parent.appendChild(li);
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы по клику на любую li в ней появлялся инпут, с помощью которого ее можно будет 
+// поредактировать.
+
+// let arr = [1, 2, 3, 4, 5, 6];
+// let parent = document.getElementById('parent');
+// for (let elem of arr) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem;
+//     parent.appendChild(li);
+
+//     li.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = li.innerHTML;
+//         li.innerHTML = '';
+//         li.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             li.innerHTML = this.value;
+//             li.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы под списком был инпут, с помощью которого можно будет добавить новый элемент в конец списка ul. Сделайте так, чтобы новые li также можно было редактировать.
+// let arr = [1, 2, 3, 4, 5, 6];
+// let parent = document.getElementById('parent');
+
+// let inp = document.createElement('input');
+// parent.insertAdjacentElement('afterEnd', inp);
+
+// inp.addEventListener('blur', function() {
+//     let li = document.createElement('li');
+//     li.innerHTML = inp.value;
+//     parent.appendChild(li);
+
+//     li.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = li.innerHTML;
+//         li.innerHTML = '';
+//         li.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             li.innerHTML = this.value;
+//             li.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// });
+
+// for (let elem of arr) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem;
+//     parent.appendChild(li);
+
+//     li.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = li.innerHTML;
+//         li.innerHTML = '';
+//         li.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             li.innerHTML = this.value;
+//             li.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы в конце каждой li стояла ссылка 'удалить', с помощью которой можно будет удалить эту li из ul.
+// let arr = [1, 2, 3, 4, 5, 6];
+// let parent = document.getElementById('parent');
+
+// let inp = document.createElement('input');
+// parent.insertAdjacentElement('afterEnd', inp);
+
+// inp.addEventListener('blur', function() {
+//     let li = document.createElement('li');
+//     li.innerHTML = inp.value;
+//     parent.appendChild(li);
+//     this.value = '';
+
+//     let span = document.createElement('span');
+//     span.innerHTML = li.innerHTML;
+//     li.innerHTML = '';
+//     li.appendChild(span);
+
+//     getRemove(li);
+
+//     span.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = span.innerHTML;
+//         span.innerHTML = '';
+//         span.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             span.innerHTML = this.value;
+//             span.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// });
+
+// for (let elem of arr) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem;
+//     parent.appendChild(li);
+
+//     let span = document.createElement('span');
+//     span.innerHTML = li.innerHTML;
+//     li.innerHTML = '';
+//     li.appendChild(span);
+
+//     getRemove(li);
+// }
+
+// let spans = document.querySelectorAll('span');
+// for (let span of spans) {
+//     span.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = span.innerHTML;
+//         span.innerHTML = '';
+//         span.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             span.innerHTML = this.value;
+//             span.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// }
+
+// function getRemove(li) {
+//     let a = document.createElement('a');
+//     a.innerHTML = ' remove';
+//     li.appendChild(a);
+//     a.addEventListener('click', function(event) {
+//         parent.removeChild(li);
+//         event.preventDefault();
+//     });
+// }
+
+
+// Модифицируйте предыдущую задачу так, чтобы в конце каждой li также стояла ссылка 'перечеркнуть', с помощью которой можно будет перечеркнуть текст данного тега li.
+// let arr = [1, 2, 3, 4, 5, 6];
+// let parent = document.getElementById('parent');
+
+// let inp = document.createElement('input');
+// parent.insertAdjacentElement('afterEnd', inp);
+
+// inp.addEventListener('blur', function() {
+//     let li = document.createElement('li');
+//     li.innerHTML = inp.value;
+//     parent.appendChild(li);
+//     this.value = '';
+
+//     let span = document.createElement('span');
+//     span.innerHTML = li.innerHTML;
+//     li.innerHTML = '';
+//     li.appendChild(span);
+
+//     getRemove(li);
+//     getThrough(li, span);
+//     getInput(span);
+// });
+
+// for (let elem of arr) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem;
+//     parent.appendChild(li);
+
+//     let span = document.createElement('span');
+//     span.innerHTML = li.innerHTML;
+//     li.innerHTML = '';
+//     li.appendChild(span);
+
+//     getRemove(li);
+//     getThrough(li, span);
+// }
+// let spans = document.querySelectorAll('span');
+// for (let span of spans) {
+//     getInput(span);
+// }
+
+// function getRemove(li) {
+//     let a = document.createElement('a');
+//     a.innerHTML = ' remove';
+//     li.appendChild(a);
+    
+//     a.addEventListener('click', function(event) {
+//         parent.removeChild(li);
+//         event.preventDefault();
+//     });
+// }
+
+// function getThrough(li, span) {
+//     let a = document.createElement('a');
+//     a.innerHTML = ' line-through';
+//     li.appendChild(a);
+    
+//     a.addEventListener('click', function(event) {
+//         span.classList.toggle('through');
+//         event.preventDefault();
+//     });
+// }
+
+// function getInput(span) {
+//     span.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = span.innerHTML;
+//         span.innerHTML = '';
+//         span.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             span.innerHTML = this.value;
+//             span.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// }
+
+
+// Выведите этих работников в HTML таблице.
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+// let parent = document.getElementById('parent');
+// for (let elem of employees) {
+//     let tr = document.createElement('tr');
+//     let td1 = document.createElement('td');
+//     td1.innerHTML = elem.name;
+//     tr.appendChild(td1);
+
+//     let td2 = document.createElement('td');
+//     td2.innerHTML = elem.age;
+//     tr.appendChild(td2);
+
+//     let td3 = document.createElement('td');
+//     td3.innerHTML = elem.salary;
+//     tr.appendChild(td3);
+
+//     parent.appendChild(tr);
+// }
+
+// Добавьте ячейкам созданной таблицы возможность редактирования.
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+// let parent = document.getElementById('parent');
+// for (let elem of employees) {
+//     let tr = document.createElement('tr');
+    
+//     let td1 = document.createElement('td');
+//     td1.innerHTML = elem.name;
+//     getRedaction(td1);
+//     tr.appendChild(td1);
+
+//     let td2 = document.createElement('td');
+//     td2.innerHTML = elem.age;
+//     getRedaction(td2);
+//     tr.appendChild(td2);
+
+//     let td3 = document.createElement('td');
+//     td3.innerHTML = elem.salary;
+//     getRedaction(td3);
+//     tr.appendChild(td3);
+
+//     parent.appendChild(tr);
+// }
+
+// function getRedaction(td) {
+//     td.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = td.innerHTML;
+//         td.innerHTML = '';
+//         td.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             td.innerHTML = this.value;
+//             td.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// }
+
+// Добавьте в вашу таблицу новую колонку со ссылкой на удаления ряда из таблицы.
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+// let parent = document.getElementById('parent');
+// for (let elem of employees) {
+//     let tr = document.createElement('tr');
+    
+//     let td1 = document.createElement('td');
+//     td1.innerHTML = elem.name;
+//     getRedaction(td1);
+//     tr.appendChild(td1);
+
+//     let td2 = document.createElement('td');
+//     td2.innerHTML = elem.age;
+//     getRedaction(td2);
+//     tr.appendChild(td2);
+
+//     let td3 = document.createElement('td');
+//     td3.innerHTML = elem.salary;
+//     getRedaction(td3);
+//     tr.appendChild(td3);
+
+//     getRemove(tr);  
+//     parent.appendChild(tr);
+// }
+
+// function getRedaction(td) {
+//     td.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = td.innerHTML;
+//         td.innerHTML = '';
+//         td.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             td.innerHTML = this.value;
+//             td.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// }
+
+// function getRemove(tr) {
+//     let td = document.createElement('td');
+//     tr.appendChild(td);
+
+//     let a = document.createElement('a');
+//     a.href = '';
+//     a.innerHTML = 'remove';
+//     td.appendChild(a);
+
+//     a.addEventListener('click', function(event) {
+//         parent.removeChild(tr);
+//         event.preventDefault();
+//     })
+// }
+
+// делайте под таблицей 3 инпута и кнопку для добавление нового работника. Пусть в инпуты вводятся имя, возраст и зарплата, и по нажатию на кнопку новый работник добавляется в таблицу. Реализуйте редактирование ячеек для вновь добавленных работников.
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+// let parent = document.getElementById('parent');
+
+// for (let elem of employees) {
+//     let tr = document.createElement('tr');
+    
+//     createTd(tr, elem.name);
+
+//     createTd(tr, elem.age);
+
+//     createTd(tr, elem.salary);
+
+//     getRemove(tr);  
+//     parent.appendChild(tr);
+// }
+
+// for (let i = 1; i <= 3; i++) {
+//     let input = document.createElement('input');
+//     parent.insertAdjacentElement('afterEnd', input);
+// }
+
+// let inputs = document.querySelectorAll('input');
+
+// let btn = document.createElement('button');
+// btn.innerHTML = 'click';
+// parent.insertAdjacentElement('afterEnd', btn);
+
+// btn.addEventListener('click', function() {
+//     let tr = document.createElement('tr');
+//     let elem1 = inputs[0].value;
+//     let elem2 = inputs[1].value;
+//     let elem3 = inputs[2].value;
+   
+//     createTd(tr, elem1);
+//     createTd(tr, elem2);
+//     createTd(tr, elem3);
+    
+//     getRemove(tr);
+//     parent.appendChild(tr);
+// });
 
 
 
+// function getRedaction(td) {
+//     td.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = td.innerHTML;
+//         td.innerHTML = '';
+//         td.appendChild(input);
+
+//         input.addEventListener('blur', function() {
+//             td.innerHTML = this.value;
+//             td.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// }
+
+// function getRemove(tr) {
+//     let td = document.createElement('td');
+//     tr.appendChild(td);
+
+//     let a = document.createElement('a');
+//     a.href = '';
+//     a.innerHTML = 'remove';
+//     td.appendChild(a);
+
+//     a.addEventListener('click', function(event) {
+//         parent.removeChild(tr);
+//         event.preventDefault();
+//     })
+// }
+
+// function createTd(tr, elem) {
+//     let td = document.createElement('td');
+//     td.innerHTML = elem;
+//     getRedaction(td);
+//     tr.appendChild(td);
+// }
+
+
+// Выведите на экран каждого работника в своем теге li тега ul.
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+
+// let ul = document.createElement('ul');
+// document.body.append(ul);
+
+// for (let elem of employees) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem.name + ' ' + elem.age + ' ' + elem.salary;
+//     ul.append(li);
+// }
+
+
+// Сделайте так, чтобы по клику на имя, возраст или зарплату работника появлялся инпут для редактирования этого поля.
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+
+// let ul = document.createElement('ul');
+// document.body.append(ul);
+
+// for (let elem of employees) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem.name + ' ' + elem.age + ' ' + elem.salary;
+//     ul.append(li);
+
+//     li.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = this.innerHTML;
+//         this.innerHTML = '';
+//         li.append(input);
+
+//         input.addEventListener('blur', function() {
+//             li.innerHTML = this.value;
+//             li.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// }
+
+
+// Добавьте в конец каждого тега li ссылку на удаление этого li из списка.
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+
+// let ul = document.createElement('ul');
+// document.body.append(ul);
+
+// for (let elem of employees) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem.name + ' ' + elem.age + ' ' + elem.salary;
+//     ul.append(li);
+
+//     li.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = this.innerHTML;
+//         this.innerHTML = '';
+//         li.append(input);
+
+//         input.addEventListener('blur', function() {
+//             li.innerHTML = this.value;
+//             li.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+
+//     let a = document.createElement('a');
+//     a.href = '';
+//     a.innerHTML = ' ' + 'remove';
+//     li.append(a);
+
+//     a.addEventListener('click', function(event) {
+//         ul.removeChild(li);
+//         event.preventDefault();
+//     });
+// }
+
+// Под списком сделайте форму для добавление нового работника.
+
+// let employees = [
+// 	{name: 'employee1', age: 30, salary: 400},
+// 	{name: 'employee2', age: 31, salary: 500},
+// 	{name: 'employee3', age: 32, salary: 600},
+// ];
+
+// let ul = document.createElement('ul');
+// document.body.append(ul);
+
+// for (let i = 1; i <= 3; i++) {
+//     let input = document.createElement('input');
+//     ul.insertAdjacentElement('afterEnd', input);
+// }
+
+// let inputs = document.querySelectorAll('input');
+
+// let btn = document.createElement('button');
+// btn.innerHTML = 'New Employee';
+// document.body.append(btn);
+
+// btn.addEventListener('click', function() {
+//     let elem1 = inputs[0].value;
+//     let elem2 = inputs[1].value;
+//     let elem3 = inputs[2].value;
+    
+//     let li = document.createElement('li');
+//     li.innerHTML = elem1 + ' ' + elem2 + ' ' + elem3;
+//     ul.append(li);
+
+//     createInput(li);
+//     getRemove(ul, li);
+    
+// });
+
+// for (let elem of employees) {
+//     let li = document.createElement('li');
+//     li.innerHTML = elem.name + ' ' + elem.age + ' ' + elem.salary;
+//     ul.append(li);
+
+//     createInput(li);
+//     getRemove(ul, li);
+// }
+
+
+// function createInput(li) {
+//     let span = document.createElement('span');
+//     span.innerHTML = li.innerHTML;
+//     li.innerHTML = '';
+//     li.append(span);
+//     span.addEventListener('click', function func() {
+//         let input = document.createElement('input');
+//         input.value = this.innerHTML;
+//         this.innerHTML = '';
+//         this.append(input);
+
+//         input.addEventListener('blur', function() {
+//             span.innerHTML = this.value;
+//             span.addEventListener('click', func);
+//         });
+//         this.removeEventListener('click', func);
+//     });
+// }
+
+// function getRemove(ul, li) {
+//     let a = document.createElement('a');
+//     a.href = '';
+//     a.innerHTML = ' ' + 'remove';
+//     li.append(a);
+
+//     a.addEventListener('click', function(event) {
+//         ul.removeChild(li);
+//         event.preventDefault();
+//     });
+// }
+
+
+//=================================== Поиск ячеек таблицы с помощью атрибута data =========================================
+// Сделайте так, чтобы по клику на любую ячейку в красный фон красились все ячейки этой колонки.
+// let tds = document.querySelectorAll('td');
+// for (let td of tds) {
+//     td.addEventListener('click', function() {
+//         let col = td.dataset.col;
+//         let colTds = document.querySelectorAll('#table td[data-col="' + col + '"]');
+
+//         for (let td of colTds) {
+//             td.classList.toggle('colored-red');
+//         }
+//     });
+// }              
+
+// Сделайте кнопку, по нажатию на которую в красный фон покрасится та ячейка, номер которой совпадает с номером из переменных.
+// let col = 2;
+// let row = 3;
+// let trs = document.querySelectorAll('td');
+
+// let btn = document.createElement('button');
+// btn.innerHTML = 'Click Me';
+// table.insertAdjacentElement('afterEnd', btn);
+
+// btn.addEventListener('click', function() {
+//     for (let tr of trs) {
+//         if (tr.dataset.row == row) {
+//             let rowTds = document.querySelectorAll('#table td[data-row="' + row + '"]');
+//             for (let td of rowTds) {
+//                 if (td.dataset.col == col) {
+//                     td.classList.add('colored-red');
+//                 }
+//             }   
+//         }
+//     }
+// });
+
+
+//======================================= Добавление номера колонки и ряда в таблицу =========================================
+// Напишите скрипт, который добавит в каждую ячейку таблицы атрибут data-col с номером колонки таблицы, в которой находится эта ячейка.
+// let trs = document.querySelectorAll('tr');
+
+// for (let tr of trs) {
+//     let tds = tr.querySelectorAll('td');
+//     let j = 1;
+//     for (let td of tds) {
+//         td.setAttribute('data-col', j++);
+//     }
+// }
+
+// Модифицируйте предыдущую задачу так, чтобы в ячейку добавлялся еще и номер ее ряда, вот так:
+// let trs = document.querySelectorAll('tr');
+// let row = 1;
+// for (let tr of trs) {
+//     tr.setAttribute('data-row', row++);
+//     let tds = tr.querySelectorAll('td');
+//     let col = 1;
+    
+//     for (let td of tds) {
+//         td.setAttribute('data-col', col++);
+//         td.setAttribute('data-row', tr.getAttribute('data-row'));
+//     }
+//     tr.removeAttribute('data-row');
+// }
+
+// Дана некоторая таблица. Сделайте так, чтобы по клику на любую ячейку в ее текст выводился номер ряда и номер колонки этой ячейки.
+// let trs = document.querySelectorAll('tr');
+// let row = 1;
+// for (let tr of trs) {
+//     tr.setAttribute('data-row', row++);
+//     let col = 1;
+//     let tds = tr.querySelectorAll('td');
+//     for (let td of tds) {
+//         td.setAttribute('data-col', col++);
+//         td.setAttribute('data-row', tr.getAttribute('data-row'));
+//         td.addEventListener('click', function() {
+//             this.innerHTML = td.dataset.row + 'ряд' + ' ' + td.dataset.col + 'колонка';
+//         });
+//     }
+//     tr.removeAttribute('data-row');
+// }
+
+// Пусть у нас есть некоторая квадратная HTML таблица. В такой таблице есть две диагонали. Назовем главной диагональ, идущую от верхнего левого угла к нижнему правому. Сделайте так, чтобы по клику на любую ячейку главной диагонали эта ячейка красилась в красный цвет фона, а по клику любую другую ячейку - она красилась в зеленый.
+// let trs = document.querySelectorAll('tr');
+// let row = 1;
+// for (let tr of trs) {
+//     tr.setAttribute('data-row', row++);
+//     let col = 1;
+//     let tds = tr.querySelectorAll('td');
+//     for (let td of tds) {
+//         td.setAttribute('data-col', col++);
+//         td.setAttribute('data-row', tr.getAttribute('data-row'));
+//         td.addEventListener('click', function() {
+//             if (td.dataset.row == td.dataset.col) {
+//                 this.classList.toggle('colored-red');
+//             } else {
+//                 this.classList.toggle('colored-green');
+//             }
+//         });
+//     }
+//     tr.removeAttribute('data-row');
+// }
+
+
+//=================================== Поиск ячеек таблицы через селектор CSS на JavaScript ==================================
+// Найдите все ячейки третьего столбца и покрасьте их в красный фон.
+// let tds = document.querySelectorAll('#table td:nth-child(3)');
+// for (let td of tds) {
+//     td.classList.add('colored-red');
+// }
+
+// Найдите третью ячейку первого ряда и покрасьте ее в красный фон.
+// let tds = document.querySelectorAll('#table tr:nth-child(1) td:nth-child(3)');
+// for (let td of tds) {
+//     td.classList.add('colored-red');
+// }
+
+// Найдите все четные ряды и покрасьте в них все нечетные ячейки.
+// let tds = document.querySelectorAll('#table tr:nth-child(even) td:nth-child(odd)');
+// for (let td of tds) {
+//     td.classList.add('colored-red');
+// }
+
+
+//============================== Функции для работы с DOM элементом на JavaScript =========================================
+// Модифицируйте созданную мною функцию так, чтобы параметром она принимала не id элемента, а произвольный CSS селектор.
+// setSelector('p', 'colored-text');
+
+// function setSelector(selector, text) {
+//     let elems = document.querySelector(selector);
+//     for (let elem of elems) {
+//         elem.innerHTML = text;
+//     }
+// }
+
+// Сделайте функцию setAttr, которая будет менять атрибут DOM элементу. Пусть первым параметром функция принимает селектор элемента, вторым - имя атрибута, а третьим - его новое значение.
+
+// setAttr('button', 'allRight', 2);
+// function setAttr(selector, nameAttribute, newValue) {
+//     let elems = document.querySelectorAll(selector);
+//     for (let elem of elems) {
+//         elem.setAttribute(nameAttribute, newValue);
+//     }
+// }
+
+
+//=========================================== Функции для работы с группой DOM элементов ===================================
+// Сделайте функцию appendText, которая первым параметром будет принимать селектор, а вторым - текст. Сделайте так, чтобы данная функция добавляла текст в конец переданных элементов.
+// appendText('p', 'миру мир');
+// function appendText(selector, text) {
+//     let elems = document.querySelectorAll(selector);
+//     for (let elem of elems) {
+//         elem.innerHTML += text;
+//     }
+// }
+
+
+//======================================= Передача коллбэка для работы с DOM на JavaScript ==================================
+// Даны абзацы. С помощью созданной нами функции forEach для каждого абзаца добавьте в конец его текста восклицательный знак.
+// forEach('.elem', function(elem) {
+//     elem.innerHTML += '!';
+// });
+
+// function forEach(selector, func) {
+//     let elems = document.querySelectorAll(selector);
+//     for (let elem of elems) {
+//         func(elem);
+//     }
+// }
+
+
+//==================================== Передача порядкового номера в коллбэк на JavaScript ==================================
+// Даны абзацы. С помощью созданной нами функции forEach для каждого абзаца добавьте ему в начало его порядковый номер.
+// forEach('.elem', function(elem, index) {
+//     elem.innerHTML = index + elem.innerHTML;
+// });
+
+// function forEach(selector, func) {
+//     let elems = document.querySelectorAll(selector);
+//     for (let i = 0; i < elems.length; i++) {
+//         func(elems[i], i);
+//     } 
+// } 
+
+
+//======================================== Передача DOM элемента параметром функции ==========================================
+
+// let elem1 = document.getElementById('elem1');
+// let elem2 = document.getElementById('elem2');
+// appendText(elem1, 'wwwwwwwww');
+// appendText(elem2, 'xxxxxxxxxxxxx');
+    
+// function appendText(elem, text) {
+//     elem.insertAdjacentText('beforeEnd', text);
+// }
+
+// Даны абзацы. Получите их, переберите циклом и каждому добавьте в конец '!' с помощью функции appendText, сделанной в предыдущей задаче.
+// let elems = document.querySelectorAll('p');
+// for (let elem of elems) {
+//     appendText(elem, '!');
+// }
+// function appendText(elem, text) {
+//     elem.insertAdjacentText('beforeEnd', text);
+// }
+
+// Сделайте функцию setValue, которая первым параметром будет принимать ссылку на инпут, а вторым - текст. Сделайте так, чтобы данная функция устанавливала переданный текст в value инпута.
+// let input = document.getElementById('inp');
+// setValue(input, 'western');
+
+// function setValue(elem, text) {
+//     elem.value = text;
+// }
+
+
+//================================= Передача DOM группы элементов параметрами функций =====================================
+// Сделайте функцию appendText, которая первым параметром будет принимать массив DOM элементов, а вторым - текст. Сделайте так, чтобы данная функция добавляла текст в конец переданных элементов.
+// let elems = document.querySelectorAll('.elem');
+// appendText(elems, 'dfeeeeeee');
+
+// function appendText(elems, text) {
+//     for (let elem of elems) {
+//         elem.insertAdjacentText('beforeEnd', text);
+//     }
+// }
+
+// Сделайте функцию appendElem, которая первым параметром будет принимать ссылку DOM объект, в котором лежит тег ul, а вторым - текст. Сделайте так, чтобы данная функция создавала новую li с переданным текстом и добавляла ее в конец переданного тега ul.
+// let parent = document.getElementById('parent');
+// appendElem(parent, 'rakamakafo');
+// appendElem(parent, 'akunamatata');
+
+// function appendElem(elem, text) {
+//     let li = document.createElement('li');
+//     li.innerHTML = text;
+//     elem.append(li);
+// }
+
+// Дан массив и ul. С помощью функции appendElem, созданной в предыдущей задаче, запишите каждый элемент массива в отдельную li в этом ul.
+// let arr = ['million', 'dollar', 'I am', 'rich', 'happy', 'helthy', 'sexy', 'clever', 'sociable'];
+// let parent = document.getElementById('parent');
+// for (let elem of arr) {
+//     appendElem(parent, elem);
+// }
+
+// function appendElem(elem, text) {
+//     let li = document.createElement('li');
+//     li.innerHTML = text;
+//     elem.append(li);
+// }
+
+
+//=============================== Функция для создания HTML таблиц на JavaScript =========================================
+// Допишите код представленной выше заготовки функции. Потестируйте работу готовой функции.
+// let parent = document.getElementById('parent');
+// createTable(10, 24, parent);
+
+// function createTable(rows, cols, parent) {
+// 	let table = document.createElement('table');
+	
+// 	for (let i = 1; i <= rows; i++) {
+//         let tr = document.createElement('tr');
+//         table.append(tr);
+// 		for (let j = 1; j <= cols; j++) {
+// 			let td = document.createElement('td');
+//             tr.append(td);
+// 		}
+// 	}
+	
+// 	parent.appendChild(table);
+// }
+
+
+//================================== Возврат таблицы из функции на JavaScript ========================================
+// Переделайте вашу функцию createTable в соответствии с описанным в теории.
+// let parent = document.getElementById('parent');
+// let table = createTable(4, 3);
+// parent.append(table);
+
+// function createTable(rows, cols) {
+// 	let table = document.createElement('table');
+	
+// 	for (let i = 1; i <= rows; i++) {
+//         let tr = document.createElement('tr');
+//         table.append(tr);
+// 		for (let j = 1; j <= cols; j++) {
+// 			let td = document.createElement('td');
+//             tr.append(td);
+// 		}
+// 	}
+// 	return table;
+// }
+
+// С помощью функции createTable создайте новую таблицу, а затем вставьте ее в конец дива в абзацами.
+// let parent = document.getElementById('elem');
+// let table = createTable(4, 3);
+// parent.append(table);
+
+// function createTable(rows, cols) {
+// 	let table = document.createElement('table');
+	
+// 	for (let i = 1; i <= rows; i++) {
+//         let tr = document.createElement('tr');
+//         table.append(tr);
+// 		for (let j = 1; j <= cols; j++) {
+// 			let td = document.createElement('td');
+//             tr.append(td);
+// 		}
+// 	}
+// 	return table;
+// }
+
+
+//================================== Функция для создания таблицы из двухмерного массива =====================================
+// Реализуйте описанную функцию. Проверьте ее работу.
+// let div = document.querySelector('#elem');
+
+// let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+// let table = createTableByArr(arr);
+
+// div.appendChild(table);
+
+// function createTableByArr(arr) {
+// 	let table = document.createElement('table');
+	
+// 	for (let i = 0; i < arr.length; i++) {
+//         let tr = document.createElement('tr');
+//         table.append(tr);
+// 		for (let j = 0; j < arr[i].length; j++) {
+// 			let td = document.createElement('td');
+//             td.innerHTML = arr[i][j];
+//             tr.append(td);
+// 		}
+// 	}
+// 	return table;
+// }
+
+
+//============================== Создание HTML таблицы из одномерного массива на JavaScript ===============================
+// Реализуйте описанную функцию convertArr. Потестируйте ее работу.
+// let elem = document.getElementById('elem');
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+// let cols = 4;
+// let table = createTableByArr(convertArr(arr, cols));
+// elem.append(table);
+
+// function createTableByArr(arr) {
+// 	let table = document.createElement('table');
+	
+// 	for (let i = 0; i < arr.length; i++) {
+//         let tr = document.createElement('tr');
+//         table.append(tr);
+// 		for (let j = 0; j < arr[i].length; j++) {
+// 			let td = document.createElement('td');
+//             td.innerHTML = arr[i][j];
+//             tr.append(td);
+// 		}
+// 	}
+// 	return table;
+// }
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let cols = 4;
+// function convertArr(arr, cols) {
+//     let newArr = [];
+//     let rows = arr.length / cols;
+//     for (let i = 0; i < rows; i++) {
+//         newArr[i] = [];
+//         for (let j = 0; j < cols; j++) {
+//             newArr[i].push(arr.shift());
+//         }
+//     }
+//     return newArr;
+// }
+
+ 
+//=================================== Нехватка элементов в массиве при создании таблицы ==================================
+// Реализуйте описанную функцию normalizeArr. Потестируйте ее работу.
+// let elem = document.getElementById('elem');
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let cols = 4;
+// let twoDimArr = convertArr(arr, cols);
+// let normalTwoDimArr = normalizeArr(twoDimArr, cols, '');
+// let table = createTableByArr(normalTwoDimArr);
+// elem.append(table);
+
+// function createTableByArr(arr) {
+// 	let table = document.createElement('table');
+	
+// 	for (let i = 0; i < arr.length; i++) {
+//         let tr = document.createElement('tr');
+//         table.append(tr);
+// 		for (let j = 0; j < arr[i].length; j++) {
+// 			let td = document.createElement('td');
+//             td.innerHTML = arr[i][j];
+//             tr.append(td);
+// 		}
+// 	}
+// 	return table;
+// }
+
+// function convertArr(arr, cols) {
+//     let newArr = [];
+//     let rows = arr.length / cols;
+//     for (let i = 0; i < rows; i++) {
+//         newArr[i] = [];
+//         for (let j = 0; j < cols; j++) {
+//             newArr[i].push(arr.shift());
+//         }
+//     }
+//     return newArr;
+// }
+
+// function normalizeArr(arr, cols, box) {
+//     let lastElem = arr.pop();
+//     for (let i = 0; i < cols; i++) {
+//         if (lastElem[i] == undefined) {
+//             lastElem[i] = box;
+//         }
+//     }
+//     arr.push(lastElem);
+//     return arr;
+// }
+
+
+//======================== Передача параметров в модуль через замыкания в JavaScript =================================
+// Дана кнопка и три инпута, в которые вводятся числа. По нажатию на кнопку выведите в консоль сумму введенных чисел. Реализуйте задачу с помощью модуля.
+
+// ;(function(selector1, selector2) {
+//     let btn = document.querySelector(selector1);
+//     let elems = document.querySelectorAll(selector2);
+
+//     btn.addEventListener('click', function() {
+//         let result = 0;
+//         for (let elem of elems) {
+//             result += Number(elem.value);
+//         }
+//         console.log(result);
+//     });
+// })('#btn', 'input');
+
+
+//======================= Экспорт переменных и функций в модулях через замыкания в JavaScript ==============================
+// Эскортируйте наружу одну из переменных и две любые функции.
+// ;(function() {
+// 	let str1 = 'переменная модуля';
+// 	let str2 = 'переменная модуля';
+// 	let str3 = 'переменная модуля';
+	
+// 	function func1() {
+// 		alert('функция модуля');
+// 	}
+// 	function func2() {
+// 		alert('функция модуля');
+//         alert(str1);
+// 	}
+// 	function func3() {
+// 		alert('функция модуля');
+// 	}
+
+//     window.func2 = func2;
+//     window.str1 = str1;
+// })();
+// func2();
+
+// Эскортируйте наружу объект с первыми пятью функциями и первыми двумя переменными.
+// ;(function() {
+// 	let str1 = 'переменная модуля';
+// 	let str2 = 'переменная модуля';
+// 	let str3 = 'переменная модуля';
+	
+// 	function func1() {
+// 		alert('функция модуля');
+// 	}
+// 	function func2() {
+// 		alert('функция модуля');
+// 	}
+// 	function func3() {
+// 		alert('функция модуля');
+// 	}
+// 	function func4() {
+// 		alert('функция модуля');
+// 	}
+// 	function func5() {
+// 		alert('функция модуля');
+// 	}
+//     window.module = {str1, str2, func1, func2, func3, func4, func5};
+// })();
+
+// module.func3();
+// alert(module.str2);
+
+
+//================================ Библиотеки через замыкания в JavaScript =============================================
+// Оформите этот код в виде модуля. Эспортируйте наружу все функции, кроме вспомогательной.
+
+;(function() {
+    function avg1(arr) {
+        return sum(arr, 1) / arr.length;
+    }
+    
+    function avg2(arr) {
+        return sum(arr, 2) / arr.length;
+    }
+    
+    function avg3(arr) {
+        return sum(arr, 3) / arr.length;
+    }
+    
+    // вспомогательная функция
+    function sum(arr, pow) {
+        let res = 0;
+        
+        for (let elem of arr) {
+            res += elem ** pow;
+        }
+        
+        return res;
+    }
+    window.avg = {avg1, avg2, avg3};
+})();
+alert(avg.avg1([1, 2, 3]) + avg.avg2([1, 2, 3]));

@@ -10260,29 +10260,173 @@
 //================================ Библиотеки через замыкания в JavaScript =============================================
 // Оформите этот код в виде модуля. Эспортируйте наружу все функции, кроме вспомогательной.
 
-;(function() {
-    function avg1(arr) {
-        return sum(arr, 1) / arr.length;
-    }
+// ;(function() {
+//     function avg1(arr) {
+//         return sum(arr, 1) / arr.length;
+//     }
     
-    function avg2(arr) {
-        return sum(arr, 2) / arr.length;
-    }
+//     function avg2(arr) {
+//         return sum(arr, 2) / arr.length;
+//     }
     
-    function avg3(arr) {
-        return sum(arr, 3) / arr.length;
-    }
+//     function avg3(arr) {
+//         return sum(arr, 3) / arr.length;
+//     }
     
-    // вспомогательная функция
-    function sum(arr, pow) {
-        let res = 0;
+//     // вспомогательная функция
+//     function sum(arr, pow) {
+//         let res = 0;
         
-        for (let elem of arr) {
-            res += elem ** pow;
-        }
+//         for (let elem of arr) {
+//             res += elem ** pow;
+//         }
         
-        return res;
-    }
-    window.avg = {avg1, avg2, avg3};
-})();
-alert(avg.avg1([1, 2, 3]) + avg.avg2([1, 2, 3]));
+//         return res;
+//     }
+//     window.avg = {avg1, avg2, avg3};
+// })();
+// alert(avg.avg1([1, 2, 3]) + avg.avg2([1, 2, 3]));
+
+
+// var array1 = [true,  true,  true,  false,
+//     true,  true,  true,  true ,
+//     true,  false, true,  false,
+//     true,  false, false, true ,
+//     true,  true,  true,  true ,
+//     false, false, true,  true ];
+
+// function countSheeps(arrayOfSheep) {
+//     let result = 0;
+//     for (let elem of arrayOfSheep) {
+//       if (elem == true) {
+//         result += 1;
+//       }
+//     }
+//     return result;
+// }
+
+// console.log(countSheeps(array1));
+
+// function highAndLow(numbers){
+//     let arr = [];
+//     let arr1 = [];
+//     let arr2 = [];
+//     arr = numbers.split(' ');
+//     for (let elem of arr) {
+//         elem = Number(elem);
+//         arr1.push(elem);
+//     }
+//     arr2.push(getMaxOfArray(arr1));
+//     arr2.push(getMinOfArray(arr1));
+//     let str = arr2.join(' ');
+//     return str;
+//
+// }
+//
+// function getMaxOfArray(numArray) {
+//     return Math.max.apply(null, numArray);
+//   }
+//
+// function getMinOfArray(numArray) {
+// return Math.min.apply(null, numArray);
+// }
+//
+// console.log(highAndLow("1 2 3 4 5"));
+
+
+
+
+// ======================================================================================================================
+// ======================================================================================================================
+// ============================================ Высший учебник JavaScript ===============================================
+// ======================================================================================================================
+// ======================================================================================================================
+
+// ================================= Введение в регулярные выражения в JavaScript =======================================
+
+
+// Напишите регулярку, которая найдет строки 'ahb', 'acb', 'aeb' по шаблону: буква 'a', любой символ, буква 'b'.
+// let str = 'ahb acb aeb aeeb adcb axeb';
+// console.log(str.replace(/a.b/g, '!'));
+
+
+// Напишите регулярку, которая найдет строки 'abba', 'adca', 'abea' по шаблону: буква 'a', 2 любых символа, буква 'a'.
+// let str = 'aba aca aea abba adca abea';
+// console.log(str.replace(/a..a/g, '!'));
+
+
+
+// Напишите регулярку, которая найдет строки 'abba' и 'abea', не захватив 'adca'.
+// let str = 'aba aca aea abba adca abea';
+// console.log(str.replace(/ab.a/g, '!'));
+
+
+//=================================== Операторы повторения символов в регулярках ========================================
+// // Напишите регулярку, которая найдет строки 'aba', 'abba', 'abbba' по шаблону: буква 'a', буква 'b' любое количество раз, буква 'a'.
+// let str = 'aa aba abba abbba abca abea';
+// let result = str.replace(/ab+a/g, '!');
+// console.log(result);
+//
+// // Напишите регулярку, которая найдет строки 'aa', 'aba', 'abba', 'abbba' по шаблону: буква 'a', буква 'b' любое количество раз (в том числе ниодного раза), буква 'a'.
+// let str = 'aa aba abba abbba abca abea';
+// console.log(str.replace(/ab*a/g, '!'));
+//
+// // Напишите регулярку, которая найдет строки 'aa', 'aba' по шаблону: буква 'a', буква 'b' один раз или ниодного, буква 'a'.
+// let str = 'aa aba abba abbba abca abea';
+// console.log(str.replace(/ab?a/g, '!'));
+//
+// // Напишите регулярку, которая найдет строки 'aa', 'aba', 'abba', 'abbba', не захватив 'abca' и 'abea'.
+// let str = 'aa aba abba abbba abca abea';
+// console.log(str.replace(/ab*a/g, '!'));
+
+
+//================================== Группирующие скобки в регулярках JavaScript ====================================
+// Напишите регулярку, которая найдет строки по шаблону: строка 'ab' повторяется 1 или более раз.
+// let str = 'ab abab abab abababab abea';
+// console.log(str.replace(/(ab)+/g, '!'));
+
+
+//================================= Экранировка спецсимволов в регулярках JavaScript ==================================
+// Напишите регулярку, которая найдет строку 'a.a', не захватив остальные.
+// let str = 'a.a aba aea';
+// console.log(str.replace(/a\.a/g, '!'));
+
+// Напишите регулярку, которая найдет строку '2+3', не захватив остальные.
+// let str = '2+3 223 2223';
+// console.log(str.replace(/2\+3/, '!'));
+
+// // Напишите регулярку, которая найдет строки '2+3', '2++3', '2+++3', не захватив остальные (+ может быть любое количество).
+// let str = '23 2+3 2++3 2+++3 345 567';
+// console.log(str.replace(/2\++3/g, '!'));
+
+// // Напишите регулярку, которая найдет строки '23', '2+3', '2++3', '2+++3', не захватив остальные.
+// let str = '23 2+3 2++3 2+++3 445 677';
+// console.log(str.replace(/2\+*3/g, '!'));
+
+// Напишите регулярку, которая найдет строки '*q+', '*qq+', '*qqq+', не захватив остальные.
+// let str = '*+ *q+ *qq+ *qqq+ *qqq qqq+';
+// console.log(str.replace(/\*q+\+/g, '!'));
+
+// Напишите регулярку, которая найдет строки в квадратных скобках и заменят их на '!'.
+// let str = '[abc] {abc} abc (abc) [abc]';
+// console.log(str.replace(/\[abc\]/g, '!'));
+
+
+//=============================== Фигурные скобки в регулярных выражения JavaScript ==================================
+// Напишите регулярку, которая найдет строки 'abba', 'abbba', 'abbbba' и только их.
+// let str = 'aa aba abba abbba abbbba abbbbba';
+// console.log(str.replace(/ab{2,4}a/g, '!'));
+
+// Напишите регулярку, которая найдет строки вида 'aba', в которых 'b' встречается менее 3-х раз (включительно).
+// let str = 'aa aba abba abbba abbbba abbbbba';
+// console.log(str.replace(/ab{1,3}a/g, '!'));
+
+// Напишите регулярку, которая найдет строки вида 'aba', в которых 'b' встречается более 4-х раз (включительно).
+// let str = 'aa aba abba abbba abbbba abbbbba';
+// console.log(str.replace(/ab{4,}a/g, '!'));
+
+
+//================================ Ограничение жадности в регулярках в JavaScript ==================================
+// Напишите регулярку, которая найдет все строки по краям которых стоят буквы 'a', и заменит каждую из них на '!'. Между буквами a может быть любой символ (кроме 'a').
+// let str = 'aba accca azzza wwwwa';
+// console.log(str.replace(/a.+?a/g, '!'));
